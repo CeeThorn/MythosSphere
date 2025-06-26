@@ -2,6 +2,8 @@ import sys
 from flask import Flask, redirect
 from flask_cors import CORS  # CORS allows for cross-origin requests
 import logging
+from dotenv import load_dotenv
+import os
 from routes.search import search_bp
 
 
@@ -11,11 +13,13 @@ def create_app():
     CORS(app, origins=["http://localhost:3000", "file://*"])
 
     app.register_blueprint(search_bp)
+    """
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     )
-    logger = logging.getLogger(__name__)
+    """
+    load_dotenv()
 
     return app
 
