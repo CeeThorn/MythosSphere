@@ -57,3 +57,41 @@ def get_tmdb_details(id, media_type):
 def search_jikan():
 
     return jsonify()
+
+
+search_bp = Blueprint("search", __name__, url_prefix="/search")
+JIKAN_API_BASE = "https://api.jikan.moe/v4/"
+
+BASE_JIKAN_PARAMS = {
+        "limit": 5
+    }
+
+
+
+@search_bp.route("/")
+def search_tmdb():
+
+    return jsonify()
+
+
+
+@search_bp.route("/<string:category>/<string:query>")
+def search_category(category, query):
+    category = category.lower().strip()
+    valid_categories = ['anime', 'manga', 'characters', 'people', 'top']
+
+    if category not in valid_categories:
+        return jsonify({
+            "error": f"Invalid search category '{category}'. Valid options are: {', '.join(valid_categories)}"
+        }), 400
+
+   
+    
+    if not query:
+        return jsonify({"error": "Missing query. Use /search/anime?q=naruto"}), 400
+    params = BASE_JIKAN_PARAMS.copy()
+    params["q"] = query
+    category = f"{category}/anime" if category == "top" else category   
+    response = requests.get(f"{JIKAN_API_BASE}{category}", params=params)
+
+    return jsonify(response.json())
