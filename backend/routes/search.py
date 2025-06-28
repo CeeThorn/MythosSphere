@@ -10,7 +10,7 @@ BASE_TMDB_PARAMS = {"language": "en-US", "include_adult": False}
 MEDIA_TYPES = ["movie", "tv"]
 
 
-@search_bp.route("/<string:query>", methods=["GET"])
+@search_bp.route("/tmdb/<string:query>", methods=["GET"])
 def search_tmdb(query):
     if not query:
         return jsonify({"Error": "Invalid Query", "Message": "Valid Query Required"})
@@ -33,7 +33,7 @@ def search_tmdb(query):
         return jsonify({"Error": str(e)})
 
 
-@search_bp.route("/details/<string:media_type>/<int:id>", methods=["GET"])
+@search_bp.route("/tmdb/details/<string:media_type>/<int:id>", methods=["GET"])
 def get_tmdb_details(id, media_type):
     if not id or not isinstance(id, int):
         return jsonify({"Error": "Invalid Id"})
