@@ -95,6 +95,55 @@ def search_comicvine(query):
     except Exception as e:
         return jsonify({"Error": str(e)})
 
+@search_bp.route("/<string:category>/<string:query>")
+def search_jikan(category, query):
+    category = category.lower().strip()
+    valid_categories = ['anime', 'manga', 'characters', 'people', 'top']
+
+    if category not in valid_categories:
+        return jsonify({
+            "error": f"Invalid search category '{category}'. Valid options are: {', '.join(valid_categories)}"
+        }), 400
+
+    if not query:
+        return jsonify({"error": "Missing query. Use /search/anime?q=naruto"}), 400
+    
+    params = BASE_JIKAN_PARAMS.copy()
+    params["q"] = query
+    category = f"{category}/anime" if category == "top" else category   
+    response = requests.get(f"{JIKAN_API_BASE}{category}", params=params)
+
+    return jsonify(response.json())
+    
+
+@search_bp.route("/jikan/details/<string:category>/<int:id>", methods=["GET"])
+def get_jikan_details(category, id):
+    category = category.lower().strip()
+    valid_categories = ['anime', 'manga', 'characters', 'people']
+
+    if not id or not isinstance(id, int):
+        return jsonify({"Error": "Invalid Id"})
+    
+    if category not in valid_categories:
+        return jsonify({
+            "Error": f"Invalid Category: {category}. Valid options are: {', '.join(valid_categories)}"
+        }), 400
+
+    try:
+        JIKAN_DETAILS = f"{JIKAN_API_BASE}{category}/{id}"
+        response = requests.get(url=JIKAN_DETAILS)
+        data = {}
+
+        if response.status_code == 200:
+            data = response.json()
+            return jsonify({"Status": "Success", "Payload": data}) 
+        else:
+            return jsonify({"Status": f"Failed: {response.status_code}"}) 
+        
+    except Exception as e:
+        return jsonify({"Error": str(e)})
+
+
 
 @search_bp.route("/valid-categories")
 def get_valid_categories():
