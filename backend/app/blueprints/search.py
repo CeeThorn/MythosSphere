@@ -18,18 +18,18 @@ ERROR_MESSAGE = "Invalid Input"
 @sleep_and_retry
 @limits(calls=50, period=5)
 @search_bp.route("/<string:query>", methods=["GET"])
-# @search_bp.route("/<string:query>/<bool:searchComics>", methods=["GET"])
+@search_bp.route("/<bool:searchComics>/<string:query>", methods=["GET"])
 @search_bp.route("/<string:query>/<string:category>", methods=["GET"])
 @cache.cached(timeout=3600, key_prefix="search")
 def search(query, searchComics=False, category=None):
     if not query or not isinstance(query, str):
         return jsonify({"Error": ERROR_MESSAGE})
-    if searchComics == False and category == None:
-        search_tmdb(query)
-    elif searchComics == False and category:
+    if searchComics == True:
+        search_comicvine(query)
+    elif searchComics == False and isinstance(category, str):
         search_jikan(query, category)
     else:
-        searchComics(query)
+        search_tmdb(query)
 
 
 @sleep_and_retry
