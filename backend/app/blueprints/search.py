@@ -49,11 +49,12 @@ def get_tmdb_details(id, media_type):
             data = response.json()
         else:
             return jsonify({"Status": "Failed"})
-        return jsonify({"Status": "Success", "Payload": data})
+        return jsonify({"Status": "Success", "Payload": data, "Tag": "TMDB"})
     except Exception as e:
         return jsonify({"Error": str(e)})
 
 
+@cache.memoize(timeout=3600)
 def search_tmdb(query):
     if not query:
         return jsonify({"Error": "Invalid Query", "Message": "Valid Query Required"})
@@ -71,11 +72,14 @@ def search_tmdb(query):
             data = response.json()
         else:
             return jsonify({"Status": "Failed"})
-        return jsonify({"Status": "Success", "Payload": data.get("results")})
+        return jsonify(
+            {"Status": "Success", "Payload": data.get("results"), "Tag": "TMDB"}
+        )
     except Exception as e:
         return jsonify({"Error": str(e)})
 
 
+@cache.memoize(timeout=7200)
 def search_comicvine(query):
     if not query or not isinstance(query, str):
         return jsonify({"Error": "Invalid Query"})
@@ -87,12 +91,12 @@ def search_comicvine(query):
             data = response.json()
         else:
             return jsonify({"Status": "Failed"})
-        return jsonify({"Status": "Success", "Payload": data})
+        return jsonify({"Status": "Success", "Payload": data, "Tag": "ComicVine"})
     except Exception as e:
         return jsonify({"Error": str(e)})
 
 
 @search_bp.route("/valid-categories")
 def get_valid_categories():
-    valid_categories = ['anime', 'manga', 'characters', 'people', 'top']
+    valid_categories = ["anime", "manga", "characters", "people", "top"]
     return jsonify({"valid_categories": valid_categories})
