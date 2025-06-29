@@ -90,3 +90,9 @@ def search_comicvine(query):
         return jsonify({"Status": "Success", "Payload": data})
     except Exception as e:
         return jsonify({"Error": str(e)})
+
+
+@search_bp.route("/valid-categories")
+def get_valid_categories():
+    valid_categories = ['anime', 'manga', 'characters', 'people', 'top']
+    return jsonify({"valid_categories": valid_categories})
