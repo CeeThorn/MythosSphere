@@ -12,18 +12,10 @@ const Search = () => {
     //understand the () with const and differnt ways to use useState
 
   // Load valid Jikan categories from Flask on page load
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000/search/valid-categories")
-      .then((res) => setValidCategories(res.data.valid_categories || []))
-      .catch((err) => { //
-        console.error("Failed to fetch categories", err);
-        setError("Could not load category options");
-      });
-  }, []);
 
-    const handleSearch = async (e) => { // handles the form of submmissopn when the user clicks the search button
-        e.preventDefault(); // prevents the default form submission behavior
+    const handleSearch = async (searchQuery, searchComics="", searchCategory="") => { // handles the form of submmissopn when the user clicks the search button
+        currentQuery = searchQuery || query; //if the user has not entered a search query, it will use the current query
+        currentCategory = searchCategory || category; //if the user has not selected a category, it will use the current category
         console.log("Search query:", query, "category:", category);
 
         if(!query.trim()) return;
@@ -34,7 +26,7 @@ const Search = () => {
             let response;
 
             
-      if (validCategories.includes(category)) {
+      if (validCategories.includes(currentCategory)) {
         // Use Flask backend for Jikan
         response = await axios.get(
           `http://localhost:5000/search/${category}/${encodeURIComponent(query)}`
