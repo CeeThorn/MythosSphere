@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import axios from "axios"
 
@@ -6,23 +6,25 @@ const Search = () => {
     const [query, setQuery] = useState(""); //handles the search bar input
     const[results, setResults] = useState([]);  // handles the search results
     const[error, setError] = useState(null); //handles any ApI errpors
-    const [category, setCategory] = useState("anime");
-    const [validCategories, setValidCategories] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const [category, setCategory] = useState("");//creates a state variable and the default variable
+    const [validCategories, setValidCategories] = useState([]);//vaild search categories fetched from my routes
+    const [loading, setLoading] = useState(false); //handles the loading state when the user clicks the search button
+    //understand the () with const and differnt ways to use useState
 
   // Load valid Jikan categories from Flask on page load
   useEffect(() => {
     axios
       .get("http://localhost:5000/search/valid-categories")
       .then((res) => setValidCategories(res.data.valid_categories || []))
-      .catch((err) => {
+      .catch((err) => { //
         console.error("Failed to fetch categories", err);
         setError("Could not load category options");
       });
   }, []);
 
     const handleSearch = async (e) => { // handles the form of submmissopn when the user clicks the search button
-        e.preventDeafault(); // prevents the default form submission behavior
+        e.preventDefault(); // prevents the default form submission behavior
+        console.log("Search query:", query, "category:", category);
 
         if(!query.trim()) return;
         setLoading(true);
@@ -40,8 +42,8 @@ const Search = () => {
         setResults(response.data.data || []);
       } else {
         // Use TMDB directly
-        const tmdbApiKey = "YOUR_TMDB_API_KEY"; // Replace with secure key
-        const tmdbUrl = `https://api.themoviedb.org/3/search/${category}`;
+        const tmdbApiKey = "TMDB_API_KEY"; // Replace with secure key please
+        const tmdbUrl = ``; // same as above :)
         response = await axios.get(tmdbUrl, {
           params: {
             query,
@@ -58,54 +60,38 @@ const Search = () => {
     }
   };
 
-  return (
-    <div className="p-6 max-w-2xl mx-auto">
-      <form onSubmit={handleSearch} className="flex gap-2 mb-4">
-        <select
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          className="border px-3 py-2 rounded"
-        >
-          {/* Default categories — can be expanded */}
-          <option value="anime">Anime</option>
-          <option value="movie">Movie</option>
-          <option value="tv">TV</option>
-          <option value="manga">Manga</option>
-          <option value="characters">Characters</option>
-          <option value="people">People</option>
-        </select>
-
+   return (
+    <div className="search-container">
+      <form onSubmit={handleSearch}>
         <input
           type="text"
           value={query}
-          placeholder="Search..."
           onChange={(e) => setQuery(e.target.value)}
-          className="border px-3 py-2 w-full rounded"
+          placeholder="Search..."
         />
-
-        <button
-          type="submit"
-          className="bg-blue-600 text-white px-4 py-2 rounded"
+        <select
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
         >
-          Search
+          <option value="">Select Category</option>
+          {validCategories.map((cat) => (
+            <option key={cat} value={cat}>
+              {cat.charAt(0).toUpperCase() + cat.slice(1)}
+            </option>
+          ))}
+        </select>
+        <button type="submit" disabled={loading}>
+          {loading ? "Searching..." : "Search"}
         </button>
       </form>
 
-      {loading && <p>Loading...</p>}
-      {error && <p className="text-red-500">{error}</p>}
+      {error && <p className="error">{error}</p>}
 
-      <div className="space-y-4">
-        {results.map((item) => (
-          <div
-            key={item.mal_id || item.id}
-            className="border rounded p-4 shadow-sm"
-          >
-            <h2 className="text-lg font-bold">
-              {item.title || item.name || "No title"}
-            </h2>
-            <p className="text-sm text-gray-600">
-              {item.synopsis || item.overview || "No description available."}
-            </p>
+      <div className="results">
+        {results.map((result, index) => (
+          <div key={index} className="result-item">
+            <h3>{result.title || result.name}</h3>
+            <p>{result.synopsis || result.overview || "No description available."}</p>
           </div>
         ))}
       </div>
@@ -114,6 +100,3 @@ const Search = () => {
 };
 
 export default Search;
-
-
-
