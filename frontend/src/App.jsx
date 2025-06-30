@@ -1,6 +1,6 @@
-import React from 'react';
-import './App.css';
-import Search from './Search'; // This matches the capitalized filename exactly
+import React from "react";
+import "./App.css";
+import Search from "./components/search.jsx";
 
 function App() {
   return (

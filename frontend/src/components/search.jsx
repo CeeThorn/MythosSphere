@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import axios from "axios"
 
@@ -24,6 +24,7 @@ const Search = () => {
 
     const handleSearch = async (e) => { // handles the form of submmissopn when the user clicks the search button
         e.preventDefault(); // prevents the default form submission behavior
+        console.log("Search query:", query, "category:", category);
 
         if(!query.trim()) return;
         setLoading(true);
