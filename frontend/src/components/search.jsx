@@ -1,49 +1,30 @@
-import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
-import axios from "axios"
+import React, { useState } from "react";
+import axios from "axios";
 
 const Search = () => {
-    const [query, setQuery] = useState(""); //handles the search bar input
-    const[results, setResults] = useState([]);  // handles the search results
-    const[error, setError] = useState(null); //handles any ApI errpors
-    const [category, setCategory] = useState("");//creates a state variable and the default variable
-    const [validCategories, setValidCategories] = useState([]);//vaild search categories fetched from my routes
-    const [loading, setLoading] = useState(false); //handles the loading state when the user clicks the search button
-    //understand the () with const and differnt ways to use useState
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  // Load valid Jikan categories from Flask on page load
+  const handleSearch = async (e) => {
+    e.preventDefault();
 
-    const handleSearch = async (searchQuery, searchComics="", searchCategory="") => { // handles the form of submmissopn when the user clicks the search button
-        currentQuery = searchQuery || query; //if the user has not entered a search query, it will use the current query
-        currentCategory = searchCategory || category; //if the user has not selected a category, it will use the current category
-        console.log("Search query:", query, "category:", category);
+    if (!query.trim()) {
+      setError("Please enter a search term.");
+      return;
+    }
 
-        if(!query.trim()) return;
-        setLoading(true);
-        setError(null);
+    setLoading(true);
+    setError(null);
 
-        try{
-            let response;
-
-            
-      if (validCategories.includes(currentCategory)) {
-        // Use Flask backend for Jikan
-        response = await axios.get(
-          `http://localhost:5000/search/${category}/${encodeURIComponent(query)}`
-        );
-        setResults(response.data.data || []);
-      } else {
-        // Use TMDB directly
-        const tmdbApiKey = "TMDB_API_KEY"; // Replace with secure key please
-        const tmdbUrl = ``; // same as above :)
-        response = await axios.get(tmdbUrl, {
-          params: {
-            query,
-            api_key: tmdbApiKey,
-          },
-        });
-        setResults(response.data.results || []);
-      }
+    try {
+      const response = await axios.get(
+        `http://localhost:5000/search?q=${encodeURIComponent(query)}`
+      );
+      console.log("Backend response:", response.data);
+      setResults(response.data.data || []);
     } catch (err) {
       console.error("Search failed", err);
       setError("Failed to fetch results.");
@@ -52,7 +33,7 @@ const Search = () => {
     }
   };
 
-   return (
+  return (
     <div className="search-container">
       <form onSubmit={handleSearch}>
         <input
@@ -61,17 +42,6 @@ const Search = () => {
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search..."
         />
-        <select
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-        >
-          <option value="">Select Category</option>
-          {validCategories.map((cat) => (
-            <option key={cat} value={cat}>
-              {cat.charAt(0).toUpperCase() + cat.slice(1)}
-            </option>
-          ))}
-        </select>
         <button type="submit" disabled={loading}>
           {loading ? "Searching..." : "Search"}
         </button>
