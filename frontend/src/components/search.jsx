@@ -26,6 +26,7 @@ const Search = () => {
           `http://localhost:5000/search/${searchComics}/${currentQuery}/${currentCategory}/`
         );
         
+        return (response.data.payload)
           
         
     } catch (err) {
