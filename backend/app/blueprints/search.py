@@ -36,9 +36,9 @@ def search(query, searchComics="empty", category="empty"):
         "people",
         "top",
     ):
-        search_jikan(query, category)
+        return (search_jikan(query, category))
     else:
-        search_tmdb(query)
+        return (search_tmdb(query))
 
 
 @sleep_and_retry
