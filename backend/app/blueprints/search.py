@@ -78,7 +78,7 @@ def search_tmdb(query):
             cache.delete_memoized(search_tmdb, query=query)
             return jsonify({"Status": "Failed", "Code": response.status_code})
         return jsonify(
-            {"Status": "Success", "Payload": data.get("results"), "Tag": "TMDB"}
+            {"Status": "Success", "tmdb": data.get("results"), "source": "TMDB"}
         )
     except Exception as e:
         return jsonify({"Error": str(e)})
@@ -105,7 +105,9 @@ def search_comicvine(query):
             cache.delete_memoized(search_comicvine, query=query)
             return jsonify({"Status": "Failed", "Code": response.status_code})
         if data.get("status_code") == 1:
-            return jsonify({"Status": "Success", "Payload": data, "Tag": "ComicVine"})
+            return jsonify(
+                {"Status": "Success", "comicvine": data, "source": "comicvine"}
+            )
         else:
             return jsonify({"Status": "Failed", "Code": data.get("status_code")})
     except Exception as e:
@@ -121,7 +123,7 @@ def search_jikan(category, query):
     response.raise_for_status()
     data = response.json()
 
-    return jsonify({"Status": "Success", "Payload": data, "Tag": "Jikan"})
+    return jsonify({"Status": "Success", "jikan": data, "source": "jikan"})
 
 
 @search_bp.route("/jikan/details/<string:category>/<int:id>", methods=["GET"])
