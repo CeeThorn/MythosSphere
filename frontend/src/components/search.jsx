@@ -3,40 +3,40 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const Search = () => {
-    const [query, setQuery] = useState(""); //handles the search bar input
-    const[results, setResults] = useState([]);  // handles the search results
-    const[error, setError] = useState(null); //handles any ApI errpors
-    const [category, setCategory] = useState("");//creates a state variable and the default variable
-    const [loading, setLoading] = useState(false); //handles the loading state when the user clicks the search button
-    //understand the () with const and differnt ways to use useState
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState([]);
+  const [error, setError] = useState(null);
+  const [category, setCategory] = useState(""); // optional
+  const [loading, setLoading] = useState(false);
 
-  const handleSearch = async (e) => {
-    e.preventDefault();
+const handleSearch = async (e) => {
+  e.preventDefault();
+  if (!query.trim()) return;
 
-    const handleSearch = async (searchQuery, searchComics="", searchCategory="") => { // handles the form of submmissopn when the user clicks the search button
-      const currentQuery = searchQuery || query; //if the user has not entered a search query, it will use the current query
-      const currentCategory = searchCategory || category; //if the user has not selected a category, it will use the current category
-      console.log("Search query:", query, "category:", category);
+  setLoading(true);
+  setError(null);
 
-      if(!query.trim()) return;
-      setLoading(true);
-      setError(null);
+  try {
+    const url = category
+      ? `http://localhost:5000/search/${query}/${category}`
+      : `http://localhost:5000/search/${query}`;
+    const response = await axios.get(url);
+    console.log("Backend response:", response.data);
 
-      try{
-        const response = await axios.get(
-          `http://localhost:5000/search/${searchComics}/${currentQuery}/${currentCategory}/`
-        );
-        
-        return (response.data.payload)
-          
-        
-    } catch (err) {
-      console.error("Search failed", err);
-      setError("Failed to fetch results.");
-    } finally {
-      setLoading(false);
+    const payload = response.data.Payload;
+    const results = payload?.data || payload || [];
+    if (results.length === 0) {
+      setError("No results found.");
     }
-  };
+    setResults(results);
+  } catch (err) {
+    console.error("Search failed", err);
+    setError("Failed to fetch results.");
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   return (
     <div className="search-container">
@@ -46,6 +46,12 @@ const Search = () => {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search..."
+        />
+        <input
+          type="text"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          placeholder="Optional category (e.g., anime)"
         />
         <button type="submit" disabled={loading}>
           {loading ? "Searching..." : "Search"}
@@ -65,5 +71,5 @@ const Search = () => {
     </div>
   );
 };
-}
+
 export default Search;
