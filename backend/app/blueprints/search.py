@@ -57,7 +57,7 @@ def get_tmdb_details(id, media_type):
         if response.status_code == 200:
             data = response.json()
         else:
-            return jsonify({"Status": "Failed"})
+            return jsonify({"Status": "Failed", "Code": response.status_code})
         return jsonify({"Status": "Success", "Payload": data, "Tag": "TMDB"})
     except Exception as e:
         return jsonify({"Error": str(e)})
@@ -76,7 +76,7 @@ def search_tmdb(query):
             data = response.json()
         else:
             cache.delete_memoized(search_tmdb, query=query)
-            return jsonify({"Status": "Failed"})
+            return jsonify({"Status": "Failed", "Code": response.status_code})
         return jsonify(
             {"Status": "Success", "Payload": data.get("results"), "Tag": "TMDB"}
         )
@@ -89,15 +89,25 @@ def search_tmdb(query):
 @cache.memoize(timeout=7200)
 def search_comicvine(query):
     try:
-        params = {"api_key": COMICVINE_API_KEY, "format": "json", "query": query}
-        response = requests.get(url=f"{COMICVINE_BASE}search/", params=params)
+        headers = {"User-Agent": "MythosSpehere/1.0"}
+        params = {
+            "api_key": COMICVINE_API_KEY,
+            "format": "json",
+            "query": query,
+        }
+        response = requests.get(
+            url=f"{COMICVINE_BASE}search/", params=params, headers=headers
+        )
         data = {}
-        if response.status_code == 1:
+        if response.status_code == 200:
             data = response.json()
         else:
             cache.delete_memoized(search_comicvine, query=query)
-            return jsonify({"Status": "Failed"})
-        return jsonify({"Status": "Success", "Payload": data, "Tag": "ComicVine"})
+            return jsonify({"Status": "Failed", "Code": response.status_code})
+        if data.get("status_code") == 1:
+            return jsonify({"Status": "Success", "Payload": data, "Tag": "ComicVine"})
+        else:
+            return jsonify({"Status": "Failed", "Code": data.get("status_code")})
     except Exception as e:
         return jsonify({"Error": str(e)})
 
