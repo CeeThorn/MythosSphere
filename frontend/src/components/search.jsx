@@ -1,17 +1,41 @@
-import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
-import axios from "axios"
+import React, { useState } from "react";
+import axios from "axios";
 
 const Search = () => {
+<<<<<<< HEAD
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+=======
     const [query, setQuery] = useState(""); //handles the search bar input
     const[results, setResults] = useState([]);  // handles the search results
     const[error, setError] = useState(null); //handles any ApI errpors
     const [category, setCategory] = useState("");//creates a state variable and the default variable
     const [loading, setLoading] = useState(false); //handles the loading state when the user clicks the search button
     //understand the () with const and differnt ways to use useState
+>>>>>>> de634e25f9dd1ea66bb81d18507cd926609da6ee
 
-  // Load valid Jikan categories from Flask on page load
+  const handleSearch = async (e) => {
+    e.preventDefault();
 
+<<<<<<< HEAD
+    if (!query.trim()) {
+      setError("Please enter a search term.");
+      return;
+    }
+
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await axios.get(
+        `http://localhost:5000/search?q=${encodeURIComponent(query)}`
+      );
+      console.log("Backend response:", response.data);
+      setResults(response.data.data || []);
+=======
     const handleSearch = async (searchQuery, searchComics="", searchCategory="") => { // handles the form of submmissopn when the user clicks the search button
       const currentQuery = searchQuery || query; //if the user has not entered a search query, it will use the current query
       const currentCategory = searchCategory || category; //if the user has not selected a category, it will use the current category
@@ -29,6 +53,7 @@ const Search = () => {
         return (response.data.payload)
           
         
+>>>>>>> de634e25f9dd1ea66bb81d18507cd926609da6ee
     } catch (err) {
       console.error("Search failed", err);
       setError("Failed to fetch results.");
@@ -37,7 +62,7 @@ const Search = () => {
     }
   };
 
-   return (
+  return (
     <div className="search-container">
       <form onSubmit={handleSearch}>
         <input
@@ -46,17 +71,6 @@ const Search = () => {
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search..."
         />
-        <select
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-        >
-          <option value="">Select Category</option>
-          {validCategories.map((cat) => (
-            <option key={cat} value={cat}>
-              {cat.charAt(0).toUpperCase() + cat.slice(1)}
-            </option>
-          ))}
-        </select>
         <button type="submit" disabled={loading}>
           {loading ? "Searching..." : "Search"}
         </button>
