@@ -7,10 +7,12 @@ import os
 search_bp = Blueprint("search", __name__, url_prefix="/search")
 TMDB_API_KEY = os.getenv("TMDB_API_KEY")
 TMDB_BASE = "https://api.themoviedb.org/3/"
-COMICVINE_API_KEY = os.getenv("COMIC_VINE_API_KEY")
+JIKAN_API_BASE = "https://api.jikan.moe/v4/"
+COMICVINE_API_KEY = os.getenv("COMICVINE_API_KEY")
 COMICVINE_BASE = "https://comicvine.gamespot.com/api/"
 headers = {"accept": "application/json", "Authorization": f"Bearer {TMDB_API_KEY}"}
 BASE_TMDB_PARAMS = {"language": "en-US", "include_adult": False}
+BASE_JIKAN_PARAMS = {"limit": 5}
 MEDIA_TYPES = ["movie", "tv"]
 ERROR_MESSAGE = "Invalid Input"
 
@@ -18,27 +20,25 @@ ERROR_MESSAGE = "Invalid Input"
 @sleep_and_retry
 @limits(calls=50, period=5)
 @search_bp.route("/<string:query>", methods=["GET"])
-@search_bp.route("/<string:searchComics>/<string:query>", methods=["GET"])
 @search_bp.route("/<string:query>/<string:category>", methods=["GET"])
-@cache.cached(timeout=3600, key_prefix="search")
-def search(query, searchComics="empty", category="empty"):
-    searchComics = searchComics.lower()
-    category = category.lower()
+def search(query, category="empty"):
+    query = query.lower().strip()
+    category = category.lower().strip()
     if not query or not isinstance(query, str):
         return jsonify({"Error": ERROR_MESSAGE})
 
-    if searchComics in ("true", "false"):
-        search_comicvine(query)
-    elif searchComics == "empty" and category in (
+    if category in (
         "anime",
         "manga",
         "characters",
         "people",
         "top",
     ):
-        search_jikan(query, category)
+        return search_jikan(category, query)
+    elif category in ("comic", "book", "comicbook"):
+        return search_comicvine(query)
     else:
-        search_tmdb(query)
+        return search_tmdb(query)
 
 
 @sleep_and_retry
@@ -65,11 +65,6 @@ def get_tmdb_details(id, media_type):
 
 @cache.memoize(timeout=3600)
 def search_tmdb(query):
-    if not query:
-        return jsonify({"Error": "Invalid Query", "Message": "Valid Query Required"})
-
-    query = query.lower().strip()
-
     params = BASE_TMDB_PARAMS.copy()
     params["query"] = query
 
@@ -80,6 +75,7 @@ def search_tmdb(query):
         if response.status_code == 200:
             data = response.json()
         else:
+            cache.delete_memoized(search_tmdb, query=query)
             return jsonify({"Status": "Failed"})
         return jsonify(
             {"Status": "Success", "Payload": data.get("results"), "Tag": "TMDB"}
@@ -88,46 +84,34 @@ def search_tmdb(query):
         return jsonify({"Error": str(e)})
 
 
+@sleep_and_retry
+@limits(calls=150, period=3600)
 @cache.memoize(timeout=7200)
 def search_comicvine(query):
-    if not query or not isinstance(query, str):
-        return jsonify({"Error": "Invalid Query"})
     try:
-        params = {"api_key": COMICVINE_API_KEY, "query": query}
+        params = {"api_key": COMICVINE_API_KEY, "format": "json", "query": query}
         response = requests.get(url=f"{COMICVINE_BASE}search/", params=params)
         data = {}
         if response.status_code == 1:
             data = response.json()
         else:
+            cache.delete_memoized(search_comicvine, query=query)
             return jsonify({"Status": "Failed"})
         return jsonify({"Status": "Success", "Payload": data, "Tag": "ComicVine"})
     except Exception as e:
         return jsonify({"Error": str(e)})
 
 
+@cache.memoize(timeout=3600)
 def search_jikan(category, query):
-    category = category.lower().strip()
-    valid_categories = ["anime", "manga", "characters", "people", "top"]
-
-    if category not in valid_categories:
-        return (
-            jsonify(
-                {
-                    "error": f"Invalid search category '{category}'. Valid options are: {', '.join(valid_categories)}"
-                }
-            ),
-            400,
-        )
-
-    if not query:
-        return jsonify({"error": "Missing query. Use /search/anime?q=naruto"}), 400
-
     params = BASE_JIKAN_PARAMS.copy()
     params["q"] = query
     category = f"{category}/anime" if category == "top" else category
     response = requests.get(f"{JIKAN_API_BASE}{category}", params=params)
+    response.raise_for_status()
+    data = response.json()
 
-    return jsonify(response.json())
+    return jsonify({"Status": "Success", "Payload": data, "Tag": "Jikan"})
 
 
 @search_bp.route("/jikan/details/<string:category>/<int:id>", methods=["GET"])
@@ -157,6 +141,7 @@ def get_jikan_details(category, id):
             data = response.json()
             return jsonify({"Status": "Success", "Payload": data})
         else:
+            cache.delete_memoized(get_jikan_details, category=category, id=id)
             return jsonify({"Status": f"Failed: {response.status_code}"})
 
     except Exception as e:
