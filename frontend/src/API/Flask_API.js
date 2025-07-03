@@ -1,22 +1,21 @@
 import axios from "axios";
-const host = import.meta.env.VITE_NETWORK_HOST;
+const host = import.meta.env.VITE_NETWORK_HOST || "http://localhost:5000/";
 
 export const fetchResults = async (searchQuery, searchCat = "") => {
   try {
-    const url = `${host}/search/${encodeURIComponent(searchQuery)}/${encodeURIComponent(searchCat)}`;
-    console.log("Fetching results from:", url);
+    const url = searchCat
+      ? `${host}search/${searchQuery}/${searchCat}`
+      : `${host}search/${searchQuery}`;
+    
     const response = await axios.get(url);
-    console.log("Backend response:", response.data);
+
     const data = response.data;
 
-    if (data.source === "jikan") {
-      return data.jikan?.data || [];
-    } else if (data.source === "comicvine") {
-      return data.comicvine?.results || [];
-    } else if (data.source === "TMDB" || data.source === "tmdb") {
-      return data.tmdb || [];
-    }
-    return [];
+    if (data.jikan) return data.jikan.data || [];       
+    if (data.tmdb) return data.tmdb || [];              
+    if (data.comicvine) return data.comicvine.results || [];  
+
+    return []; 
   } catch (error) {
     console.error("Error fetching results:", error);
     return [];
