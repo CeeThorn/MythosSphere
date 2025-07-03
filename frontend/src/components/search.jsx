@@ -21,11 +21,15 @@ const SearchBar = () => {
   useEffect(()=>{
     const handleClickOutside = (event) =>{
       if (searchRef.current && !search.ref.current.contains(event.target)){
-        setResults([]);
+        setisExpanded(false)
         return;
       }
     }
-  });
+    // Add the event listener when the component mounts
+    document.addEventListener("mousedown", handleClickOutside);
+     // Return a cleanup function to remove the listener when the component unmounts
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  },[]); // The empty dependency array means this effect runs only once
 
     // Debouncing effect for the search query
   useEffect(() => {
@@ -38,7 +42,7 @@ const SearchBar = () => {
     const debounceTimer = setTimeout(async()=>{
       const fetchedResults = await fetchResults(query, category)
       setResults(fetchedResults);
-    },300);
+    },300);// Waits for 300ms after user stops typing
     return ()=> clearTimeout(debounceTimer)
   },[query]);
 
@@ -49,6 +53,7 @@ const SearchBar = () => {
           <SearchIcon/>
         </button>
         {isExpanded &&(
+          <>
           <input 
             id="searchInputBox"
             type="text"
@@ -57,11 +62,15 @@ const SearchBar = () => {
             placeholder = "Search MythoSphere..."
             autoFocus
             />
+          <select>
+            <option value="anime"> Anime</option>
+          </select>
+          </>
         )}
       </div>
       {isExpanded && results.length > 0 &&(
         <ul>
-          {results.map((result,index)=>(
+          {results[0].results.map((result,index)=>(
             <li key={index}>{result}</li>
           ))}
         </ul>
