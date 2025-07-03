@@ -1,22 +1,31 @@
 import axios from "axios";
-const host = import.meta.env.VITE_NETWORK_HOST;
+const host = import.meta.env.VITE_NETWORK_HOST || "http://localhost:5000/";
 
 export const fetchResults = async (searchQuery, searchCat = "") => {
   try {
-    const response = await axios.get(
-      `${host}search/${searchQuery}/${searchCat}`
-    );
-    let data = response.data;
-    if (data.tag === "jikan") {
-      return [data.jikan, data.source];
-    } else if (data.tag === "comicvine") {
-      return [data.comicvine, data.source];
-    } else {
-      return [data.tmdb, data.source];
-    }
+    const url = searchCat
+      ? `${host}search/${searchQuery}/${searchCat}`
+      : `${host}search/${searchQuery}`;
+    
+    const response = await axios.get(url);
+
+    const data = response.data;
+
+    if (data.jikan) return data.jikan.data || [];       
+    if (data.tmdb) return data.tmdb || [];              
+    if (data.comicvine) return data.comicvine.results || [];  
+
+    return []; 
   } catch (error) {
-    console.error("Error fetching ratings:", error);
+    console.error("Error fetching results:", error);
+    return [];
   }
 };
 
-export const getDetails = async (itemSource, itemId, itemCat) => {};
+
+
+
+export const getDetails = async (itemSource, itemId, itemCat) => {
+ 
+};
+
