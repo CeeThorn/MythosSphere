@@ -45,11 +45,12 @@ const SearchBar = () => {
   return (
     <div ref={searchRef}>
       <div>
-        <button onClick={()=>setisExpanded(!isExpanded)}>
+        <button id = "searchTrigger"onClick={()=>setisExpanded(!isExpanded)}>
           <SearchIcon/>
         </button>
         {isExpanded &&(
           <input 
+            id="searchInputBox"
             type="text"
             value={query}
             onChange={(e)=>setQuery(e.target.value)}
