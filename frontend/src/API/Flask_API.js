@@ -12,7 +12,7 @@ export const fetchResults = async (searchQuery, searchCat = "") => {
     const data = response.data;
 
     if (data.jikan) return data.jikan.data || [];       
-    if (data.tmdb) return data.tmdb || [];              
+    if (data.tmdb) return data.tmdb.results || [];              
     if (data.comicvine) return data.comicvine.results || [];  
 
     return []; 
