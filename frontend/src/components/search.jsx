@@ -62,7 +62,7 @@ const SearchBar = () => {
             placeholder = "Search MythoSphere..."
             autoFocus
             />
-          <select>
+          <select value = {category} onChange = {(e)=>setCategory(e.target.value)}>
             <option value="anime"> Anime</option>
           </select>
           </>
