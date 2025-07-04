@@ -1,79 +1,117 @@
-import React, { useState,useEffect, useRef } from "react";
-import axios from "axios";
+import React, { useState, useEffect, useRef } from "react";
 import { fetchResults } from "../API/Flask_API";
 
-// A simple, reusable SVG icon for the search button
 const SearchIcon = () => (
-  <svg style={{ width: '24px', height: '24px', stroke: 'currentColor' }} xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" fill="none" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+  <svg
+    style={{ width: "24px", height: "24px", stroke: "currentColor" }}
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+    />
   </svg>
 );
 
 const SearchBar = () => {
-  const [query, setQuery] = useState(""); //handles the search bar input
-  const[results, setResults] = useState([]);  // handles the search results
-  const [category, setCategory] = useState("");//creates a state variable and the default variable
-  const [isExpanded, setisExpanded] = useState(false);
-  const [loading, setLoading] = useState(false); //handles the loading state when the user clicks the search button
-  //understand the () with const and differnt ways to use useState
-  const searchRef = useRef(null)
+  const [query, setQuery] = useState("");
+  const [category, setCategory] = useState("anime"); // default category
+  const [results, setResults] = useState([]);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [hasSearched, setHasSearched] = useState(false);
+  const searchRef = useRef(null);
 
-  useEffect(()=>{
-    const handleClickOutside = (event) =>{
-      if (searchRef.current && !search.ref.current.contains(event.target)){
-        setisExpanded(false)
-        return;
-      }
-    }
-    // Add the event listener when the component mounts
-    document.addEventListener("mousedown", handleClickOutside);
-     // Return a cleanup function to remove the listener when the component unmounts
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  },[]); // The empty dependency array means this effect runs only once
-
-    // Debouncing effect for the search query
+  // Collapse input if user clicks outside
   useEffect(() => {
-    // Don't search if the query is empty
-    if (query.trim() === '') {
-      setResults([]);
+    const handleClickOutside = (event) => {
+      if (searchRef.current && !searchRef.current.contains(event.target)) {
+        setIsExpanded(false);
+        setResults([]);
+        setHasSearched(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleSearchClick = async () => {
+    if (!isExpanded) {
+      setIsExpanded(true);
       return;
     }
-    
-    const debounceTimer = setTimeout(async()=>{
-      const fetchedResults = await fetchResults(query, category)
-      setResults(fetchedResults);
-    },300);// Waits for 300ms after user stops typing
-    return ()=> clearTimeout(debounceTimer)
-  },[query]);
+
+    if (!query.trim()) return;
+
+    setLoading(true);
+    setHasSearched(true);
+
+    try {
+      const fetchedResults = await fetchResults(query, category);
+      setResults(fetchedResults || []);
+    } catch (err) {
+      console.error("Search failed:", err);
+      setResults([]);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div ref={searchRef}>
-      <div>
-        <button id = "searchTrigger"onClick={()=>setisExpanded(!isExpanded)}>
-          <SearchIcon/>
+      <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+        <button onClick={handleSearchClick} aria-label="Search">
+          <SearchIcon />
         </button>
-        {isExpanded &&(
+        {isExpanded && (
           <>
-          <input 
-            id="searchInputBox"
-            type="text"
-            value={query}
-            onChange={(e)=>setQuery(e.target.value)}
-            placeholder = "Search MythoSphere..."
-            autoFocus
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search MythosSphere..."
+              autoFocus
             />
-          <select value = {category} onChange = {(e)=>setCategory(e.target.value)}>
-            <option value="anime"> Anime</option>
-          </select>
+            <select
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+            >
+              <option value="anime">Anime</option>
+              <option value="manga">Manga</option>
+              <option value="characters">Characters</option>
+              <option value="people">People</option>
+              <option value="top">Top</option>
+              <option value="">Movies & TV (TMDB)</option>
+              <option value="comic">Comics (ComicVine)</option>
+            </select>
           </>
         )}
       </div>
-      {isExpanded && results.length > 0 &&(
-        <ul>
-          {results[0].results.map((result,index)=>(
-            <li key={index}>{result}</li>
+
+      {loading && <p>Loading...</p>}
+
+      {isExpanded && results.length > 0 && (
+        <ul style={{ textAlign: "left", marginTop: "1rem" }}>
+          {results.map((result, index) => (
+            <li key={index} style={{ marginBottom: "1rem" }}>
+              <strong>{result.title || result.name || "No Title"}</strong>
+              <p>
+                {result.synopsis ||
+                  result.overview ||
+                  result.deck ||
+                  "No description available."}
+              </p>
+            </li>
           ))}
         </ul>
+      )}
+
+      {isExpanded && hasSearched && !loading && results.length === 0 && (
+        <p>No results found.</p>
       )}
     </div>
   );
