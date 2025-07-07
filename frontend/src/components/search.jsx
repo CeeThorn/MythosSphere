@@ -80,13 +80,13 @@ const SearchBar = () => {
               value={category}
               onChange={(e) => setCategory(e.target.value)}
             >
+              <option value="">Movies & TV </option>
+              <option value="comic">Comics </option>
               <option value="anime">Anime</option>
               <option value="manga">Manga</option>
               <option value="characters">Characters</option>
               <option value="people">People</option>
               <option value="top">Top</option>
-              <option value="">Movies & TV (TMDB)</option>
-              <option value="comic">Comics (ComicVine)</option>
             </select>
           </>
         )}
