@@ -63,14 +63,23 @@ const SearchBar = () => {
      */
     const handleEnterPress = async (e:React.KeyboardEvent<HTMLInputElement>): Promise<void> => {
       if (e.key === "Enter"){
+        setLoading(true)
         console.log(query,category)
-        setResults(await fetchResults(query,category))
+        try{
+          setResults(await fetchResults(query,category))
+        }catch(err){
+          console.log(err)
+        }finally{
+          setLoading(false)
+        }
+        
+        
       }
     }
   
 
   return (
-    <div ref={searchRef}>
+    <div ref={searchRef} className="">
       <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
         <button onClick={()=>setIsExpanded(!isExpanded)}>
           <SearchIcon />
