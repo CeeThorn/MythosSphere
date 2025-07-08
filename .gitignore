@@ -23,3 +23,6 @@ yarn-error.log*
 
 # Frontend build artifacts
 /build/
+
+#Backend Cache Files
+backend/app/cache/

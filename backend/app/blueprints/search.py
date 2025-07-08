@@ -19,11 +19,13 @@ ERROR_MESSAGE = "Invalid Input"
 
 @sleep_and_retry
 @limits(calls=50, period=5)
-@search_bp.route("/<string:query>", methods=["GET"])
+@search_bp.route("/<string:query>/", methods=["GET"])
 @search_bp.route("/<string:query>/<string:category>", methods=["GET"])
 def search(query, category="empty"):
     query = query.lower().strip()
-    category = category.lower().strip()
+    category.lower().strip()
+
+    print(f"DEBUG: Query: '{query}', Category: '{category}'")
     if not query or not isinstance(query, str):
         return jsonify({"Error": ERROR_MESSAGE})
 
@@ -34,10 +36,13 @@ def search(query, category="empty"):
         "people",
         "top",
     ):
+        print("searching jikan")
         return search_jikan(category, query)
-    elif category in ("comic", "book", "comicbook"):
+    elif category in ("comics", "books", "comicbooks"):
+        print("searching comicvine")
         return search_comicvine(query)
     else:
+        print("searching tmdb")
         return search_tmdb(query)
 
 

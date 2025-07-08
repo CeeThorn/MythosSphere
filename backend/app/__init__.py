@@ -6,7 +6,6 @@
 Runs the application
 """
 import sys
-from dotenv import load_dotenv
 from flask import Flask, redirect
 from flask import Flask
 from flask_cors import CORS  # CORS allows for cross-origin requests
@@ -20,8 +19,7 @@ def create_app():
     init_extensions(app)
     app.register_blueprint(search_bp)
     # Initializes CORS
-    CORS(app, origins=["http://localhost:3000"])
-    load_dotenv()
+    CORS(app, origins=["http://localhost:5173"])
 
     # What happens when someone visits the default path.
     @app.route("/")
@@ -29,6 +27,6 @@ def create_app():
         if getattr(sys, "frozen", False):
             return app.send_static_file("index.html")
         else:
-            return redirect("http://localhost:3000")  # Redirects to proper url
+            return redirect("http://localhost:5173")  # Redirects to proper url
 
     return app
