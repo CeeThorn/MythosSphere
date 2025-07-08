@@ -77,9 +77,7 @@ def search_tmdb(query):
         else:
             cache.delete_memoized(search_tmdb, query=query)
             return jsonify({"Status": "Failed", "Code": response.status_code})
-        return jsonify(
-            {"Status": "Success", "tmdb": data.get("results"), "source": "TMDB"}
-        )
+        return jsonify({"Status": "Success", "tmdb": data, "source": "TMDB"})
     except Exception as e:
         return jsonify({"Error": str(e)})
 
