@@ -31,7 +31,7 @@ const SearchBar = () => {
   const [showDropdown, setShowDropdown] = useState(false)
   const [loading, setLoading] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
-  const image_url = " https://image.tmdb.org/t/p/w500";
+  const tmdb_image_url = "https://image.tmdb.org/t/p/w500";
 
   /**
    * The `handleCollapse` function sets the `showDropdown` state to false and clears the `query` state.
@@ -105,25 +105,29 @@ const SearchBar = () => {
         
       </div>
       {results.length > 0 && isExpanded &&(
-        results.map((item:any,index:number)=>(
-
-          <Card key ={`${item}${index}`} className="w-full max-w-sm">
+        <div className="grid grid-cols-4 gap-5">
+        {results.map((item:any,index:number)=>(
+          <Card key ={`${item}${index}`} className="w-full max-w-sm max-h-fit">
             <CardHeader>
-              <CardTitle>{item.name ?? item.title}</CardTitle>
+              <CardTitle>{item?.name ?? item?.title}</CardTitle>
             </CardHeader>
             <CardContent onClick={()=>fetchDetails(item.source,item.id, item.media_type, )} style={{cursor:"pointer"}}>
               <div className="flex flex-col gap-4">
               {item.poster_path &&(
-                <img src={`${image_url}${item.poster_path}`} alt="" className="rounded-md shadow-xl"></img>
+                <img src={`${tmdb_image_url}${item?.poster_path}`} alt="" className="rounded-md shadow-xl"></img>
               )}
-              <p>{item.description ?? item.overview}</p>
+              {item.images &&(
+                <img src={item.images.jpg.image_url} alt=""></img>
+              )}
+              <p>{item?.release_date ?? item?.first_air_date ?? item.aired?.from.slice(0,10) ?? item.published?.from.slice(0,10)}</p>
+
+              
               </div>
             </CardContent>
           
           </Card>
-          
-        
-        ))
+        ))}
+        </div>
       )}
     </div>
   );
