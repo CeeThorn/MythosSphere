@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { fetchResults } from "../API/Flask_API";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 /* The `SearchIcon` constant in the provided code snippet is a functional component in React that
 returns an SVG element representing a search icon. This icon is defined using SVG (Scalable Vector
@@ -79,7 +80,7 @@ const SearchBar = () => {
   
 
   return (
-    <div ref={searchRef} className="">
+    <div ref={searchRef}>
       <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
         <button onClick={()=>setIsExpanded(!isExpanded)}>
           <SearchIcon />
@@ -103,10 +104,17 @@ const SearchBar = () => {
       </div>
       {results.length > 0 && isExpanded &&(
         results.map((item:any,index:number)=>(
-          <ul key={`${item}${index}`}>
-            <li>{item.name ?? item.title}</li>
-            
-          </ul>
+          <Card key ={`${item}${index}`}>
+            <CardHeader>
+              <CardTitle>{item.name ?? item.title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>{item.description ?? item.overview}</p>
+            </CardContent>
+          
+          </Card>
+          
+        
         ))
       )}
     </div>
