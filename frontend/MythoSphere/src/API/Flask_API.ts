@@ -53,7 +53,7 @@ export const fetchResults = async (searchQuery: string, searchCat = ""): Promise
 
 
 
-export const getDetails = async (itemSource: string, itemId: number, itemCat: string ) => {
+export const fetchDetails = async (itemSource: string, itemId: number, itemCat: string ) => {
   
 };
 
