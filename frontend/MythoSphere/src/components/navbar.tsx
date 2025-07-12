@@ -13,8 +13,12 @@ import { Link } from "react-router-dom";
 
 
 
-export function Navbar() {
+ function Navbar() {
   return (
+   
+         
+
+
  <div className="w-full max-w-2xl mx-auto">
       <NavigationMenu>
         <NavigationMenuList className="flex gap-6">
@@ -54,3 +58,5 @@ export function Navbar() {
 
 );
     }
+
+    export default Navbar;
