@@ -54,6 +54,13 @@ export const fetchResults = async (searchQuery: string, searchCat = ""): Promise
 
 
 export const fetchDetails = async (itemSource: string, itemId: number, itemCat: string ) => {
+  try{
+    
+  }catch{
+
+  }finally{
+    
+  }
   
 };
 

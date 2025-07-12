@@ -111,7 +111,7 @@ const SearchBar = () => {
             <CardHeader>
               <CardTitle>{item?.name ?? item?.title}</CardTitle>
             </CardHeader>
-            <CardContent onClick={()=>fetchDetails(item.source,item.id, item.media_type, )} style={{cursor:"pointer"}}>
+            <CardContent onClick={()=>fetchDetails(item.source,item.id, item.media_type)} style={{cursor:"pointer"}}>
               <div className="flex flex-col gap-4">
               {item.poster_path &&(
                 <img src={`${tmdb_image_url}${item?.poster_path}`} alt="" className="rounded-md shadow-xl"></img>
