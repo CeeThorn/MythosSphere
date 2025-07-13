@@ -1,4 +1,5 @@
 import axios from "axios";
+import type { StringDecoder } from "string_decoder";
 const host = import.meta.env.VITE_NETWORK_HOST;
 
 /* These interfaces in TypeScript are defining the structure of the response data expected from
@@ -30,10 +31,12 @@ type FlaskApiSearch = TmdbResponse | ComicvineResponse | JikanResponse;
  * that represents the category or type of search you want to perform. It is an optional parameter with
  * a default value of an empty string. This parameter is used to specify the category of the search
  * query, which can help
+ * @param {String} [universe=""] - The `universe` parameter is an optional string that can be used to specify a particular
+ * universe or context for the search query. If not provided, it defaults to an empty string
  * @returns The fetchResults function returns different types of results based on the response data
  * received from the API:
  */
-export const fetchResults = async (searchQuery: string, searchCat = ""): Promise<any> => {
+export const fetchResults = async (searchQuery: string, searchCat = "",searchUniverse: string): Promise<any> => {//i put in universe
   try {
     const response = await axios.get<FlaskApiSearch>(`${host}search/${searchQuery}/${searchCat}`);
 
