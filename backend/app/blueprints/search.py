@@ -167,3 +167,52 @@ def get_jikan_details(category, id):
 def get_valid_categories():
     valid_categories = ["anime", "manga", "characters", "people", "top"]
     return jsonify({"valid_categories": valid_categories})
+
+
+@search_bp.route("", methods=["GET"])
+@sleep_and_retry
+@limits(calls=50, period=5)
+def smart_search():
+    query = request.args.get("query", "").lower().strip()
+    category = request.args.get("category", "").lower().strip()
+    universe = request.args.get("universe", "").lower().strip()
+
+    print(f"DEBUG: query={query}, category={category}, universe={universe}")
+
+    if not query:
+        return jsonify({"Error": ERROR_MESSAGE}), 400
+
+    results = []
+
+    try:
+        if universe in ["marvel", "dc"]:
+            print("→ Searching ComicVine & TMDB only")
+            comicvine = search_comicvine(query)
+            tmdb = search_tmdb(query)
+
+            results.extend([
+                {"source": "comicvine", "data": comicvine.json},
+                {"source": "tmdb", "data": tmdb.json},
+            ])
+
+        elif universe in ["one piece", "jujutsu kaisen", "jjk"]:
+            print("→ Searching Jikan only")
+            jikan = search_jikan(category or "anime", query)
+            results.append({"source": "jikan", "data": jikan.json})
+
+        else:
+            print("→ Searching all APIs")
+            tmdb = search_tmdb(query)
+            comicvine = search_comicvine(query)
+            jikan = search_jikan(category or "anime", query)
+
+            results.extend([
+                {"source": "tmdb", "data": tmdb.json},
+                {"source": "comicvine", "data": comicvine.json},
+                {"source": "jikan", "data": jikan.json},
+            ])
+
+        return jsonify({"Status": "Success", "results": results})
+
+    except Exception as e:
+        return jsonify({"Error": str(e)}), 500

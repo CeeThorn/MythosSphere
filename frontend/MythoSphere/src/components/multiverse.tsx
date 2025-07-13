@@ -17,16 +17,23 @@ const Multiverse = () => {
   const navigate = useNavigate();
 
   const handleSelect = (universe: string) => {
-    navigate(`/search?universe=${encodeURIComponent(universe)}`);
+    navigate(`/search?universe=${encodeURIComponent(universe)}`);// {this stuff will handle select universes deal with later}
   };
 
-  return (
+  
+  const universes = [
+    { name: "Marvel" },
+    { name: "DC" },
+    { name: "One Piece" },
+    { name: "Jujutsu Kaisen" },
+  ];
+
+ return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <span className="cursor-pointer text-lg font-semibold">
-          Multiverse
-        </span>
+        <span className="cursor-pointer text-lg font-semibold">Multiverse</span>
       </DropdownMenuTrigger>
+
       <DropdownMenuContent className="bg-white p-4 w-[400px] shadow-lg">
         <div className="grid grid-cols-2 gap-4">
           {multiverses.map((item) => (
@@ -36,7 +43,11 @@ const Multiverse = () => {
               className="hover:shadow-xl cursor-pointer transition-transform hover:scale-105"
             >
               <CardContent className="flex flex-col items-center p-4">
-                <img src={item.image} alt={item.name} className="h-12 object-contain mb-2" />
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="h-12 object-contain mb-2"
+                />
                 <CardTitle className="text-center text-sm">{item.name}</CardTitle>
               </CardContent>
             </Card>
@@ -44,6 +55,7 @@ const Multiverse = () => {
         </div>
       </DropdownMenuContent>
     </DropdownMenu>
+  
   );
 };
 

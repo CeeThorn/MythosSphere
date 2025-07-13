@@ -8,16 +8,17 @@ import About from "./pages/about";
 import Contact from "./pages/contact";
 import Multiverse from "./components/multiverse";
 import "./App.css";
+import TopBar from "./components/topbar";
 
 function App() {
   return (
     <Router>
-      <Navbar />
+      <TopBar />
+      
       <main className="p-4">
-        <Multiverse />
+        
         <Routes>
-          <Route path="/" element={<SearchBar />} /> 
-          <Route path="/home" element={<SearchBar />} />         
+          <Route path="/search" element={<SearchBar />} />   
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
