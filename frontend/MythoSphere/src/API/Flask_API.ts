@@ -6,7 +6,7 @@ different APIs. */
 interface TmdbResponse{
   tmdb:{
     page:number,
-        type:AnimationEffect,
+        type:string,
     results: [{
       adult:boolean,
       backdrop_path:string,
