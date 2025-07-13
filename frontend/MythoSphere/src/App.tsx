@@ -1,19 +1,30 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { UniverseSelector } from "./components/universe/UniverseSelector";
+import { GalaxySelector } from "./components/galaxy/GalaxySelector";
+import { type Universe, universes } from "./lib/data";
 import SearchBar from "./components/search";
-import Navbar from "./components/ui/navbar";
 import "./App.css";
 
-
-
 function App() {
+  const [selectedUniverse, setSelectedUniverse] = useState<Universe | null>(
+    null
+  );
+  const handleUniverseSelect = (universe: Universe) => {
+    setSelectedUniverse(universe);
+  };
+  const handleGoBack = () => {
+    setSelectedUniverse(null);
+  };
   return (
- <div>
-      <Navbar />         
-      <main className=""p-4 >
-  <SearchBar />;
-      </main>
+    <div>
+      {!selectedUniverse ? (
+        <UniverseSelector
+          universes={universes}
+          onSelectUniverse={handleUniverseSelect} // Pass the function as a prop
+        />
+      ) : (
+        <GalaxySelector universe={selectedUniverse} onBack={handleGoBack} />
+      )}
     </div>
   );
 }
