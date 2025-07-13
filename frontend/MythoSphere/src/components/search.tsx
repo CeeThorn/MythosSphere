@@ -1,8 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { fetchResults,fetchDetails } from "../API/Flask_API";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useSearchParams } from "react-router-dom";
-
 
 
 /* The `SearchIcon` constant in the provided code snippet is a functional component in React that
@@ -34,15 +32,6 @@ const SearchBar = () => {
   const [loading, setLoading] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
   const tmdb_image_url = "https://image.tmdb.org/t/p/w500";
-  const [searchParams] = useSearchParams();
-  const universe = searchParams.get("universe") || "";
-
-   const handleSearch = async () => {
-    setLoading(true);
-    const data = await fetchResults(query, category, universe);
-    setResults(data);
-    setLoading(false);
-  };
 
   /**
    * The `handleCollapse` function sets the `showDropdown` state to false and clears the `query` state.
@@ -78,9 +67,9 @@ const SearchBar = () => {
     const handleEnterPress = async (e:React.KeyboardEvent<HTMLInputElement>): Promise<void> => {
       if (e.key === "Enter"){
         setLoading(true)
-        console.log(query,category, )
+        console.log(query,category)
         try{
-          setResults(await fetchResults(query,category, universe)) //i put in universe
+          setResults(await fetchResults(query,category))
         }catch(err){
           console.log(err)
         }finally{

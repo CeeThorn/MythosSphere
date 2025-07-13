@@ -172,47 +172,60 @@ def get_valid_categories():
 @search_bp.route("", methods=["GET"])
 @sleep_and_retry
 @limits(calls=50, period=5)
-def smart_search():
+def search():
     query = request.args.get("query", "").lower().strip()
     category = request.args.get("category", "").lower().strip()
     universe = request.args.get("universe", "").lower().strip()
 
-    print(f"DEBUG: query={query}, category={category}, universe={universe}")
-
     if not query:
-        return jsonify({"Error": ERROR_MESSAGE}), 400
+        return jsonify({"Error": "Query parameter is required"}), 400
 
+    # Call your existing search functions depending on category, e.g.:
+    if category in ("anime", "manga", "characters", "people", "top"):
+        raw_response = search_jikan(category, query)
+    elif category in ("comics", "books", "comicbooks"):
+        raw_response = search_comicvine(query)
+    else:
+        raw_response = search_tmdb(query)
+
+    # Extract the results list from your raw response based on source
     results = []
+    source = ""
+    if "jikan" in raw_response.json:
+        results = raw_response.json["jikan"]["data"]  # or appropriate path
+        source = "jikan"
+    elif "comicvine" in raw_response.json:
+        results = raw_response.json["comicvine"]["results"]
+        source = "comicvine"
+    elif "tmdb" in raw_response.json:
+        results = raw_response.json["tmdb"]["results"]
+        source = "tmdb"
+    else:
+        # fallback if raw_response already has results directly
+        results = raw_response.json.get("results", [])
 
-    try:
-        if universe in ["marvel", "dc"]:
-            print("→ Searching ComicVine & TMDB only")
-            comicvine = search_comicvine(query)
-            tmdb = search_tmdb(query)
+    # Filter results by universe keyword
+    filtered_results = filter_results_by_universe(results, universe)
 
-            results.extend([
-                {"source": "comicvine", "data": comicvine.json},
-                {"source": "tmdb", "data": tmdb.json},
-            ])
+    return jsonify({"Status": "Success", "results": filtered_results, "source": source})
 
-        elif universe in ["one piece", "jujutsu kaisen", "jjk"]:
-            print("→ Searching Jikan only")
-            jikan = search_jikan(category or "anime", query)
-            results.append({"source": "jikan", "data": jikan.json})
 
-        else:
-            print("→ Searching all APIs")
-            tmdb = search_tmdb(query)
-            comicvine = search_comicvine(query)
-            jikan = search_jikan(category or "anime", query)
+def filter_results_by_universe(results, universe):
+    universe_lower = universe.lower()
+    filtered = []
 
-            results.extend([
-                {"source": "tmdb", "data": tmdb.json},
-                {"source": "comicvine", "data": comicvine.json},
-                {"source": "jikan", "data": jikan.json},
-            ])
+    for item in results:
+        
+        text_to_search = (
+            (item.get("title") or "") +
+            (item.get("name") or "") +
+            (item.get("overview") or "") +
+            (item.get("description") or "") +
+            " ".join(item.get("genres", [])) +
+            " ".join(item.get("tags", []))
+        ).lower()
 
-        return jsonify({"Status": "Success", "results": results})
+        if universe_lower in text_to_search:
+            filtered.append(item)
 
-    except Exception as e:
-        return jsonify({"Error": str(e)}), 500
+    return filtered
