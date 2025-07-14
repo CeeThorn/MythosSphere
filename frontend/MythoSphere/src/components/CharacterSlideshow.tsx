@@ -16,7 +16,7 @@ export const CharacterSlideshow = ({
     if (isActive && images.length > 1) {
       const intervalId = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-      }, 5000); // Change image every 5 seconds
+      }, 3000); // Change image every 5 seconds
 
       // Clear the interval when the component unmounts or when it becomes inactive
       return () => clearInterval(intervalId);
@@ -33,7 +33,7 @@ export const CharacterSlideshow = ({
           className={`
             absolute top-0 left-0 w-full h-full object-cover object-top
             transition-opacity duration-1000 ease-in-out
-            ${index === currentIndex ? "opacity-30" : "opacity-0"}
+            ${index === currentIndex ? "opacity-100" : "opacity-0"} 
           `}
         />
       ))}
