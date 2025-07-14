@@ -343,4 +343,4 @@ export const JJKUniverse: Universe = {
     },
   ],
 };
-export const universes:Universe[] = [dcUniverse,marvelUniverse,starWarsUniverse];
+export const universes:Universe[] = [dcUniverse,marvelUniverse,starWarsUniverse, OPUniverse, JJKUniverse];
