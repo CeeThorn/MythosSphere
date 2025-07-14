@@ -198,5 +198,149 @@ export const starWarsUniverse: Universe = {
   ],
 };
 
+export const OPUniverse: Universe = {
+  id: 'one-piece',
+  name: 'One Piece',
+  description: 'Embark on an epic adventure across the Grand Line with Luffy and his crew in search of the legendary One Piece treasure.',
+  logoUrl: '/Universe Logos/one-piece-logo.png',
+  // Add paths to character images for the slideshow card
+  iconicCharacters: [
+      '/characters/one-piece/luffy-duece.png',
+      '/characters/one-piecce/one-piece-manga.png',
+     
 
+  ],
+  galaxies: [
+    {
+      id: 'east-blue',
+      name: 'East Blue Saga',
+      description: "The beginning of Luffy's journey, where he gathers his first crewmates." ,
+      // Add a path to the galaxy's logo
+      iconicCharacters: [
+      '/characters/one-piece/nami-east-blue.png',
+      '/characters/one-piece/zoro-east-blue.png',
+      '/characters/one-piece/arlong.png',
+     
+
+  ],
+      media: [], // Populate using Jikan later
+    },
+    {
+      id: 'alabasta',
+      name: 'Alabasta Saga',
+      description: 'The Straw Hat Pirates . ..',
+      media: [],
+      iconicCharacters: [
+      '/characters/one-piece/vivi.png',
+      '/characters/one-piece/croc.png',
+      '/characters/one-piece/ace-alabasta.png',
+      
+
+  ],
+    },
+    {
+      id: 'skypiea',
+      name: 'Skypiea Saga',
+      description: '',
+      media: [],
+      iconicCharacters: [
+      '/characters/one-piece/enel.png',
+      '/characters/one-piece/asure-skypiea.png',
+      
+
+  ],
+    },
+    {
+
+      id: 'water-seven',
+      name: 'Water Seven Saga',
+      description: ' The Straw Hat Pirates face new challenges in the Water Seven and Enies Lobby arcs.',
+      media: [],
+      iconicCharacters: [
+      '/characters/one-piece/franky-water-seven.png',
+      '/characters/one-piece/boxer-luffy.png',
+      
+      
+      ],
+    },
+    {
+      id: 'new-world',
+      name: 'New World Saga',
+      description: "The upcoming rebooted universe by James Gunn, starting with 'Gods and Monsters'.",
+      iconicCharacters: [
+      '/characters/one-piece/gecko-moria.png',
+      '/characters/one-piece/ryuma.png',
+      
+
+      ],
+  
+  
+      media: [],
+    },
+  ],
+};
+
+export const JJKUniverse: Universe = {
+  id: 'jujutsu-kaisen',
+  name: 'Jujutsu Kaisen',
+  description: 'Enter a world of curses and sorcerers, where the battle against malevolent spirits shapes the fate of humanity.',
+  logoUrl: '/Universe Logos/jujutsu-kaisen-logo.png',
+  // Add paths to character images for the slideshow card
+  iconicCharacters: [
+      '/characters/jjk/itadori.png',
+      '/characters/jjk/jjk-dope/.png',
+      '/characters/jjk/gojo.png',
+      '/characters/jjk/megumi-ss1.png',
+      '/characters/jjk/nobara-goat.png',
+      '/characters/jjk/sukuna.png',
+      '/characters/jjk/gojo-last-fight.png',
+
+  ],
+  galaxies: [
+    {
+      id: 'jjk-0',
+      name: 'Jujutsu Kaisen 0',
+      description: 'The prequel story that introduces the world of Jujutsu Sorcerers and the events leading up to the main series.',
+      // Add a path to the galaxy's logo
+      iconicCharacters: [
+      '/characters/jjk/yuta-jjk0.png',
+      '/characters/jjk/suguru-getp.png',
+     
+
+  ],
+      media: [], // This will be populated with movies/shows later
+    },
+    {
+      id: 'Season-1',
+      name: 'Season 1',
+      description: 'The first season of the anime series, following Yuji Itadori as he joins Jujutsu High and battles curses.',
+      media: [],
+      iconicCharacters: [
+      '/characters/jjk/itadori.png',
+      '/characters/jjk/nobaru-goat.png',
+      '/characters/jjk/todo-s1.png',
+      '/characters/jjk/sukuna.png',
+      '/characters/jjk/gojo.png',
+      '/characters/jjk/megumi-ss1.png',
+
+  ],
+    },
+    {
+      id: 'seasom-2',
+      name: 'Season 2',
+      description: 'The second season of the anime series, continuing the story of Yuji and his friends as they face new challenges and powerful curses.',
+      iconicCharacters: [
+      '/characters/jjk/kenny-s2.png',
+      '/characters/jjk/gojo-awakening.png',
+      '/characters/jjk/mahito-s2.png',
+      '/characters/jjk/mahito-new-form.png',
+      '/characters/jjk/toji.png',
+      '/characters/jjk/uruame.png',
+
+
+  ],
+      media: [],
+    },
+  ],
+};
 export const universes:Universe[] = [dcUniverse,marvelUniverse,starWarsUniverse];
