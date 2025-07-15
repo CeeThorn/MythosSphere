@@ -312,7 +312,7 @@ export const JJKUniverse: Universe = {
     },
     {
       id: 'Season-1',
-      name: 'Season 1',
+      name: 'Season 1', //update the name of Season 1 and 2 i dont like the names
       description: 'The first season of the anime series, following Yuji Itadori as he joins Jujutsu High and battles curses.',
       media: [],
       iconicCharacters: [
