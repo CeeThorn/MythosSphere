@@ -1,6 +1,9 @@
-import { useState, useEffect, useRef } from "react";
-import { type Universe } from "../../lib/data";
-import { GalaxyCard } from "./galaxycard";
+// src/components/galaxy/GalaxySelector.tsx
+
+import { useState } from "react";
+import { type Universe, type Galaxy } from "../../lib/data";
+import { ScrollingRow } from "./scrollingrow";
+import { GalaxyDetailModal } from "./GalaxyDetailModal";
 
 interface GalaxySelectorProps {
   universe: Universe;
@@ -8,39 +11,40 @@ interface GalaxySelectorProps {
 }
 
 export const GalaxySelector = ({ universe, onBack }: GalaxySelectorProps) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const carouselRef = useRef<HTMLDivElement>(null);
-  const galaxies = universe.galaxies;
-  const activeGalaxy = galaxies[activeIndex];
+  const [selectedGalaxy, setSelectedGalaxy] = useState<Galaxy | null>(null);
 
-  useEffect(() => {
-    const activeItem = carouselRef.current?.children[
-      activeIndex
-    ] as HTMLElement;
-    activeItem?.scrollIntoView({
-      behavior: "smooth",
-      inline: "center",
-      block: "nearest",
-    });
-  }, [activeIndex]);
+  const tvGalaxies = universe.galaxies
+    .filter((galaxy) => galaxy.watch_type?.includes("tv"))
+    .sort(
+      (a, b) => parseInt(a.start_year || "0") - parseInt(b.start_year || "0")
+    );
 
-  const backgroundImageUrl =
-    activeGalaxy.bckGrdImg || activeGalaxy.iconicCharacters[0];
+  const movieGalaxies = universe.galaxies
+    .filter((galaxy) => galaxy.watch_type?.includes("movies"))
+    .sort(
+      (a, b) => parseInt(a.start_year || "0") - parseInt(b.start_year || "0")
+    );
+
+  {
+    /*// Future Proofing
+  const gameGalaxies = universe.galaxies
+    .filter((galaxy) => galaxy.watch_type?.includes("games"))
+    .sort(
+      (a, b) => parseInt(a.start_year || "0") - parseInt(b.start_year || "0")
+    );*/
+  }
+
+  const handleCardClick = (galaxy: Galaxy) => {
+    setSelectedGalaxy(galaxy);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedGalaxy(null);
+  };
 
   return (
-    // The component is now a single, relative container that fills the screen
-    <div className="h-screen w-full bg-black relative overflow-hidden">
-      {/* Main Background Image */}
-      <div className="absolute inset-0">
-        <img
-          src={backgroundImageUrl}
-          alt={activeGalaxy.name}
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-      </div>
-
-      {/* Header with a higher z-index to ensure it's clickable */}
+    <div className="h-screen w-full bg-black relative overflow-hidden flex flex-col">
+      {/* Header */}
       <header className="absolute top-0 left-0 w-full z-40 p-8 flex justify-between items-center">
         <img
           src={universe.logoUrl}
@@ -55,35 +59,15 @@ export const GalaxySelector = ({ universe, onBack }: GalaxySelectorProps) => {
         </button>
       </header>
 
-      {/* Main Content */}
-      <div className="relative z-20 h-full flex flex-col justify-center">
-        <div className="max-w-xl p-8 md:p-16">
-          <h2 className="text-4xl md:text-7xl font-black text-white my-4">
-            {activeGalaxy.name}
-          </h2>
-          <p className="text-white/70 text-base md:text-lg">
-            {activeGalaxy.description}
-          </p>
-        </div>
-      </div>
+      {/* Main content area for the rows */}
+      <div className="flex-grow flex flex-col justify-center gap-12 py-4">
+        <ScrollingRow galaxies={tvGalaxies} onCardClick={handleCardClick} />
 
-      {/* Thumbnail Carousel */}
-      <div className="absolute bottom-0 left-0 w-full z-30 px-4 md:px-8">
-        <div
-          ref={carouselRef}
-          className="flex gap-4 p-4 overflow-x-auto"
-          style={{ scrollbarWidth: "none" }}
-        >
-          {galaxies.map((galaxy, index) => (
-            <GalaxyCard
-              key={galaxy.id}
-              galaxy={galaxy}
-              isActive={index === activeIndex}
-              onClick={() => setActiveIndex(index)}
-            />
-          ))}
-        </div>
+        <ScrollingRow galaxies={movieGalaxies} onCardClick={handleCardClick} />
       </div>
+      {selectedGalaxy && (
+        <GalaxyDetailModal galaxy={selectedGalaxy} onClose={handleCloseModal} />
+      )}
     </div>
   );
 };

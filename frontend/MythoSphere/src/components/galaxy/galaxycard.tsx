@@ -16,8 +16,8 @@ export const GalaxyCard = ({ galaxy, isActive, onClick }: GalaxyCardProps) => (
       flex-shrink-0 w-40 h-56 rounded-lg overflow-hidden relative transition-all duration-500
       ${
         isActive
-          ? "filter brightness-125"
-          : "filter brightness-50 hover:brightness-75"
+          ? "filter brightness-100"
+          : "filter brightness-75 hover:brightness-85 hover:scale-105 hover:-translate-y-2"
       }
     `}
   >

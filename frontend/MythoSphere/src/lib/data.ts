@@ -6,6 +6,8 @@ export interface Connection {
   reason: string;
 }
 
+export type MediaType = 'tv' | 'movies' | 'games' | 'manga';
+
 // Defines a movie or a TV show for the timeline
 export interface Media {
   // Your own unique ID (e.g., "batman-the-animated-series")
@@ -13,7 +15,7 @@ export interface Media {
   // The ID from the TMDB API to fetch details
   tmdb_id: number;
   // The media type for the API call ('tv' or 'movie')
-  media_type: 'tv' | 'movie';
+  media_type: MediaType[];
   // Display name of the show/movie
   name: string;
   // The release date for chronological sorting on the timeline
@@ -31,9 +33,13 @@ export interface Galaxy {
   // Display name (e.g., "DCAU")
   name: string;
 
-  years?: string;
+  start_year?: string;
+
+  end_year?: string;
 
   description: string;
+
+  watch_type?: MediaType[];
 
   iconicCharacters: string[];
   // An array of shows and/or movies in this galaxy
@@ -41,7 +47,6 @@ export interface Galaxy {
 
   relationships?: Connection[]
 
-  bckGrdImg?: string;
 }
 
 // Defines a Universe (e.g., DC, Marvel)
@@ -79,28 +84,32 @@ export const dcUniverse: Universe = {
     {
       id: 'dcau',
       name: 'DCAU',
-      years: '1992-2006',
+      start_year: '1992',
+      end_year: '2006',
       description: 'The classic animated continuity started by Batman: The Animated Series.',
       iconicCharacters: [
           '/characters/dc/superman-dcau.png',
           '/characters/dc/batman-dcau.png',
+          '/characters/dc/joker-dcau.png',
           '/characters/dc/wonder-woman-dcau.png',
           '/characters/dc/static-shock-dcau.png',
           '/characters/dc/batman-beyond-dcau.png',
           '/characters/dc/green-lantern-dcau.png',
           '/characters/dc/hawkgirl-dcau.png',
       ],
+      watch_type: ['tv'],
       media: [],
       relationships: [{
         toId: 'caped-crusader',
         reason: 'Batman: Caped Crusader is a spiritual successor from original creator Bruce Timm.'
       }],
-      bckGrdImg:'/Galaxy Background/background-dcau.jpg'
+
     },
     {
       id: 'dceu',
       name: 'DCEU',
-      years: '2013-2023',
+      start_year: '2013',
+      end_year:'2023',
       description: 'The cinematic universe that began with Man of Steel (2013).',
       iconicCharacters: [
           '/characters/dc/superman-dceu.png',
@@ -111,17 +120,17 @@ export const dcUniverse: Universe = {
           '/characters/dc/blue-beetle-dceu.png',
           '/characters/dc/harley-quinn-dceu.png',
       ],
+      watch_type: ['movies'],
       media: [],
       relationships: [{
         toId: 'dcu',
         reason: 'This universe was officially rebooted into the new DCU.'
       }],
-      bckGrdImg:'/Galaxy Background/background-dceu.png'
     },
     {
       id: 'dcamu',
       name: 'DCAMU',
-      years: '2013-Present',
+      start_year: '2013',
       description: 'A consolidated timeline of DC\'s modern animated movies, covering the interconnected "DCAMU" saga (2013-2020) and its subsequent reboot into the "Tomorrowverse" era (2020-Present).',
        iconicCharacters: [
           '/characters/dc/superman-dcamu.png',
@@ -138,13 +147,13 @@ export const dcUniverse: Universe = {
           '/characters/dc/supergirl-tomorrowverse.png',
           
       ],
+      watch_type: ['movies'],
       media: [],
-      bckGrdImg:'/Galaxy Background/background-dcamu.jpg'
     },
     {
       id: 'dcu',
       name: 'DCU',
-      years: '2024-Present',
+      start_year: '2024',
       description: "The upcoming rebooted universe by James Gunn, starting with 'Gods and Monsters'.",
       iconicCharacters: [
           '/characters/dc/superman-dcu.png',
@@ -155,6 +164,7 @@ export const dcUniverse: Universe = {
           '/characters/dc/hawkgirl-dcu.png',
           '/characters/dc/metamorpho-dcu.png',
       ],
+      watch_type: ['tv','movies','games'],
       media: [],
       relationships: [{
         toId: 'dceu',
@@ -165,7 +175,8 @@ export const dcUniverse: Universe = {
     {
       id: 'smallville',
       name: 'Smallville',
-      years: '2001-2011',
+      start_year: '2001',
+      end_year:'2011',
       description: "The story of a young Clark Kent's journey to becoming Superman, exploring his relationships and the emergence of other heroes and villains.",
       iconicCharacters: [
         '/characters/dc/clark-kent-smallville.png',
@@ -174,6 +185,7 @@ export const dcUniverse: Universe = {
         '/characters/dc/lois-lane-smallville.png',
         '/characters/dc/lex-luthor-smallville.png',
       ],
+      watch_type: ['tv'],
       media: [],
       relationships: [{
         toId: 'arrowverse',
@@ -183,7 +195,8 @@ export const dcUniverse: Universe = {
     {
       id: 'arrowverse',
       name: 'Arrowverse',
-      years: '2012-2023',
+      start_year: '2012',
+      end_year:'2023',
       description: 'The shared live-action universe that began with Arrow, encompassing numerous series on The CW.',
       iconicCharacters: [
         '/characters/dc/green-arrow-arrowverse.png',
@@ -194,6 +207,7 @@ export const dcUniverse: Universe = {
         '/characters/dc/batwoman-arrowverse.png',
         
       ],
+      watch_type: ['tv'],
       media: [],
        relationships: [
         { toId: 'smallville', reason: 'Brought back the characters from Smallville for the "Crisis on Infinite Earths" crossover.' },
@@ -206,13 +220,15 @@ export const dcUniverse: Universe = {
     {
       id: 'superman-and-lois',
       name: 'Superman & Lois',
-      years: '2021-2024',
+      start_year: '2021',
+      end_year:'2024',
       description: "Set in its own continuity, this series follows Clark Kent and Lois Lane as they face the challenges of being working parents in Smallville.",
       iconicCharacters: [
         '/characters/dc/clark-and-lois-superman-and-lois.png',
         '/characters/dc/jon-kent-superman-and-lois.png',
         '/characters/dc/jordan-kent-superman-and-lois.png',
       ],
+      watch_type: ['tv'],
       media: [],
       relationships: [{
         toId: 'arrowverse',
@@ -222,7 +238,7 @@ export const dcUniverse: Universe = {
     {
       id: 'young-justice',
       name: 'Young Justice',
-      years: '2010-Present',
+      start_year: '2010',
       description: 'An animated series about a team of young superheroes operating as a covert unit for the Justice League.',
       iconicCharacters: [
         '/characters/dc/nightwing-yj.png',
@@ -231,6 +247,7 @@ export const dcUniverse: Universe = {
         '/characters/dc/miss-martian-yj.png',
         '/characters/dc/kid-flash-yj.png',
       ],
+      watch_type: ['tv'],
       media: [],
       relationships: [{
         toId: 'green-lantern-as',
@@ -240,7 +257,8 @@ export const dcUniverse: Universe = {
     {
       id: 'teen-titans-2003',
       name: 'Teen Titans (2003)',
-      years: '2003-2006',
+      start_year: '2003',
+      end_year:'2006',
       description: 'The iconic animated series following five teenage heroes—Robin, Starfire, Cyborg, Raven, and Beast Boy—as they defend their city.',
       iconicCharacters: [
         '/characters/dc/robin-teen-titans.png',
@@ -249,6 +267,7 @@ export const dcUniverse: Universe = {
         '/characters/dc/raven-teen-titans.png',
         '/characters/dc/beast-boy-teen-titans.png',
       ],
+      watch_type: ['tv'],
       media: [],
       relationships: [{
         toId: 'teen-titans-go', // Note: This ID is not in the list but represents the relationship
@@ -258,20 +277,22 @@ export const dcUniverse: Universe = {
      {
       id: 'harley-quinn-series',
       name: 'Harley Quinn Series',
-      years: '2019-Present',
+      start_year: '2019',
       description: "An adult animated series following Harley Quinn's misadventures after her explosive breakup with the Joker.",
       iconicCharacters: [
-        '/characters/dc/harley-quinn-series.png',
-        '/characters/dc/poison-ivy-series.png',
-        '/characters/dc/king-shark-series.png',
-        '/characters/dc/clayface-series.png',
+        '/characters/dc/harley-quinn-hq-series.png',
+        '/characters/dc/poison-ivy-hq-series.png',
+        '/characters/dc/king-shark-hq-series.png',
+        '/characters/dc/clayface-hq-series.png',
       ],
+      watch_type: ['tv'],
       media: [],
     },
     {
       id: 'green-lantern-as',
       name: 'Green Lantern: The Animated Series',
-      years: '2011-2013',
+      start_year: '2011',
+      end_year:'2013',
       description: 'A CG-animated series following Hal Jordan and Kilowog as they patrol the far reaches of space.',
       iconicCharacters: [
         '/characters/dc/hal-jordan-gl-as.png',
@@ -279,6 +300,7 @@ export const dcUniverse: Universe = {
         '/characters/dc/aya-gl-as.png',
         '/characters/dc/razor-gl-as.png',
       ],
+      watch_type: ['tv'],
       media: [],
       relationships: [{
         toId: 'young-justice',
@@ -288,7 +310,8 @@ export const dcUniverse: Universe = {
     {
       id: 'the-batman-2004',
       name: 'The Batman (2004)',
-      years: '2004-2008',
+      start_year: '2004',
+      end_year:'2008',
       description: 'An animated series that presents a young, athletic Batman in his early years of crime-fighting with a unique, angular art style.',
       iconicCharacters: [
         '/characters/dc/batman-the-batman-2004.png',
@@ -296,12 +319,14 @@ export const dcUniverse: Universe = {
         '/characters/dc/batgirl-the-batman-2004.png',
         '/characters/dc/joker-the-batman-2004.png',
       ],
+      watch_type: ['tv'],
       media: [],
     },
     {
       id: 'dark-knight-trilogy',
       name: 'The Dark Knight Trilogy',
-      years: '2005-2012',
+      start_year: '2005',
+      end_year:'2012',
       description: "Christopher Nolan's grounded and realistic cinematic take on the Batman mythos.",
       iconicCharacters: [
         '/characters/dc/batman-dark-knight.png',
@@ -309,12 +334,13 @@ export const dcUniverse: Universe = {
         '/characters/dc/bane-dark-knight.png',
         '/characters/dc/two-face-dark-knight.png',
       ],
+      watch_type: ['movies'],
       media: [],
     },
     {
       id: 'the-batman-reevesverse',
       name: "The Batman's Universe",
-      years: '2022-Present',
+      start_year: '2022',
       description: "Matt Reeves' noir-inspired, detective-focused universe centered on a younger, more brutal Batman.",
       iconicCharacters: [
         '/characters/dc/batman-the-batman-reeves.png',
@@ -322,19 +348,24 @@ export const dcUniverse: Universe = {
         '/characters/dc/penguin-the-batman-reeves.png',
         '/characters/dc/riddler-the-batman-reeves.png',
       ],
+      watch_type: ['tv', 'movies'],
       media: [],
     },
     {
       id: 'caped-crusader',
       name: 'Batman: Caped Crusader',
-      years: '2025-Present',
+      start_year: '2025',
       description: 'A forthcoming animated series from Bruce Timm, J.J. Abrams, and Matt Reeves, reimagining the Batman mythology with a noir sensibility.',
       iconicCharacters: [
         '/characters/dc/batman-caped-crusader.png',
+        '/characters/dc/bruce-wayne-caped-crusader.png',
         '/characters/dc/catwoman-caped-crusader.png',
-        '/characters/dc/gordon-caped-crusader.png',
+        '/characters/dc/selena-kyle-caped-crusader.png',
+        '/characters/dc/jim-gordon-caped-crusader.png',
+        '/characters/dc/barbra-gordon-caped-crusader.png',
         '/characters/dc/harley-quinn-caped-crusader.png',
       ],
+      watch_type: ['tv'],
       media: [],
       relationships: [{
         toId: 'dcau',
@@ -344,20 +375,25 @@ export const dcUniverse: Universe = {
     {
       id: 'arkhamverse',
       name: 'Arkhamverse',
-      years: '2009-2024',
+      start_year: '2009',
+      end_year:'2024',
       description: 'The dark, gritty universe established in the "Batman: Arkham" video game series and its associated animated film, "Assault on Arkham".',
       iconicCharacters: [
         '/characters/dc/batman-arkham.png',
         '/characters/dc/joker-arkham.png',
         '/characters/dc/harley-quinn-arkham.png',
         '/characters/dc/scarecrow-arkham.png',
+        '/characters/dc/superman-arkham.png',
+        '/characters/dc/wonder-woman-arkham.png',
       ],
+      watch_type: ['movies', 'games'],
       media: [],
     },
     {
       id: 'beware-the-batman',
       name: 'Beware the Batman',
-      years: '2013-2014',
+      start_year: '2013',
+      end_year:'2014',
       description: 'A CG-animated series featuring a more detective-focused Batman who teams up with the sword-wielding Katana and his butler, Alfred Pennyworth.',
       iconicCharacters: [
         '/characters/dc/batman-beware.png',
@@ -365,19 +401,23 @@ export const dcUniverse: Universe = {
         '/characters/dc/alfred-beware.png',
         '/characters/dc/anarky-beware.png',
       ],
+      watch_type: ['tv'],
       media: [],
     },
     {
       id: 'titans-live-action',
       name: 'Titans (Live-Action)',
-      years: '2018-2023',
+      start_year: '2018',
+      end_year:'2023',
       description: 'A mature, live-action take on the Teen Titans, following Dick Grayson as he forms a new team of young heroes.',
       iconicCharacters: [
+        '/characters/dc/robin-titans.png',
         '/characters/dc/nightwing-titans.png',
         '/characters/dc/starfire-titans.png',
         '/characters/dc/raven-titans.png',
         '/characters/dc/beast-boy-titans.png',
       ],
+      watch_type: ['tv'],
       media: [],
       relationships: [
         { toId: 'doom-patrol-live-action', reason: 'Introduced the Doom Patrol in a backdoor pilot before the latter became its own separate continuity.' },
@@ -387,7 +427,8 @@ export const dcUniverse: Universe = {
     {
       id: 'doom-patrol-live-action',
       name: 'Doom Patrol (Live-Action)',
-      years: '2019-2023',
+      start_year: '2019',
+      end_year:'2023',
       description: 'The surreal adventures of a team of traumatized and outcast superheroes brought together by a mysterious benefactor.',
       iconicCharacters: [
         '/characters/dc/robotman-doom-patrol.png',
@@ -395,6 +436,7 @@ export const dcUniverse: Universe = {
         '/characters/dc/crazy-jane-doom-patrol.png',
         '/characters/dc/elastigirl-doom-patrol.png',
       ],
+      watch_type: ['tv'],
       media: [],
       relationships: [
         { toId: 'titans-live-action', reason: 'Spun-off into its own continuity after an appearance in Titans.' },
@@ -404,14 +446,17 @@ export const dcUniverse: Universe = {
     {
       id: 'stargirl-live-action',
       name: 'Stargirl',
-      years: '2020-2022',
+      start_year: '2020',
+      end_year:'2022',
       description: "High schooler Courtney Whitmore inspires a new generation of superheroes to form the Justice Society of America in this live-action series.",
       iconicCharacters: [
         '/characters/dc/stargirl-stargirl.png',
         '/characters/dc/pat-dugan-stargirl.png',
         '/characters/dc/wildcat-stargirl.png',
         '/characters/dc/hourman-stargirl.png',
+        '/characters/dc/shade-stargirl.png',
       ],
+      watch_type: ['tv'],
       media: [],
       relationships: [{
         toId: 'arrowverse',
@@ -421,7 +466,8 @@ export const dcUniverse: Universe = {
     {
       id: 'justice-league-action',
       name: 'Justice League Action',
-      years: '2016-2018',
+      start_year: '2016',
+      end_year:'2018',
       description: 'A fast-paced animated series featuring a wide array of DC heroes in short, 11-minute, action-packed adventures.',
       iconicCharacters: [
         '/characters/dc/batman-jla.png',
@@ -429,6 +475,7 @@ export const dcUniverse: Universe = {
         '/characters/dc/wonder-woman-jla.png',
         '/characters/dc/firestorm-jla.png',
       ],
+      watch_type: ['tv'],
       media: [],
     }
   ],
