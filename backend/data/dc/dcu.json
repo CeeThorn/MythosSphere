@@ -1,0 +1,91 @@
+{
+  "id": "dcu",
+  "name": "DCU",
+  "start_year": "2024",
+  "description": "The official rebooted cinematic universe spearheaded by James Gunn and Peter Safran. Chapter 1, titled 'Gods and Monsters', begins with the animated series 'Creature Commandos'.",
+  "iconicCharacters": [
+    "/characters/dc/superman-dcu.png",
+    "/characters/dc/lois-lane-dcu.png",
+    "/characters/dc/guy-gardner-dcu.png",
+    "/characters/dc/the-bride-dcu.png",
+    "/characters/dc/mister-terrific-dcu.png",
+    "/characters/dc/hawkgirl-dcu.png",
+    "/characters/dc/metamorpho-dcu.png"
+  ],
+  "watch_type": [
+    "tv",
+    "movies",
+    "games"
+  ],
+  "media": [
+    {
+      "id": "creature-commandos-dcu",
+      "source_id": 219543,
+      "name": "Creature Commandos"
+    },
+    {
+      "id": "waller-dcu",
+      "source_id": 201232,
+      "name": "Waller",
+      "timeline_note": "This series follows the character of Amanda Waller, with Viola Davis reprising her role from the DCEU's 'Peacemaker' series. It serves as a bridge between the old and new universes."
+    },
+    {
+      "id": "superman-dcu",
+      "source_id": 1061474,
+      "name": "Superman"
+    },
+    {
+      "id": "supergirl-woman-of-tomorrow-dcu",
+      "source_id": 1081003,
+      "name": "Supergirl: Woman of Tomorrow"
+    },
+    {
+      "id": "the-authority-dcu",
+      "source_id": 1080999,
+      "name": "The Authority"
+    },
+    {
+      "id": "the-brave-and-the-bold-dcu",
+      "source_id": 1081004,
+      "name": "The Brave and the Bold"
+    },
+    {
+      "id": "lanterns-dcu",
+      "source_id": 95350,
+      "name": "Lanterns"
+    },
+    {
+      "id": "swamp-thing-dcu",
+      "source_id": 1080998,
+      "name": "Swamp Thing"
+    },
+    {
+      "id": "paradise-lost-dcu",
+      "source_id": 219546,
+      "name": "Paradise Lost",
+      "timeline_note": "A drama set in Themyscira, the home of the Amazons, said to focus on political intrigue before the birth of Diana (Wonder Woman)."
+    },
+    {
+      "id": "wonder-woman-reboot-dcu",
+      "source_id": 1495964,
+      "name": "Untitled Wonder Woman Reboot",
+      "timeline_note": "Following the success of 'Superman', a reboot film for Wonder Woman has reportedly been fast-tracked."
+    },
+    {
+      "id": "booster-gold-dcu",
+      "source_id": 219548,
+      "name": "Booster Gold"
+    },
+    {
+      "id": "untitled-teen-titans-film-dcu",
+      "source_id": 1259816,
+      "name": "Untitled Teen Titans Film"
+    }
+  ],
+  "relationships": [
+    {
+      "toId": "dceu",
+      "reason": "Serves as a wide-scale reboot of the previous cinematic universe, with some actors and character threads carrying over."
+    }
+  ]
+}

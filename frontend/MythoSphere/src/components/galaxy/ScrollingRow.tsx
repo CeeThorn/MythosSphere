@@ -1,137 +1,75 @@
-// src/components/galaxy/ScrollingRow.tsx
-
-import { useState, useEffect, useRef, useLayoutEffect } from "react";
-import { type Galaxy } from "../../lib/data";
-import { GalaxyCard } from "./galaxycard";
+import { useState, useRef, useLayoutEffect } from "react";
+import { type GalaxySummary } from "@/API/Flask_API";
+import { GalaxyCard } from "./GalaxyCard";
 
 interface ScrollingRowProps {
-  galaxies: Galaxy[];
-  onCardClick: (galaxy: Galaxy) => void;
+  galaxies: GalaxySummary[];
+  onCardClick: (galaxy: GalaxySummary) => void;
 }
 
 export const ScrollingRow = ({ galaxies, onCardClick }: ScrollingRowProps) => {
-  const [activeIndex, setActiveIndex] = useState(0);
   const rowRef = useRef<HTMLDivElement>(null);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const [isScrollable, setIsScrollable] = useState(false);
 
-  /* The `useLayoutEffect` hook in the provided code snippet is responsible for checking if the content
-  inside the `ScrollingRow` component is scrollable based on the dimensions of the container element
-  (`rowRef`). */
+  /* The `useLayoutEffect` hook in the provided code snippet is used to observe changes in the size of
+  the row element containing the galaxies. Here's a breakdown of what it does: */
   useLayoutEffect(() => {
     const rowElement = rowRef.current;
-    const containerElement = rowElement?.parentElement;
-
-    if (!rowElement || !containerElement) return;
+    if (!rowElement) return;
 
     const observer = new ResizeObserver(() => {
-      const isNowScrollable =
-        rowElement.scrollWidth > containerElement.clientWidth;
-      setIsScrollable(isNowScrollable);
+      setIsScrollable(rowElement.scrollWidth > rowElement.clientWidth);
     });
 
-    // We observe the inner row because its width changes as content loads.
     observer.observe(rowElement);
-
-    // Clean up the observer when the component is removed.
     return () => observer.disconnect();
-  }, []);
+  }, [galaxies]);
 
-  /* This `useEffect` hook is responsible for starting and stopping the auto-scroll functionality based
-  on changes in the length of the `galaxies` array. */
-  useEffect(() => {
-    if (isScrollable) {
-      startAutoScroll();
-      return () => stopAutoScroll();
-    }
-  }, [galaxies.length]);
+  const handleNav = (direction: "next" | "prev") => {
+    const row = rowRef.current;
+    if (!row) return;
 
-  /* This `useEffect` hook is responsible for scrolling the active item into view within the
-  `ScrollingRow` component. It runs whenever the `activeIndex` state changes. */
-  useEffect(() => {
-    const activeItem = rowRef.current?.children[activeIndex] as HTMLElement;
-    activeItem?.scrollIntoView({
+    // Calculate how much to scroll. We'll scroll by 75% of the row's width.
+    const scrollAmount = row.clientWidth * 0.75;
+
+    row.scrollBy({
+      left: direction === "next" ? scrollAmount : -scrollAmount,
       behavior: "smooth",
-      inline: "center",
-      block: "nearest",
     });
-  }, [activeIndex]);
-
-  /**
-   * The function `startAutoScroll` sets up an interval to cycle through a list of galaxies every 5
-   * seconds in a React component.
-   */
-  const startAutoScroll = () => {
-    stopAutoScroll();
-    intervalRef.current = setInterval(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % galaxies.length);
-    }, 4000);
-  };
-
-  const stopAutoScroll = () => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-    }
-  };
-
-  const handleManualNav = (direction: "next" | "prev") => {
-    stopAutoScroll();
-    if (direction === "next") {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % galaxies.length);
-    } else {
-      setActiveIndex(
-        (prevIndex) => (prevIndex - 1 + galaxies.length) % galaxies.length
-      );
-    }
   };
 
   return (
-    <div
-      className="relative group" // Parent container for button positioning
-      onMouseEnter={isScrollable ? stopAutoScroll : undefined}
-      onMouseLeave={isScrollable ? startAutoScroll : undefined}
-    >
-      {/* The scrolling container itself */}
+    <div className="relative group">
       <div
-        className="w-full overflow-x-hidden"
-        style={{
-          maskImage:
-            "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
-        }}
+        ref={rowRef}
+        className={`flex w-full overflow-x-auto snap-x snap-mandatory scroll-smooth ${
+          !isScrollable ? "justify-center" : ""
+        }`}
+        style={{ scrollbarWidth: "none" }}
       >
-        <div
-          ref={rowRef}
-          className={`flex transition-transform duration-500 ease-in-out ${
-            isScrollable ? "w-max" : "w-full justify-center"
-          }`}
-        >
-          {galaxies.map((galaxy, index) => (
-            <div key={`${galaxy.id}-${index}`} className="mx-4">
-              <GalaxyCard
-                galaxy={galaxy}
-                isActive={false}
-                onClick={() => onCardClick(galaxy)}
-              />
-            </div>
-          ))}
-        </div>
+        {galaxies.map((galaxy) => (
+          <div key={galaxy.id} className="flex-shrink-0 snap-center mx-3">
+            <GalaxyCard
+              galaxy={galaxy}
+              onClick={() => onCardClick(galaxy)}
+              isActive={false}
+            />
+          </div>
+        ))}
       </div>
 
-      {/* Navigation Buttons */}
+      {/* Navigation Buttons: Now use the direct handleNav function */}
       {isScrollable && (
         <>
-          {/* Previous Button */}
           <button
-            onClick={() => handleManualNav("prev")}
-            className="absolute top-1/2 left-2 -translate-y-1/2 z-10 w-9 h-9 bg-neutral-800 rounded-full text-white text-lg font-bold flex items-center justify-center transition-colors hover:bg-neutral-700 focus:outline-none"
+            onClick={() => handleNav("prev")}
+            className="absolute top-1/2 left-2 -translate-y-1/2 z-10 w-10 h-10 bg-neutral-800/60 rounded-full text-white text-xl font-bold flex items-center justify-center transition-all hover:bg-neutral-700 focus:outline-none opacity-0 group-hover:opacity-100"
           >
             &lt;
           </button>
-
-          {/* Next Button */}
           <button
-            onClick={() => handleManualNav("next")}
-            className="absolute top-1/2 right-2 -translate-y-1/2 z-10 w-9 h-9 bg-neutral-800 rounded-full text-white text-lg font-bold flex items-center justify-center transition-colors hover:bg-neutral-700 focus:outline-none"
+            onClick={() => handleNav("next")}
+            className="absolute top-1/2 right-2 -translate-y-1/2 z-10 w-10 h-10 bg-neutral-800/60 rounded-full text-white text-xl font-bold flex items-center justify-center transition-all hover:bg-neutral-700 focus:outline-none opacity-0 group-hover:opacity-100"
           >
             &gt;
           </button>

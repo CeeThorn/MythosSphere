@@ -1,0 +1,110 @@
+{
+  "id": "dcamu",
+  "name": "DCAMU",
+  "start_year": "2013",
+  "end_year": "2020",
+  "description": "An interconnected timeline of DC's animated movies that began with 'The Flashpoint Paradox' and concluded with 'Apokolips War'.",
+  "iconicCharacters": [
+    "/characters/dc/wonder-woman-dcamu.png",
+    "/characters/dc/superman-dcamu.png",
+    "/characters/dc/batman-dcamu.png",
+    "/characters/dc/flash-dcamu.png",
+    "/characters/dc/zatanna-dcamu.png",
+    "/characters/dc/constantine-dcamu.png"
+  ],
+  "watch_type": [
+    "movies"
+  ],
+  "media": [
+    {
+      "id": "the-flashpoint-paradox-dcamu",
+      "source_id": 183011,
+      "name": "Justice League: The Flashpoint Paradox"
+    },
+    {
+      "id": "justice-league-war-dcamu",
+      "source_id": 217993,
+      "name": "Justice League: War"
+    },
+    {
+      "id": "son-of-batman-dcamu",
+      "source_id": 251519,
+      "name": "Son of Batman"
+    },
+    {
+      "id": "justice-league-throne-of-atlantis-dcamu",
+      "source_id": 297556,
+      "name": "Justice League: Throne of Atlantis"
+    },
+    {
+      "id": "batman-vs-robin-dcamu",
+      "source_id": 321528,
+      "name": "Batman vs. Robin"
+    },
+    {
+      "id": "batman-bad-blood-dcamu",
+      "source_id": 366924,
+      "name": "Batman: Bad Blood"
+    },
+    {
+      "id": "justice-league-vs-teen-titans-dcamu",
+      "source_id": 379291,
+      "name": "Justice League vs. Teen Titans"
+    },
+    {
+      "id": "justice-league-dark-dcamu",
+      "source_id": 408220,
+      "name": "Justice League Dark"
+    },
+    {
+      "id": "teen-titans-the-judas-contract-dcamu",
+      "source_id": 408647,
+      "name": "Teen Titans: The Judas Contract"
+    },
+    {
+      "id": "suicide-squad-hell-to-pay-dcamu",
+      "source_id": 487242,
+      "name": "Suicide Squad: Hell to Pay"
+    },
+    {
+      "id": "death-and-return-of-superman-dcamu",
+      "source_id": 630656,
+      "name": "The Death and Return of Superman",
+      "timeline_note": "This represents the two-part story told in 'The Death of Superman' (2018) and 'Reign of the Supermen' (2019)."
+    },
+    {
+      "id": "constantine-city-of-demons-dcamu",
+      "source_id": 539517,
+      "name": "Constantine: City of Demons",
+      "timeline_note": "This movie's events occur concurrently with the 'Death of Superman' storyline."
+    },
+    {
+      "id": "wonder-woman-bloodlines-dcamu",
+      "source_id": 537055,
+      "name": "Wonder Woman: Bloodlines",
+      "timeline_note": "While released later, the majority of this film consists of flashbacks that take place before 'Justice League: War', with the present-day scenes happening after 'Reign of the Supermen'."
+    },
+    {
+      "id": "batman-hush-dcamu",
+      "source_id": 537056,
+      "name": "Batman: Hush"
+    },
+    {
+      "id": "justice-league-dark-apokolips-war-dcamu",
+      "source_id": 618344,
+      "name": "Justice League Dark: Apokolips War"
+    },
+    {
+      "id": "constantine-the-house-of-mystery-dcamu",
+      "source_id": 791348,
+      "name": "Constantine: The House of Mystery",
+      "timeline_note": "This film serves as an epilogue to the DCAMU, directly following the events of 'Apokolips War'."
+    }
+  ],
+  "relationships": [
+    {
+      "toId": "tomorrowverse",
+      "reason": "The Tomorrowverse is the rebooted animated universe that began after the events of 'Justice League Dark: Apokolips War'."
+    }
+  ]
+}

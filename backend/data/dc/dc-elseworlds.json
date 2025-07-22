@@ -1,0 +1,457 @@
+{
+  "id": "dc-elseworlds",
+  "name": "DC Elseworlds",
+  "start_year": "1943",
+  "description": "A collection of standalone and self-contained stories, both live-action and animated, that exist outside of the major interconnected universes. Each entry represents its own unique continuity, ordered by its original release date.",
+  "iconicCharacters": [
+    "/characters/dc/wonder-woman-elseworlds.png",
+    "/characters/dc/lois-and-clark-elseworlds.png",
+    "/characters/dc/teen-titans-elseworlds.png",
+    "/characters/dc/the-batman-2004-elseworlds.png",
+    "/characters/dc/young-justice-elseworlds.png",
+    "/characters/dc/v-for-vendetta.png",
+    "/characters/dc/dr-manhattan.png",
+    "/characters/dc/rorschach.png"
+   
+  ],
+  "watch_type": [
+    "tv",
+    "movies"
+  ],
+  "media": [
+       {
+      "id": "batman-1943-serial-elseworlds",
+      "source_id": 125249,
+      "name": "The Batman (1943 Serial)"
+    },
+    {
+      "id": "superman-1948-serial-elseworlds",
+      "source_id": 126712,
+      "name": "Superman (1948 Serial)"
+    },
+    {
+      "id": "batman-and-robin-1949-serial-elseworlds",
+      "source_id": 93560,
+      "name": "Batman and Robin (1949 Serial)",
+      "timeline_note": "A sequel to the 1943 'The Batman' serial."
+    },
+    {
+      "id": "atom-man-vs-superman-1950-serial-elseworlds",
+      "source_id": 106358,
+      "name": "Atom Man vs. Superman",
+      "timeline_note": "A sequel to the 1948 'Superman' serial."
+    },
+{
+      "id": "adventures-of-superman-1952-elseworlds",
+      "source_id": 12662,
+      "name": "Adventures of Superman (George Reeves)"
+    },
+    {
+      "id": "new-scooby-doo-movies-batman-robin-1972-elseworlds",
+      "source_id": 1068,
+      "name": "The New Scooby-Doo Movies feat. Batman and Robin"
+    },
+    {
+      "id": "wonder-woman-1974-elseworlds",
+      "source_id": 161620,
+      "name": "Wonder Woman (1974 TV Movie)",
+      "timeline_note": "The first live-action Wonder Woman adaptation to air. This pilot, starring Cathy Lee Crosby, featured a non-powered, spy-centric version of the character and is a separate continuity from the 1975 Lynda Carter series."
+    },
+{
+      "id": "wonder-woman-1975-elseworlds",
+      "source_id": 4331,
+      "name": "Wonder Woman (Lynda Carter)"
+    },
+     {
+      "id": "the-flash-1990-elseworlds",
+      "source_id": 236,
+      "name": "The Flash (1990 TV Series)",
+      "timeline_note": "Starring John Wesley Shipp, this series exists on Earth-90. The character and world were officially integrated into the multiverse during the Arrowverse's 'Crisis on Infinite Earths' crossover."
+    },
+{
+      "id": "lois-and-clark-1993-elseworlds",
+      "source_id": 4515,
+      "name": "Lois & Clark: The New Adventures of Superman",
+      "timeline_note": "This series exists in its own continuity (Earth-94) and was acknowledged during the Arrowverse's 'Crisis on Infinite Earths' crossover."
+    },
+    {
+      "id": "teen-titans-2003-elseworlds",
+      "source_id": 604,
+      "name": "Teen Titans (2003)"
+    },
+    {
+      "id": "the-batman-2004-elseworlds",
+      "source_id": 2022,
+      "name": "The Batman (2004)"
+    },
+{
+      "id": "catwoman-2004-elseworlds",
+      "source_id": 314,
+      "name": "Catwoman (2004)"
+    },
+    {
+      "id": "the-batman-vs-dracula-2005-elseworlds",
+      "source_id": 20077,
+      "name": "The Batman vs. Dracula"
+    },
+    {
+      "id": "krypto-the-superdog-2005-elseworlds",
+      "source_id": 1453,
+      "name": "Krypto the Superdog"
+    },
+{
+      "id": "constantine-2005-elseworlds",
+      "source_id": 561,
+      "name": "Constantine (2005)"
+    },
+{
+      "id": "v-for-vendetta-2005-elseworlds",
+      "source_id": 752,
+      "name": "V for Vendetta"
+    },
+    {
+      "id": "teen-titans-trouble-in-tokyo-2006-elseworlds",
+      "source_id": 16237,
+      "name": "Teen Titans: Trouble in Tokyo"
+    },
+    {
+      "id": "legion-of-super-heroes-2006-elseworlds",
+      "source_id": 4028,
+      "name": "Legion of Super Heroes"
+    },
+    {
+      "id": "superman-doomsday-2007-elseworlds",
+      "source_id": 13640,
+      "name": "Superman: Doomsday"
+    },
+    {
+      "id": "justice-league-the-new-frontier-2008-elseworlds",
+      "source_id": 14011,
+      "name": "Justice League: The New Frontier"
+    },
+    {
+      "id": "batman-gotham-knight-2008-elseworlds",
+      "source_id": 13851,
+      "name": "Batman: Gotham Knight",
+      "timeline_note": "Ties into the Nolan Batman Trilogy, set between 'Batman Begins' and 'The Dark Knight'."
+    },
+    {
+      "id": "batman-the-brave-and-the-bold-2008-elseworlds",
+      "source_id": 15804,
+      "name": "Batman: The Brave and the Bold"
+    },
+    {
+      "id": "wonder-woman-2009-elseworlds",
+      "source_id": 15359,
+      "name": "Wonder Woman (2009)"
+    },
+    {
+      "id": "superman-batman-public-enemies-2009-elseworlds",
+      "source_id": 22855,
+      "name": "Superman/Batman: Public Enemies"
+    },
+    {
+      "id": "green-lantern-first-flight-2009-elseworlds",
+      "source_id": 17445,
+      "name": "Green Lantern: First Flight"
+    },
+{
+      "id": "watchmen-2009-elseworlds",
+      "source_id": 13183,
+      "name": "Watchmen (2009 Film)"
+    },
+    {
+      "id": "justice-league-crisis-on-two-earths-2010-elseworlds",
+      "source_id": 30061,
+      "name": "Justice League: Crisis on Two Earths"
+    },
+    {
+      "id": "batman-under-the-red-hood-2010-elseworlds",
+      "source_id": 40662,
+      "name": "Batman: Under the Red Hood"
+    },
+    {
+      "id": "superman-batman-apocalypse-2010-elseworlds",
+      "source_id": 45162,
+      "name": "Superman/Batman: Apocalypse"
+    },
+    {
+      "id": "superman-shazam-the-return-of-black-adam-2010-elseworlds",
+      "source_id": 43641,
+      "name": "Superman/Shazam!: The Return of Black Adam"
+    },
+    {
+      "id": "young-justice-2010-elseworlds",
+      "source_id": 33217,
+      "name": "Young Justice"
+    },
+    {
+      "id": "all-star-superman-2011-elseworlds",
+      "source_id": 56590,
+      "name": "All-Star Superman"
+    },
+    {
+      "id": "green-lantern-emerald-knights-2011-elseworlds",
+      "source_id": 65291,
+      "name": "Green Lantern: Emerald Knights"
+    },
+    {
+      "id": "batman-year-one-2011-elseworlds",
+      "source_id": 69735,
+      "name": "Batman: Year One"
+    },
+{
+      "id": "green-lantern-2011-elseworlds",
+      "source_id": 44912,
+      "name": "Green Lantern (2011)"
+    },
+    {
+      "id": "green-lantern-the-animated-series-2011-elseworlds",
+      "source_id": 40351,
+      "name": "Green Lantern: The Animated Series"
+    },
+    {
+      "id": "justice-league-doom-2012-elseworlds",
+      "source_id": 76589,
+      "name": "Justice League: Doom"
+    },
+    {
+      "id": "superman-vs-the-elite-2012-elseworlds",
+      "source_id": 103269,
+      "name": "Superman vs. the Elite"
+    },
+    {
+      "id": "batman-the-dark-knight-returns-part-1-2012-elseworlds",
+      "source_id": 123025,
+      "name": "Batman: The Dark Knight Returns, Part 1"
+    },
+    {
+      "id": "teen-titans-go-2013-elseworlds",
+      "source_id": 45140,
+      "name": "Teen Titans Go!"
+    },
+    {
+      "id": "batman-the-dark-knight-returns-part-2-2013-elseworlds",
+      "source_id": 142061,
+      "name": "Batman: The Dark Knight Returns, Part 2"
+    },
+    {
+      "id": "superman-unbound-2013-elseworlds",
+      "source_id": 166076,
+      "name": "Superman: Unbound"
+    },
+    {
+      "id": "beware-the-batman-2013-elseworlds",
+      "source_id": 41676,
+      "name": "Beware the Batman"
+    },
+    {
+      "id": "justice-league-adventures-trapped-in-time-2014-elseworlds",
+      "source_id": 251768,
+      "name": "Justice League Adventures: Trapped in Time"
+    },
+    {
+      "id": "justice-league-gods-and-monsters-2015-elseworlds",
+      "source_id": 323027,
+      "name": "Justice League: Gods and Monsters"
+    },
+    {
+      "id": "batman-unlimited-animal-instincts-2015-elseworlds",
+      "source_id": 327418,
+      "name": "Batman Unlimited: Animal Instincts"
+    },
+    {
+      "id": "batman-unlimited-monster-mayhem-2015-elseworlds",
+      "source_id": 342917,
+      "name": "Batman Unlimited: Monster Mayhem"
+    },
+    {
+      "id": "batman-the-killing-joke-2016-elseworlds",
+      "source_id": 382322,
+      "name": "Batman: The Killing Joke"
+    },
+    {
+      "id": "batman-unlimited-mechs-vs-mutants-2016-elseworlds",
+      "source_id": 411802,
+      "name": "Batman Unlimited: Mechs vs Mutants"
+    },
+    {
+      "id": "justice-league-action-2016-elseworlds",
+      "source_id": 68837,
+      "name": "Justice League Action"
+    },
+    {
+      "id": "the-lego-batman-movie-2017-elseworlds",
+      "source_id": 324849,
+      "name": "The LEGO Batman Movie",
+      "timeline_note": "Part of the theatrical LEGO movie universe, along with 'The LEGO Movie' and 'The LEGO Movie 2: The Second Part'."
+    },
+    {
+      "id": "batman-gotham-by-gaslight-2018-elseworlds",
+      "source_id": 471474,
+      "name": "Batman: Gotham by Gaslight"
+    },
+    {
+      "id": "scooby-doo-batman-the-brave-and-the-bold-2018-elseworlds",
+      "source_id": 484862,
+      "name": "Scooby-Doo! & Batman: The Brave and the Bold"
+    },
+    {
+      "id": "teen-titans-go-to-the-movies-2018-elseworlds",
+      "source_id": 474395,
+      "name": "Teen Titans Go! To the Movies"
+    },
+    {
+      "id": "batman-ninja-2018-elseworlds",
+      "source_id": 485942,
+      "name": "Batman: Ninja"
+    },
+    {
+      "id": "dc-super-hero-girls-2019-elseworlds",
+      "source_id": 87491,
+      "name": "DC Super Hero Girls"
+    },
+    {
+      "id": "teen-titans-go-vs-teen-titans-2019-elseworlds",
+      "source_id": 556901,
+      "name": "Teen Titans Go! vs Teen Titans"
+    },
+    {
+      "id": "batman-vs-the-teenage-mutant-ninja-turtles-2019-elseworlds",
+      "source_id": 581997,
+      "name": "Batman vs. The Teenage Mutant Ninja Turtles"
+    },
+{
+      "id": "joker-2019-elseworlds",
+      "source_id": 475557,
+      "name": "Joker"
+    },
+    {
+      "id": "superman-red-son-2020-elseworlds",
+      "source_id": 124305,
+      "name": "Superman: Red Son"
+    },
+    {
+      "id": "deathstroke-knights-and-dragons-2020-elseworlds",
+      "source_id": 703771,
+      "name": "Deathstroke: Knights & Dragons"
+    },
+    {
+      "id": "batman-a-death-in-the-family-2020-elseworlds",
+      "source_id": 618353,
+      "name": "Batman: A Death in the Family"
+    },
+    {
+      "id": "batman-soul-of-the-dragon-2021-elseworlds",
+      "source_id": 732450,
+      "name": "Batman: Soul of the Dragon"
+    },
+    {
+      "id": "justice-league-x-rwby-super-heroes-and-huntsmen-part-one-2021-elseworlds",
+      "source_id": 997776,
+      "name": "Justice League x RWBY: Super Heroes & Huntsmen, Part One"
+    },
+    {
+      "id": "teen-titans-go-see-space-jam-2021-elseworlds",
+      "source_id": 834404,
+      "name": "Teen Titans Go! See Space Jam"
+    },
+    {
+      "id": "injustice-2021-elseworlds",
+      "source_id": 831405,
+      "name": "Injustice",
+      "timeline_note": "An adaptation of the prequel comic for the 'Injustice: Gods Among Us' video game."
+    },
+    {
+      "id": "catwoman-hunted-2022-elseworlds",
+      "source_id": 862491,
+      "name": "Catwoman: Hunted"
+    },
+    {
+      "id": "dc-league-of-super-pets-2022-elseworlds",
+      "source_id": 539681,
+      "name": "DC League of Super-Pets"
+    },
+    {
+      "id": "battle-of-the-super-sons-2022-elseworlds",
+      "source_id": 886396,
+      "name": "Battle of the Super Sons"
+    },
+    {
+      "id": "batman-the-doom-that-came-to-gotham-2023-elseworlds",
+      "source_id": 1003579,
+      "name": "Batman: The Doom that Came to Gotham"
+    },
+    {
+      "id": "justice-league-x-rwby-super-heroes-and-huntsmen-part-two-2023-elseworlds",
+      "source_id": 1150537,
+      "name": "Justice League x RWBY: Super Heroes & Huntsmen, Part Two"
+    },
+    {
+      "id": "scooby-doo-and-krypto-too-2023-elseworlds",
+      "source_id": 1146348,
+      "name": "Scooby-Doo! and Krypto, too!"
+    },
+    {
+      "id": "my-adventures-with-superman-2023-elseworlds",
+      "source_id": 125928,
+      "name": "My Adventures with Superman"
+    },
+    {
+      "id": "merry-little-batman-2023-elseworlds",
+      "source_id": 870358,
+      "name": "Merry Little Batman"
+    },
+    {
+      "id": "aquaman-king-of-atlantis-2023-elseworlds",
+      "source_id": 98137,
+      "name": "Aquaman: King of Atlantis"
+    },
+    {
+      "id": "batwheels-2023-elseworlds",
+      "source_id": 155780,
+      "name": "Batwheels"
+    },
+    {
+      "id": "beast-boy-lone-wolf-2024-elseworlds",
+      "source_id": 228880,
+      "name": "Beast Boy: Lone Wolf"
+    },
+    {
+      "id": "suicide-squad-isekai-2024-elseworlds",
+      "source_id": 229926,
+      "name": "Suicide Squad Isekai"
+    },
+    {
+      "id": "watchmen-chapter-1-2024-elseworlds",
+      "source_id": 1155058,
+      "name": "Watchmen: Chapter 1"
+    },
+    {
+      "id": "watchmen-chapter-2-2024-elseworlds",
+      "source_id": 1299652,
+      "name": "Watchmen: Chapter 2"
+    },
+ {
+      "id": "joker-folie-a-deux-2024-elseworlds",
+      "source_id": 889737,
+      "name": "Joker: Folie à Deux",
+      "timeline_note": "The sequel to the 2019 standalone film 'Joker'."
+    },
+    {
+      "id": "aztec-batman-clash-of-empires-2025-elseworlds",
+      "source_id": 987400,
+      "name": "Aztec Batman: Clash of Empires"
+    },
+    {
+      "id": "batman-the-caped-crusader-2025-elseworlds",
+      "source_id": 125909,
+      "name": "Batman: The Caped Crusader"
+    },
+    {
+      "id": "batman-ninja-vs-yakuza-league-2025-elseworlds",
+      "source_id": 1297763,
+      "name": "Batman Ninja vs. Yakuza League"
+    }
+  ]
+}

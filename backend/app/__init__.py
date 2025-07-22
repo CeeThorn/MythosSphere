@@ -12,12 +12,14 @@ from flask_cors import CORS  # CORS allows for cross-origin requests
 
 from app.extensions import init_extensions
 from app.blueprints.search import search_bp
+from app.blueprints.data import data_bp
 
 
 def create_app():
     app = Flask(__name__)
     init_extensions(app)
     app.register_blueprint(search_bp)
+    app.register_blueprint(data_bp)
     # Initializes CORS
     CORS(app, origins=["http://localhost:5173"])
 

@@ -1,0 +1,40 @@
+{
+  "id": "the-batman-reevesverse",
+  "name": "The Batman's Universe (Reevesverse)",
+  "start_year": "2022",
+  "description": "Matt Reeves' noir-inspired, detective-focused universe centered on a younger, more brutal Batman. It exists as a separate 'Elseworlds' continuity from the main DCU.",
+  "iconicCharacters": [
+    "/characters/dc/batman-the-batman-reeves.png",
+    "/characters/dc/catwoman-the-batman-reeves.png",
+    "/characters/dc/penguin-the-batman-reeves.png",
+    "/characters/dc/riddler-the-batman-reeves.png"
+  ],
+  "watch_type": [
+    "movies",
+    "tv"
+  ],
+  "media": [
+    {
+      "id": "the-batman-reevesverse",
+      "source_id": 414906,
+      "name": "The Batman"
+    },
+    {
+      "id": "the-penguin-reevesverse",
+      "source_id": 194764,
+      "name": "The Penguin",
+      "timeline_note": "This series takes place one week after the events of 'The Batman' and chronicles Oswald Cobblepot's rise to power in Gotham's underworld."
+    },
+    {
+      "id": "the-batman-part-2-reevesverse",
+      "source_id": 806704,
+      "name": "The Batman – Part II"
+    }
+  ],
+  "relationships": [
+    {
+      "toId": "dcu",
+      "reason": "This is an 'Elseworlds' project that runs concurrently with, but is separate from, the main DCU continuity."
+    }
+  ]
+}

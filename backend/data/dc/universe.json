@@ -1,0 +1,20 @@
+{
+  "id": "dc",
+  "name": "DC",
+  "description": "Home to the world's greatest superheroes, from Batman and Superman to Wonder Woman and The Flash.",
+  "logoUrl": "/Universe Logos/dc-logo.png",
+  "iconicCharacters": [
+      "/characters/dc/justice-league.png",
+      "/characters/dc/batman-family.png",
+      "/characters/dc/superman-family.png",
+      "/characters/dc/wonder-woman-family.png",
+      "/characters/dc/titans.png",
+      "/characters/dc/teen-titans.png",
+      "/characters/dc/lantern-corp.png",
+      "/characters/dc/the-sandman.png",
+      "/characters/dc/superman.png",
+      "/characters/dc/batman.png",
+      "/characters/dc/wonder-woman.png"
+
+  ]
+}

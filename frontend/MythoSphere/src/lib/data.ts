@@ -6,24 +6,21 @@ export interface Connection {
   reason: string;
 }
 
-export type MediaType = 'tv' | 'movies' | 'games' | 'manga';
+export type GalaxyMediaType = 'tv' | 'movies' | 'games' | 'manga';
+export type MediaType = 'tv' | 'movie' | 'game' | 'manga'
 
 // Defines a movie or a TV show for the timeline
 export interface Media {
   // Your own unique ID (e.g., "batman-the-animated-series")
   id: string;
-  // The ID from the TMDB API to fetch details
-  tmdb_id: number;
-  // The media type for the API call ('tv' or 'movie')
-  media_type: MediaType[];
   // Display name of the show/movie
   name: string;
-  // The release date for chronological sorting on the timeline
-  releaseDate: string;
-  // The URL for the movie/show poster image
-  posterUrl: string;
+  // The ID from the TMDB API to fetch details
+  source_id: number;
+
+  timeline_note?: string;
   // An array defining connections to other media in the timeline
-  connections: Connection[];
+  connections?: Connection[];
 }
 
 // Defines a specific continuity (e.g., DCAU, DCEU)
@@ -39,7 +36,7 @@ export interface Galaxy {
 
   description: string;
 
-  watch_type?: MediaType[];
+  watch_type?: GalaxyMediaType[];
 
   iconicCharacters: string[];
   // An array of shows and/or movies in this galaxy
@@ -67,44 +64,139 @@ export interface Universe {
 
 
 export const dcUniverse: Universe = {
-  id: 'dc',
-  name: 'DC',
-  description: "Home to the world's greatest superheroes, from Batman and Superman to Wonder Woman and The Flash.",
-  logoUrl: '/Universe Logos/dc-logo.png',
+  "id": 'dc',
+  "name": 'DC',
+  "description": "Home to the world's greatest superheroes, from Batman and Superman to Wonder Woman and The Flash.",
+  "logoUrl": '/Universe Logos/dc-logo.png',
   // Add paths to character images for the slideshow card
-  iconicCharacters: [
+  "iconicCharacters": [
       '/characters/dc/superman.png',
       '/characters/dc/batman.png',
       '/characters/dc/wonder-woman.png',
       '/characters/dc/flash.png',
       '/characters/dc/green-lantern.png',
+      '/characters/dc/green-arrow.png',
 
   ],
-  galaxies: [
+  "galaxies": [
     {
-      id: 'dcau',
-      name: 'DCAU',
-      start_year: '1992',
-      end_year: '2006',
-      description: 'The classic animated continuity started by Batman: The Animated Series.',
-      iconicCharacters: [
-          '/characters/dc/superman-dcau.png',
-          '/characters/dc/batman-dcau.png',
-          '/characters/dc/joker-dcau.png',
-          '/characters/dc/wonder-woman-dcau.png',
-          '/characters/dc/static-shock-dcau.png',
-          '/characters/dc/batman-beyond-dcau.png',
-          '/characters/dc/green-lantern-dcau.png',
-          '/characters/dc/hawkgirl-dcau.png',
-      ],
-      watch_type: ['tv'],
-      media: [],
-      relationships: [{
-        toId: 'caped-crusader',
-        reason: 'Batman: Caped Crusader is a spiritual successor from original creator Bruce Timm.'
-      }],
-
+  "id": "dcau",
+  "name": "DCAU",
+  "start_year": "1992",
+  "end_year": "2006",
+  "description": "The classic animated continuity started by Batman: The Animated Series.",
+  "iconicCharacters": [
+      "/characters/dc/superman-dcau.png",
+      "/characters/dc/batman-dcau.png",
+      "/characters/dc/joker-dcau.png",
+      "/characters/dc/wonder-woman-dcau.png",
+      "/characters/dc/static-shock-dcau.png",
+      "/characters/dc/batman-beyond-dcau.png",
+      "/characters/dc/green-lantern-dcau.png",
+      "/characters/dc/hawkgirl-dcau.png"
+  ],
+  "watch_type": ["tv", "movies"],
+  "media": [
+    {
+      "id": "batman-the-animated-series-dcau",
+      "source_id": null,
+      "name": "Batman: The Animated Series"
     },
+    {
+      "id": "batman-mask-of-the-phantasm-dcau",
+      "source_id": null,
+      "name": "Batman: Mask of the Phantasm"
+    },
+    {
+      "id": "the-new-batman-adventures-dcau",
+      "source_id": null,
+      "name": "The New Batman Adventures"
+    },
+    {
+      "id": "batman-and-mr-freeze-subzero-dcau",
+      "source_id": null,
+      "name": "Batman & Mr. Freeze: SubZero"
+    },
+    {
+      "id": "superman-the-animated-series-dcau",
+      "source_id": null,
+      "name": "Superman: The Animated Series"
+    },
+    {
+      "id": "superman-brainiac-attacks-dcau",
+      "source_id": null,
+      "name": "Superman: Brainiac Attacks",
+      "timeline_note": "This movie is not considered canon to the DCAU by the creators, but is included as requested."
+    },
+    {
+        "id": "gotham-girls-dcau",
+        "source_id": null,
+        "name": "Gotham Girls"
+    },
+    {
+        "id": "lobo-webseries-dcau",
+        "source_id": null,
+        "name": "Lobo (Webseries)",
+        "timeline_note": "This webseries is not officially considered part of the DCAU but was created by some of the same team and is often associated with it."
+    },
+    {
+      "id": "static-shock-dcau",
+      "source_id": null,
+      "name": "Static Shock",
+      "timeline_note": "The episodes 'The Big Leagues', 'Hard as Nails', and 'A League of Their Own' Parts 1 & 2 feature crossovers with the Justice League and occur during the 'Justice League' series timeline. 'Future Shock' is a crossover with 'Batman Beyond' and takes place during that show's timeline."
+    },
+    {
+      "id": "justice-league-dcau",
+      "source_id": null,
+      "name": "Justice League"
+    },
+    {
+      "id": "justice-league-unlimited-dcau",
+      "source_id": null,
+      "name": "Justice League Unlimited",
+      "timeline_note": "The episode 'Epilogue' should be watched after 'Batman Beyond' and 'Batman Beyond: Return of the Joker'."
+    },
+    {
+      "id": "batman-mystery-of-the-batwoman-dcau",
+      "source_id": null,
+      "name": "Batman: Mystery of the Batwoman"
+    },
+    {
+        "id": "batman-and-harley-quinn-dcau",
+        "source_id": null,
+        "name": "Batman and Harley Quinn",
+        "timeline_note": "The canonicity of this film is debatable. While executive producer Bruce Timm considers it canon, it is often seen as a standalone story."
+    },
+    {
+        "id": "justice-league-vs-the-fatal-five-dcau",
+        "source_id": null,
+        "name": "Justice League vs. The Fatal Five",
+        "timeline_note": "Similar to 'Batman and Harley Quinn', the canonicity of this film is open to interpretation. Executive producer Bruce Timm regards it as canon."
+    },
+    {
+      "id": "batman-beyond-dcau",
+      "source_id": null,
+      "name": "Batman Beyond"
+    },
+    {
+      "id": "the-zeta-project-dcau",
+      "source_id": null,
+      "name": "The Zeta Project",
+      "timeline_note": "This series is a spin-off of 'Batman Beyond'."
+    },
+    {
+      "id": "batman-beyond-return-of-the-joker-dcau",
+      "source_id": null,
+      "name": "Batman Beyond: Return of the Joker"
+    }
+  ],
+  "relationships": [
+    {
+      "toId": "caped-crusader",
+      "reason": "Batman: Caped Crusader is a spiritual successor from original creator Bruce Timm."
+    }
+  ]
+},
     {
       id: 'dceu',
       name: 'DCEU',
@@ -128,27 +220,172 @@ export const dcUniverse: Universe = {
       }],
     },
     {
-      id: 'dcamu',
-      name: 'DCAMU',
-      start_year: '2013',
-      description: 'A consolidated timeline of DC\'s modern animated movies, covering the interconnected "DCAMU" saga (2013-2020) and its subsequent reboot into the "Tomorrowverse" era (2020-Present).',
-       iconicCharacters: [
-          '/characters/dc/superman-dcamu.png',
-          '/characters/dc/batman-dcamu.png',
-          '/characters/dc/wonder-woman-dcamu.png',
-          '/characters/dc/flash-dcamu.png',
-          '/characters/dc/zatanna-dcamu.png',
-          '/characters/dc/constantine-dcamu.png',
-          '/characters/dc/constantine-tomorrowverse.png',
-          '/characters/dc/flash-tomorrowverse.png',
-          '/characters/dc/wonder-woman-tomorrowverse.png',
-          '/characters/dc/batman-tomorrowverse.png',
-          '/characters/dc/superman-tomorrowverse.png',
-          '/characters/dc/supergirl-tomorrowverse.png',
-          
+  "id": "dcamu",
+  "name": "DCAMU",
+  "start_year": "2013",
+  "end_year": "2020",
+  "description": "A consolidated timeline of DC's modern animated movies, covering the interconnected \"DCAMU\" saga from 2013 to 2020.",
+  "iconicCharacters": [
+    "/characters/dc/superman-dcamu.png",
+    "/characters/dc/batman-dcamu.png",
+    "/characters/dc/wonder-woman-dcamu.png",
+    "/characters/dc/flash-dcamu.png",
+    "/characters/dc/zatanna-dcamu.png",
+    "/characters/dc/constantine-dcamu.png",
+  ],
+  "watch_type": [
+    "movies"
+  ],
+  "media": [
+    {
+      "id": "the-flashpoint-paradox-dcamu",
+      "source_id": null,
+      "name": "Justice League: The Flashpoint Paradox"
+    },
+    {
+      "id": "justice-league-war-dcamu",
+      "source_id": null,
+      "name": "Justice League: War"
+    },
+    {
+      "id": "son-of-batman-dcamu",
+      "source_id": null,
+      "name": "Son of Batman"
+    },
+    {
+      "id": "justice-league-throne-of-atlantis-dcamu",
+      "source_id": null,
+      "name": "Justice League: Throne of Atlantis"
+    },
+    {
+      "id": "batman-vs-robin-dcamu",
+      "source_id": null,
+      "name": "Batman vs. Robin"
+    },
+    {
+      "id": "batman-bad-blood-dcamu",
+      "source_id": null,
+      "name": "Batman: Bad Blood"
+    },
+    {
+      "id": "justice-league-vs-teen-titans-dcamu",
+      "source_id": null,
+      "name": "Justice League vs. Teen Titans"
+    },
+    {
+      "id": "justice-league-dark-dcamu",
+      "source_id": null,
+      "name": "Justice League Dark"
+    },
+    {
+      "id": "teen-titans-the-judas-contract-dcamu",
+      "source_id": null,
+      "name": "Teen Titans: The Judas Contract"
+    },
+    {
+      "id": "suicide-squad-hell-to-pay-dcamu",
+      "source_id": null,
+      "name": "Suicide Squad: Hell to Pay"
+    },
+    {
+      "id": "death-and-return-of-superman-dcamu",
+      "source_id": null,
+      "name": "The Death and Return of Superman",
+      "timeline_note": "This represents the two-part story told in 'The Death of Superman' and 'Reign of the Supermen'."
+    },
+    {
+      "id": "constantine-city-of-demons-dcamu",
+      "source_id": null,
+      "name": "Constantine: City of Demons",
+      "timeline_note": "This movie's events occur concurrently with the 'Death of Superman' storyline."
+    },
+    {
+      "id": "wonder-woman-bloodlines-dcamu",
+      "source_id": null,
+      "name": "Wonder Woman: Bloodlines",
+      "timeline_note": "While released later, the majority of this film consists of flashbacks that take place before 'Justice League: War', with the present-day scenes happening after 'Reign of the Supermen'."
+    },
+    {
+      "id": "batman-hush-dcamu",
+      "source_id": null,
+      "name": "Batman: Hush"
+    },
+    {
+      "id": "justice-league-dark-apokolips-war-dcamu",
+      "source_id": null,
+      "name": "Justice League Dark: Apokolips War"
+    },
+    {
+      "id": "constantine-the-house-of-mystery-dcamu",
+      "source_id": null,
+      "name": "Constantine: The House of Mystery",
+      "timeline_note": "This film serves as an epilogue to the DCAMU, directly following the events of 'Apokolips War'."
+    }
+  ],
+  "relationships": [
+    {
+      "toId": "tomorrowverse",
+      "reason": "The Tomorrowverse is the rebooted animated universe that began after the events of 'Justice League Dark: Apokolips War'."
+    }
+  ]
+},{
+      "id": "tomorrowverse",
+      "name": "Tomorrowverse",
+      "start_year": "2020",
+      "description": "The current animated universe that began with 'Superman: Man of Tomorrow', serving as a reboot after the events of the DCAMU.",
+      "iconicCharacters": [
+           "/characters/dc/constantine-tomorrowverse.png",
+          "/characters/dc/flash-tomorrowverse.png",
+          "/characters/dc/wonder-woman-tomorrowverse.png",
+          "/characters/dc/batman-tomorrowverse.png",
+          "/characters/dc/superman-tomorrowverse.png",
+          "/characters/dc/supergirl-tomorrowverse.png"
       ],
-      watch_type: ['movies'],
-      media: [],
+      "watch_type": ["movies"],
+      "media": [
+        {
+          "id": "superman-man-of-tomorrow-tomorrowverse",
+          "source_id": null,
+          "name": "Superman: Man of Tomorrow"
+        },
+        {
+          "id": "justice-society-wwii-tomorrowverse",
+          "source_id": null,
+          "name": "Justice Society: World War II",
+          "timeline_note": "The framing story with The Flash takes place in the present day, but the main plot is set in the past."
+        },
+        {
+          "id": "batman-the-long-halloween-tomorrowverse",
+          "source_id": null,
+          "name": "Batman: The Long Halloween",
+          "timeline_note": "This story is told across two parts."
+        },
+        {
+          "id": "green-lantern-beware-my-power-tomorrowverse",
+          "source_id": null,
+          "name": "Green Lantern: Beware My Power"
+        },
+        {
+          "id": "legion-of-super-heroes-tomorrowverse",
+          "source_id": null,
+          "name": "Legion of Super-Heroes"
+        },
+        {
+          "id": "justice-league-warworld-tomorrowverse",
+          "source_id": null,
+          "name": "Justice League: Warworld"
+        },
+        {
+          "id": "justice-league-crisis-on-infinite-earths-tomorrowverse",
+          "source_id": null,
+          "name": "Justice League: Crisis on Infinite Earths",
+          "timeline_note": "This is a three-part finale to the Tomorrowverse."
+        }
+      ],
+      "relationships": [{
+        "toId": "dcamu",
+        "reason": "This universe is a reboot that follows the conclusion of the DCAMU storyline."
+      }]
     },
     {
       id: 'dcu',
@@ -165,7 +402,82 @@ export const dcUniverse: Universe = {
           '/characters/dc/metamorpho-dcu.png',
       ],
       watch_type: ['tv','movies','games'],
-      media: [],
+      media: [{
+        id:"creature-commandoes",
+        source_id: 219543,
+        name: "Creature Commandoes",
+        
+      },{
+        id:"superman-dcu-2025",
+        source_id: 1061474,
+        name: "Superman",
+        
+      },{
+        id:"supergirl-dcu-2026",
+        source_id: 1081003,
+        name: "Supergirl",
+        
+      },{
+        id:"clayface-dcu-2026",
+        source_id: 1400940,
+        name: "Clayface",
+        
+      },{
+        id:"lanterns-dcu-2026",
+        source_id: 95350,
+        name: "Lanterns",
+        
+      },{
+        id:"waller-dcu",
+        source_id: 201232,
+        name: "Waller",
+        
+      },{
+        id:"booster-gold-dcu",
+        source_id: 219548,
+        name: "Booster Gold",
+        
+      },{
+        id:"paradise-lost-dcu",
+        source_id: 219546,
+        name: "Paradise Lost",
+        
+      },{
+        id:"wonder-woman-dcu",
+        source_id: 1495964,
+        name: "Wonder Woman",
+        
+      },{
+        id:"batman-dcu",
+        source_id: 1081004,
+        name: "Batman Brave And The Bold",
+        
+      },{
+        id:"teen-titans-dcu",
+        source_id: 1259816,
+        name: "Teen Titans",
+        
+      },{
+        id:"sgt-rock-dcu",
+        source_id: 1504329,
+        name: "Sgt. Rock",
+        
+      },{
+        id:"swamp-thing-dcu",
+        source_id: 1080998,
+        name: "Swamp Thing",
+        
+      },{
+        id:"the-authority-dcu",
+        source_id: 1080999,
+        name: "The Authority",
+        
+      },{
+        id:"bane-deathstroke-film-dcu",
+        source_id: 1362897,
+        name: "Bane and Deathstroke Film",
+        
+      },],
       relationships: [{
         toId: 'dceu',
         reason: 'Serves as a wide-scale reboot of the previous cinematic universe.'
@@ -183,7 +495,7 @@ export const dcUniverse: Universe = {
         '/characters/dc/jonathon-kent-smallville.png',
         '/characters/dc/martha-kent-smallville.png',
         '/characters/dc/lois-lane-smallville.png',
-        '/characters/dc/lex-luthor-smallville.png',
+        
       ],
       watch_type: ['tv'],
       media: [],

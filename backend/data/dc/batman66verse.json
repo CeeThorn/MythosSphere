@@ -1,0 +1,45 @@
+{
+  "id": "batman66verse",
+  "name": "Batman '66 Universe",
+  "start_year": "1966",
+  "end_year": "2017",
+  "description": "The campy, pop-art universe that began with the classic 1960s TV show starring Adam West and Burt Ward. This continuity was officially continued decades later with two animated sequel films.",
+  "iconicCharacters": [
+    "/characters/dc/batman-batman-66.png",
+    "/characters/dc/robin-batman-66.png",
+    "/characters/dc/catwoman-batman-66.png",
+    "/characters/dc/joker-batman-66.png",
+    "/characters/dc/riddler-batman-66.png",
+    "/characters/dc/penguin-batman-66.png"
+  ],
+  "watch_type": [
+    "tv",
+    "movies"
+  ],
+  "media": [
+    {
+      "id": "batman-66-tv-series",
+      "source_id": 2287,
+      "name": "Batman (1966 TV Series)"
+    },
+    {
+      "id": "batman-the-movie-1966",
+      "source_id": 2661,
+      "name": "Batman: The Movie",
+      "timeline_note": "This film was released between the first and second seasons of the TV series."
+    },
+    {
+      "id": "batman-return-of-the-caped-crusaders-2016",
+      "source_id": 411736,
+      "name": "Batman: Return of the Caped Crusaders",
+      "timeline_note": "An animated sequel film released for the 50th anniversary, featuring the voices of Adam West, Burt Ward, and Julie Newmar."
+    },
+    {
+      "id": "batman-vs-two-face-2017",
+      "source_id": 464882,
+      "name": "Batman vs. Two-Face",
+      "timeline_note": "The final performance of Adam West as Batman, this animated sequel introduces a '66 version of Two-Face."
+    }
+  ],
+  "relationships": []
+}

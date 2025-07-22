@@ -1,32 +1,57 @@
-import { useState } from "react";
-import { type Universe } from "../../lib/data";
-import { CharacterSlideshow } from "../CharacterSlideshow";
+import { useEffect, useState } from "react";
+import { CharacterSlideshow } from "../characterslideshow";
+import { type Universe, fetchUniverses } from "@/API/Flask_API";
 
 interface UniverseSelectorProps {
-  universes: Universe[];
   onSelectUniverse: (universe: Universe) => void;
 }
 
 export const UniverseSelector = ({
-  universes,
   onSelectUniverse,
 }: UniverseSelectorProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [universes, setUniverses] = useState<Universe[] | null>(null);
+
+  useEffect(() => {
+    const getUniverses = async () => {
+      const response = await fetchUniverses();
+      if (response) {
+        setUniverses(response);
+      } else {
+        console.log("Failed to acquire universes");
+      }
+    };
+
+    getUniverses();
+  }, []);
 
   const handleNext = () => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % universes.length);
+    if (universes) {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % universes.length);
+    }
   };
 
   const handlePrev = () => {
-    setActiveIndex(
-      (prevIndex) => (prevIndex - 1 + universes.length) % universes.length
-    );
+    if (universes) {
+      setActiveIndex(
+        (prevIndex) => (prevIndex - 1 + universes.length) % universes.length
+      );
+    }
   };
 
+  //Replace witha  loading screen later on
+  if (!universes) {
+    return (
+      <div className="h-screen w-full flex items-center justify-center bg-black text-white">
+        Loading Universes...
+      </div>
+    );
+  }
+
   return (
-    <div className="h-screen w-full flex flex-col justify-center items-center bg-white overflow-hidden">
+    <div className="h-screen w-full flex flex-col justify-center items-center bg-black overflow-hidden">
       {/* The list container no longer rotates. It's just a stage. */}
-      <div className="relative w-full h-[600px] [perspective:1000px]">
+      <div className="relative w-full h-[650px] [perspective:1000px]">
         {universes.map((universe, index) => {
           /* This block of code is determining the styles for each card in the slideshow based on its
           position relative to the active card. Here's a breakdown of what each part is doing: */
@@ -75,7 +100,7 @@ export const UniverseSelector = ({
           return (
             <div
               key={universe.id}
-              className="absolute w-[70vw] max-w-[700px] h-[600px] transition-all duration-700 ease-in-out"
+              className="absolute w-[80vw] max-w-[960px] h-[540px] transition-all duration-700 ease-in-out"
               style={{
                 transform,
                 opacity,
@@ -84,8 +109,8 @@ export const UniverseSelector = ({
                 // Position the div in the center of the container
                 top: "50%",
                 left: "50%",
-                marginLeft: "-35vw", // Half of width
-                marginTop: "-300px", // Half of height
+                marginLeft: "-40vw",
+                marginTop: "-270px",
               }}
               onClick={() => isActive && onSelectUniverse(universe)}
             >

@@ -1,0 +1,52 @@
+{
+  "id": "reeve-superman-verse",
+  "name": "The Reeve Superman-verse",
+  "start_year": "1978",
+  "end_year": "2006",
+  "description": "The iconic universe that began with Christopher Reeve's 'Superman: The Movie'. This continuity includes the original film series, its 'Supergirl' spin-off, and the 2006 spiritual sequel 'Superman Returns'.",
+  "iconicCharacters": [
+    "/characters/dc/superman-reeveverse.png",
+    "/characters/dc/lois-lane-reeveverse.png",
+    "/characters/dc/lex-luthor-reeveverse.png",
+    "/characters/dc/supergirl-reeveverse.png",
+    "/characters/dc/superman-returns.png"
+  ],
+  "watch_type": [
+    "movies"
+  ],
+  "media": [
+    {
+      "id": "superman-1978-reeveverse",
+      "source_id": 1924,
+      "name": "Superman: The Movie"
+    },
+    {
+      "id": "superman-2-1980-reeveverse",
+      "source_id": 8536,
+      "name": "Superman II"
+    },
+    {
+      "id": "superman-3-1983-reeveverse",
+      "source_id": 9531,
+      "name": "Superman III"
+    },
+    {
+      "id": "supergirl-1984-reeveverse",
+      "source_id": 9651,
+      "name": "Supergirl",
+      "timeline_note": "A direct spin-off set within the continuity of the Christopher Reeve Superman films."
+    },
+    {
+      "id": "superman-4-1987-reeveverse",
+      "source_id": 11411,
+      "name": "Superman IV: The Quest for Peace"
+    },
+    {
+      "id": "superman-returns-2006-reeveverse",
+      "source_id": 1452,
+      "name": "Superman Returns",
+      "timeline_note": "This film serves as a spiritual sequel and homage, intended to follow the events of 'Superman II' while ignoring 'Superman III' and 'IV'."
+    }
+  ],
+  "relationships": []
+}

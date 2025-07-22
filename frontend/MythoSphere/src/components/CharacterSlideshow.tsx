@@ -11,6 +11,10 @@ export const CharacterSlideshow = ({
 }: CharacterSlideshowProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  if (!images || images.length === 0) {
+    return null; //Replace with loading screen later
+  }
+
   useEffect(() => {
     // Only run the slideshow if this card is active and there's more than one image
     if (isActive && images.length > 1) {

@@ -1,0 +1,69 @@
+{
+  "id": "legodcverse",
+  "name": "LEGO DC Super Heroes Universe",
+  "start_year": "2013",
+  "end_year": "2020",
+  "description": "The interconnected universe of direct-to-video animated films featuring the LEGO versions of DC characters. Known for its family-friendly humor and action, this continuity is separate from the theatrical LEGO movies.",
+  "iconicCharacters": [
+    "/characters/dc/batman-lego-dcv.png",
+    "/characters/dc/superman-lego-dcv.png",
+    "/characters/dc/wonder-woman-lego-dcv.png",
+    "/characters/dc/flash-lego-dcv.png",
+    "/characters/dc/cyborg-lego-dcv.png",
+    "/characters/dc/green-lantern-lego-dcv.png",
+    "/characters/dc/joker-lego-dcv.png",
+    "/characters/dc/shazam-lego-dcv.png"
+  ],
+  "watch_type": [
+    "movies"
+  ],
+  "media": [
+    {
+      "id": "lego-batman-the-movie-dc-super-heroes-unite-lego-dcv",
+      "source_id": 177271,
+      "name": "Lego Batman the Movie: DC Super Heroes Unite",
+      "timeline_note": "This film is an adaptation of the 'Lego Batman 2: DC Super Heroes' video game and serves as the starting point for this universe."
+    },
+    {
+      "id": "lego-dc-justice-league-vs-bizarro-league-lego-dcv",
+      "source_id": 322456,
+      "name": "Lego DC Comics Super Heroes: Justice League vs. Bizarro League"
+    },
+    {
+      "id": "lego-dc-justice-league-attack-of-the-legion-of-doom-lego-dcv",
+      "source_id": 353595,
+      "name": "Lego DC Comics Super Heroes: Justice League - Attack of the Legion of Doom"
+    },
+    {
+      "id": "lego-dc-justice-league-cosmic-clash-lego-dcv",
+      "source_id": 382512,
+      "name": "Lego DC Comics Super Heroes: Justice League - Cosmic Clash"
+    },
+    {
+      "id": "lego-dc-justice-league-gotham-city-breakout-lego-dcv",
+      "source_id": 396330,
+      "name": "Lego DC Comics Super Heroes: Justice League - Gotham City Breakout"
+    },
+    {
+      "id": "lego-dc-super-heroes-the-flash-lego-dcv",
+      "source_id": 504997,
+      "name": "Lego DC Super Heroes: The Flash"
+    },
+    {
+      "id": "lego-dc-super-heroes-aquaman-rage-of-atlantis-lego-dcv",
+      "source_id": 513736,
+      "name": "Lego DC Super Heroes: Aquaman - Rage of Atlantis"
+    },
+    {
+      "id": "lego-dc-batman-family-matters-lego-dcv",
+      "source_id": 602307,
+      "name": "Lego DC Batman: Family Matters"
+    },
+    {
+      "id": "lego-dc-shazam-magic-and-monsters-lego-dcv",
+      "source_id": 690369,
+      "name": "Lego DC Shazam!: Magic and Monsters"
+    }
+  ],
+  "relationships": []
+}

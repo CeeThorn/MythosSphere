@@ -1,0 +1,114 @@
+{
+  "id": "dceu",
+  "name": "DCEU",
+  "start_year": "2013",
+  "end_year": "2023",
+  "description": "The cinematic universe that began with Man of Steel (2013) and concluded with Aquaman and the Lost Kingdom (2023), leading into the new DCU.",
+  "iconicCharacters": [
+    "/characters/dc/superman-dceu.png",
+    "/characters/dc/batman-dceu.png",
+    "/characters/dc/wonder-woman-dceu.png",
+    "/characters/dc/shazam-dceu.png",
+    "/characters/dc/flash-dceu.png",
+    "/characters/dc/blue-beetle-dceu.png",
+    "/characters/dc/harley-quinn-dceu.png"
+  ],
+  "watch_type": [
+    "movies",
+    "tv"
+  ],
+  "media": [
+    {
+      "id": "wonder-woman-dceu",
+      "source_id": 297762,
+      "name": "Wonder Woman",
+      "timeline_note": "The majority of this film takes place in 1918, making it the chronological starting point for the DCEU's history. The framing story is set in the present day, after 'Batman v Superman'."
+    },
+    {
+      "id": "wonder-woman-1984-dceu",
+      "source_id": 464052,
+      "name": "Wonder Woman 1984"
+    },
+    {
+      "id": "man-of-steel-dceu",
+      "source_id": 49521,
+      "name": "Man of Steel"
+    },
+    {
+      "id": "batman-v-superman-dceu",
+      "source_id": 209112,
+      "name": "Batman v Superman: Dawn of Justice"
+    },
+    {
+      "id": "suicide-squad-2016-dceu",
+      "source_id": 297761,
+      "name": "Suicide Squad (2016)"
+    },
+    {
+      "id": "justice-league-dceu",
+      "source_id": 141052,
+      "name": "Justice League",
+      "timeline_note": "Zack Snyder's Justice League (2021) is an alternate, non-canon version of this film."
+    },
+    {
+      "id": "aquaman-dceu",
+      "source_id": 297802,
+      "name": "Aquaman"
+    },
+    {
+      "id": "shazam-dceu",
+      "source_id": 287947,
+      "name": "Shazam!"
+    },
+    {
+      "id": "birds-of-prey-dceu",
+      "source_id": 495764,
+      "name": "Birds of Prey"
+    },
+    {
+      "id": "the-suicide-squad-2021-dceu",
+      "source_id": 436969,
+      "name": "The Suicide Squad (2021)"
+    },
+    {
+      "id": "peacemaker-dceu",
+      "source_id": 110492,
+      "name": "Peacemaker",
+      "timeline_note": "This TV series immediately follows the events of 'The Suicide Squad'."
+    },
+    {
+      "id": "black-adam-dceu",
+      "source_id": 436270,
+      "name": "Black Adam"
+    },
+    {
+      "id": "shazam-fury-of-the-gods-dceu",
+      "source_id": 594767,
+      "name": "Shazam! Fury of the Gods"
+    },
+{
+      "id": "aquaman-and-the-lost-kingdom-dceu",
+      "source_id": 572802,
+      "name": "Aquaman and the Lost Kingdom"
+    },
+    {
+      "id": "the-flash-dceu",
+      "source_id": 298618,
+      "name": "The Flash",
+      "timeline_note": "The events of this film directly lead to the reboot of the timeline, ending the DCEU and setting the stage for the new DCU."
+    },
+    {
+      "id": "blue-beetle-dceu",
+      "source_id": 565770,
+      "name": "Blue Beetle",
+      "timeline_note": "While a DCEU film, the main character is considered the first official character of the new DCU."
+    }
+    
+  ],
+  "relationships": [
+    {
+      "toId": "dcu",
+      "reason": "This universe was officially rebooted into the new DCU following the events of 'The Flash'."
+    }
+  ]
+}
