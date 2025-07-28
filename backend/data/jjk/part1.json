@@ -1,0 +1,30 @@
+{
+  "id": "part-1",
+  "name": "Part 1 (Season 1)",
+  "description": "Covers Yuji Itadori’s journey into the world of Jujutsu and the early battles with curses.",
+  "overview": "From his first contact with curses to the Kyoto Goodwill Event and Death Painting Arc.",
+  "iconicCharacters": [
+    "/characters/jjk/U-Pics/U-Pics-itadori.png",
+    "/characters/jjk/U-Pics/jjk-dope.png",
+    "/characters/jjk/U-Pics/gojo.png",
+    "/characters/jjk/megumi-ss1.png",
+    "/characters/jjk/Death-Painting-Arc/nobara-goat.png",
+    "/characters/jjk/Fearsome Womb Arc/sukuna.png",
+    "/characters/jjk/gojo-last-fight.png"
+  ],
+  "media": [
+    {
+      "id": "death-painting-wombs",
+      "source_id": 40866,
+      "name": "Death Painting Arc"
+    },
+    {
+      "id": "vs-mahito",
+      "source_id": 40866,
+      "name": "Vs. Mahito Arc"
+    }
+  ],
+  "watch_type": ["anime"],
+  "start_year": "2020",
+  "end_year": "2021"
+}

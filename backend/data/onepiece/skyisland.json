@@ -1,0 +1,17 @@
+{
+  "id": "sky-island",
+  "name": "Sky Island Saga",
+  "description": "The Straw Hats reach the sky island of Skypiea and uncover ancient mysteries.",
+  "iconicCharacters": [
+    "/characters/one-piece/Skypiea/enel.png",
+    "/characters/one-piece/Skypiea/asure-skypiea.png"
+  ],
+  "media": [
+    { "id": "jaya", "source_id": 21, "name": "Jaya Arc" },
+    { "id": "skypiea", "source_id": 21, "name": "Skypiea Arc" }
+  ],
+  "watch_type": ["anime"],
+  "start_year": "2003",
+  "end_year": "2004",
+  "overview": "In the Sky Island Saga, the Straw Hats confront the god-like Enel and explore ancient civilizations and poneglyphs."
+}

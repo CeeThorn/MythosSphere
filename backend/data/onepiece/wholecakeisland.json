@@ -1,0 +1,22 @@
+{
+  "id": "whole-cake-island",
+  "name": "Whole Cake Island Saga",
+  "description": "Luffy attempts to rescue Sanji from Big Mom’s territory.",
+  "iconicCharacters": [
+       "/characters/one-piece/Whole-Cake-Island/671-lg.png",
+    "/characters/one-piece/Whole-Cake-Island/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.u2.png",
+    "/characters/one-piece/Whole Cake Island/AA1oahl2.png",
+    "/characters/one-piece/Whole Cake Island/eeknt8ixy6u41-1.png",
+    "/characters/one-piece/Whole Cake Island/One-Piece-Whole-Cake-Island-Sanji-Crying-1.png",
+    "/characters/one-piece/Whole Cake Island/tumblr_938ed565a735a51981c62ea894da91dd_10ac5d46_1280.png"
+  ],
+  "media": [
+    { "id": "zou", "source_id": 21, "name": "Zou Arc" },
+    { "id": "whole-cake-island", "source_id": 21, "name": "Whole Cake Island Arc" },
+    { "id": "levely", "source_id": 21, "name": "Levely Arc" }
+  ],
+  "watch_type": ["anime"],
+  "start_year": "2016",
+  "end_year": "2019",
+  "overview": "Whole Cake Island Saga features infiltration and confrontation with Big Mom."
+}

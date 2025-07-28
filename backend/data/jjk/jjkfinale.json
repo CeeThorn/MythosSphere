@@ -1,0 +1,45 @@
+{
+  "id": "finale",
+  "name": "Finale",
+  "description": "Final acts of the Jujutsu Kaisen manga.",
+  "overview": "Shinjuku Showdown and beyond as the story races to its conclusion.",
+  "iconicCharacters": [
+    "/characters/jjk/U-Pics/U-Pics-itadori.png",
+    "/characters/jjk/U-Pics/jjk-dope.png",
+    "/characters/jjk/U-Pics/gojo.png",
+    "/characters/jjk/megumi-ss1.png",
+    "/characters/jjk/Death-Painting-Arc/nobara-goat.png",
+    "/characters/jjk/Fearsome Womb Arc/sukuna.png",
+    "/characters/jjk/gojo-last-fight.png"
+  ],
+  "media": [
+    {
+      "id": "shinjuku-showdown",
+      "source_id": 113138,
+      "name": "Shinjuku Showdown Arc"
+    },
+    {
+      "id": "post-culling-games",
+      "source_id": 113138,
+      "name": "Post-Culling Games Arc"
+    },
+    {
+      "id": "shibuya-aftermath",
+      "source_id": 113138,
+      "name": "Shibuya Aftermath Arc"
+    },
+    {
+      "id": "kenjaku-invasion",
+      "source_id": 113138,
+      "name": "Kenjaku Invasion Arc"
+    },
+    {
+      "id": "endgame",
+      "source_id": 113138,
+      "name": "Endgame Arc"
+    }
+  ],
+  "watch_type": ["manga"],
+  "start_year": "2024",
+  "end_year": ""
+}

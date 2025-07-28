@@ -1,0 +1,35 @@
+{
+  "id": "jjk-0",
+  "name": "Jujutsu Kaisen 0",
+  "description": "The prequel story that introduces the world of Jujutsu Sorcerers and the events leading up to the main series.",
+  "overview": "A movie prequel focusing on Yuta Okkotsu and the origins of cursed energy in the Jujutsu Kaisen world.",
+  "iconicCharacters": [
+    "/characters/jjk/JJK-0/yuta-jjk0.png",
+    "/characters/jjk/JJK-0/suguru-geto.png"
+  ],
+  "media": [
+    {
+      "id": "introduction",
+      "source_id": 40866,
+      "name": "Introduction Arc"
+    },
+    {
+      "id": "vs-noritoshi-kamo",
+      "source_id": 40866,
+      "name": "Vs. Noritoshi Kamo Arc"
+    },
+    {
+      "id": "vs-sukuna",
+      "source_id": 40866,
+      "name": "Vs. Sukuna Arc"
+    },
+    {
+      "id": "vs-fushiguro",
+      "source_id": 40866,
+      "name": "Vs. Fushiguro Arc"
+    }
+  ],
+  "watch_type": ["anime"],
+  "start_year": "2021",
+  "end_year": "2021"
+}

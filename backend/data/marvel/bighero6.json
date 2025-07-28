@@ -1,0 +1,22 @@
+{
+  "id": "big-hero-6",
+  "name": "Big Hero 6 Universe",
+  "description": "A futuristic blend of superhero action and robotics, following Hiro Hamada and Baymax as they protect San Fransokyo.",
+  "iconicCharacters": [
+    "/characters/marvel/big-hero-6/hiro.png",
+    "/characters/marvel/big-hero-6/baymax.png",
+    "/characters/marvel/big-hero-6/go-go.png",
+    "/characters/marvel/big-hero-6/honey-lemon.png",
+    "/characters/marvel/big-hero-6/wasabi.png",
+    "/characters/marvel/big-hero-6/fred.png"
+  ],
+  "media": [
+    { "id": "big-hero-6", "source_id": 177572, "name": "Big Hero 6 (2014)" },
+    { "id": "big-hero-6-the-series", "source_id": 73055, "name": "Big Hero 6: The Series (2017–2021)" },
+    { "id": "baymax", "source_id": 113988, "name": "Baymax! (2022)" },
+    { "id": "feast", "source_id": 24450, "name": "Feast (2014 short)" }
+  ],
+  "start_year": "2014",
+  "end_year": "2022",
+  "overview": "The Big Hero 6 universe mixes Marvel’s team-based heroism with a Disney twist, centering on Hiro and Baymax as they face off against tech-powered threats."
+}

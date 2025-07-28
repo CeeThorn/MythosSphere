@@ -1,0 +1,12 @@
+{
+  "id": "marvel",
+  "name": "Marvel",
+  "description": "Explore a cosmos of heroes, villains, and epic stories, from Earth's Mightiest Heroes to the Children of the Atom.",
+  "logoUrl": "/Universe Logos/marvel-logo.png",
+  "iconicCharacters": [
+    "/characters/marvel/spider-man.png",
+    "/characters/marvel/hulk.png",
+    "/characters/marvel/wolverine.png",
+    "/characters/marvel/thor.png"
+  ]
+}

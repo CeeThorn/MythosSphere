@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useLayoutEffect } from "react";
 import { type Galaxy } from "../../lib/data";
-import { GalaxyCard } from "./galaxycard";
+import {GalaxyCard } from "./galaxycard";
 
 interface ScrollingRowProps {
   galaxies: Galaxy[];

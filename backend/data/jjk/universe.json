@@ -1,0 +1,15 @@
+{
+  "id": "jujutsu-kaisen",
+  "name": "Jujutsu Kaisen",
+  "description": "Enter a world of curses and sorcerers, where the battle against malevolent spirits shapes the fate of humanity.",
+  "logoUrl": "/Universe Logos/jujutsu-kaisen-logo.png",
+  "iconicCharacters": [
+    "/characters/jjk/U-Pics/U-Pics-itadori.png",
+    "/characters/jjk/U-Pics/jjk-dope.png",
+    "/characters/jjk/U-Pics/gojo.png",
+    "/characters/jjk/megumi-ss1.png",
+    "/characters/jjk/Death-Painting-Arc/nobara-goat.png",
+    "/characters/jjk/Fearsome Womb Arc/sukuna.png",
+    "/characters/jjk/gojo-last-fight.png"
+  ]
+}
