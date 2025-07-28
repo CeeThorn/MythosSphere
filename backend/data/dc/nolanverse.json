@@ -1,0 +1,39 @@
+{
+  "id": "nolanverse",
+  "name": "The Nolanverse (The Dark Knight Trilogy)",
+  "start_year": "2005",
+  "end_year": "2012",
+  "description": "Christopher Nolan's grounded and realistic cinematic take on the Batman mythos, known for its practical effects and dark, serious tone.",
+  "iconicCharacters": [
+    "/characters/dc/batman-dark-knight.png",
+    "/characters/dc/joker-dark-knight.png",
+    "/characters/dc/bane-dark-knight.png",
+    "/characters/dc/two-face-dark-knight.png"
+  ],
+  "watch_type": [
+    "movies"
+  ],
+  "media": [
+    {
+      "id": "batman-begins-nolanverse",
+      "source_id": 272,
+      "name": "Batman Begins"
+    },
+    {
+      "id": "the-dark-knight-nolanverse",
+      "source_id": 155,
+      "name": "The Dark Knight"
+    },
+    {
+      "id": "the-dark-knight-rises-nolanverse",
+      "source_id": 49026,
+      "name": "The Dark Knight Rises"
+    }
+  ],
+  "relationships": [
+    {
+      "toId": "dcu",
+      "reason": "This is a self-contained, 'Elseworlds'-style trilogy that is separate from any other DC cinematic universe."
+    }
+  ]
+}

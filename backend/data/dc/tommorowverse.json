@@ -1,0 +1,76 @@
+{
+  "id": "tomorrowverse",
+  "name": "Tomorrowverse",
+  "start_year": "2020",
+  "description": "The current animated universe that began with 'Superman: Man of Tomorrow', serving as a reboot after the events of the DCAMU.",
+  "iconicCharacters": [
+    "/characters/dc/constantine-tomorrowverse.png",
+          "/characters/dc/flash-tomorrowverse.png",
+          "/characters/dc/wonder-woman-tomorrowverse.png",
+          "/characters/dc/batman-tomorrowverse.png",
+          "/characters/dc/superman-tomorrowverse.png",
+          "/characters/dc/supergirl-tomorrowverse.png"
+  ],
+  "watch_type": [
+    "movies"
+  ],
+  "media": [
+{
+      "id": "justice-society-wwii-tomorrowverse",
+      "source_id": 736069,
+      "name": "Justice Society: World War II",
+      "timeline_note": "The framing story with The Flash takes place in the present day, but the main plot is set in the past."
+    },
+    {
+      "id": "superman-man-of-tomorrow-tomorrowverse",
+      "source_id": 618354,
+      "name": "Superman: Man of Tomorrow"
+    },
+    {
+      "id": "batman-the-long-halloween-part-1-tomorrowverse",
+      "source_id": 736073,
+      "name": "Batman: The Long Halloween, Part One"
+    },
+    {
+      "id": "batman-the-long-halloween-part-2-tomorrowverse",
+      "source_id": 736074,
+      "name": "Batman: The Long Halloween, Part Two"
+    },
+    {
+      "id": "green-lantern-beware-my-power-tomorrowverse",
+      "source_id": 887357,
+      "name": "Green Lantern: Beware My Power"
+    },
+    {
+      "id": "legion-of-super-heroes-tomorrowverse",
+      "source_id": 1003580,
+      "name": "Legion of Super-Heroes"
+    },
+    {
+      "id": "justice-league-warworld-tomorrowverse",
+      "source_id": 1003581,
+      "name": "Justice League: Warworld"
+    },
+    {
+      "id": "justice-league-crisis-on-infinite-earths-part-1-tomorrowverse",
+      "source_id": 1155089,
+      "name": "Justice League: Crisis on Infinite Earths - Part One"
+    },
+    {
+      "id": "justice-league-crisis-on-infinite-earths-part-2-tomorrowverse",
+      "source_id": 1209288,
+      "name": "Justice League: Crisis on Infinite Earths - Part Two"
+    },
+    {
+      "id": "justice-league-crisis-on-infinite-earths-part-3-tomorrowverse",
+      "source_id": 1209290,
+      "name": "Justice League: Crisis on Infinite Earths - Part Three"
+    }
+  ],
+  "relationships": [
+    {
+      "toId": "dcamu",
+      "reason": "This universe is a reboot that follows the conclusion of the DCAMU storyline."
+    }
+  ]
+}

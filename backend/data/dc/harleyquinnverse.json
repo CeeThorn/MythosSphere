@@ -1,0 +1,31 @@
+{
+  "id": "harleyquinnverse",
+  "name": "Harley Quinn's Universe",
+  "start_year": "2019",
+  "description": "An adult animated universe following Harley Quinn's misadventures and her crew after her explosive breakup with the Joker. Known for its meta-humor and mature themes.",
+  "iconicCharacters": [
+    "/characters/dc/harley-quinn-hq-series.png",
+    "/characters/dc/poison-ivy-hq-series.png",
+    "/characters/dc/king-shark-hq-series.png",
+    "/characters/dc/clayface-hq-series.png",
+    "/characters/dc/kite-man-hq-series.png",
+    "/characters/dc/batman-hq-series.png"
+  ],
+  "watch_type": [
+    "tv"
+  ],
+  "media": [
+    {
+      "id": "harley-quinn-main-series",
+      "source_id": 74440,
+      "name": "Harley Quinn"
+    },
+    {
+      "id": "kite-man-hell-yeah-series",
+      "source_id": 200753,
+      "name": "Kite Man: Hell Yeah!",
+      "timeline_note": "A spin-off series set in the same universe, following the adventures of Kite Man and Golden Glider."
+    }
+  ],
+  "relationships": []
+}

@@ -1,0 +1,103 @@
+{
+  "id": "cwverse",
+  "name": "CWverse",
+  "start_year": "2001",
+  "end_year": "2024",
+  "description": "A consolidated galaxy of live-action DC shows from The CW network. It includes the core 'Arrowverse' and other interconnected series like 'Smallville' and 'Superman & Lois', which were linked via multiverse crossover events.",
+  "iconicCharacters": [
+    "/characters/dc/clark-kent-smallville-cwverse.png",
+	"/characters/dc/lex-luthor-smallville-cwverse.png",
+    "/characters/dc/green-arrow-arrowverse.png",
+    "/characters/dc/flash-arrowverse.png",
+    "/characters/dc/white-canary-arrowverse.png",
+    "/characters/dc/constantine-arrowverse.png",
+    "/characters/dc/supergirl-arrowverse.png",
+    "/characters/dc/superman-arrowverse.png",
+    "/characters/dc/batwoman-arrowverse.png",
+    "/characters/dc/black-lightning-cwverse.png",
+    "/characters/dc/stargirl-stargirl-cwverse.png",
+    "/characters/dc/clark-and-lois-superman-and-lois-cwverse.png",
+    "/characters/dc/robin-titans-cwverse.png"
+  ],
+  "watch_type": [
+    "tv"
+  ],
+  "media": [
+    {
+      "id": "smallville-cwverse",
+      "source_id": 4604,
+      "name": "Smallville",
+      "timeline_note": "Exists on its own Earth (Earth-167). Its characters and world were officially brought into the Arrowverse's multiverse during the 'Crisis on Infinite Earths' crossover event."
+    },
+    {
+      "id": "arrow-cwverse",
+      "source_id": 1412,
+      "name": "Arrow",
+      "timeline_note": "The foundational show of the Arrowverse, set on Earth-1."
+    },
+    {
+      "id": "the-flash-cwverse",
+      "source_id": 60735,
+      "name": "The Flash",
+      "timeline_note": "The first direct spin-off from 'Arrow', also set on Earth-1."
+    },
+    {
+      "id": "constantine-cwverse",
+      "source_id": 60743,
+      "name": "Constantine",
+      "timeline_note": "Originally an NBC show, the character was integrated into the Arrowverse on Earth-1 after its cancellation, becoming a regular on 'Legends of Tomorrow'."
+    },
+    {
+      "id": "supergirl-cwverse",
+      "source_id": 62688,
+      "name": "Supergirl",
+      "timeline_note": "Began on its own Earth (Earth-38) and later merged with Earth-1 to become Earth-Prime after 'Crisis on Infinite Earths'."
+    },
+    {
+      "id": "legends-of-tomorrow-cwverse",
+      "source_id": 62643,
+      "name": "DC's Legends of Tomorrow"
+    },
+    {
+      "id": "black-lightning-cwverse",
+      "source_id": 71663,
+      "name": "Black Lightning",
+      "timeline_note": "Began on its own separate Earth and was merged into Earth-Prime after 'Crisis on Infinite Earths'."
+    },
+    {
+      "id": "titans-live-action-cwverse",
+      "source_id": 75450,
+      "name": "Titans",
+      "timeline_note": "A separate universe (Earth-9) that was officially acknowledged during the 'Crisis on Infinite Earths' crossover."
+    },
+    {
+      "id": "doom-patrol-live-action-cwverse",
+      "source_id": 79501,
+      "name": "Doom Patrol",
+      "timeline_note": "A separate universe (Earth-21) that was officially acknowledged during the 'Crisis on Infinite Earths' crossover."
+    },
+    {
+      "id": "batwoman-cwverse",
+      "source_id": 89247,
+      "name": "Batwoman"
+    },
+    {
+      "id": "stargirl-cwverse",
+      "source_id": 80986,
+      "name": "Stargirl",
+      "timeline_note": "Set on the post-Crisis Earth-2. While connected to the multiverse, it remains in its own continuity."
+    },
+    {
+      "id": "superman-and-lois-cwverse",
+      "source_id": 95057,
+      "name": "Superman & Lois",
+      "timeline_note": "Initially presented as a direct spin-off set on Earth-Prime, this series was later retconned to be in its own separate universe."
+    }
+  ],
+  "relationships": [
+    {
+      "toId": "dcu",
+      "reason": "The CWverse concluded prior to the launch of the new DCU."
+    }
+  ]
+}
