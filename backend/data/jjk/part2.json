@@ -1,0 +1,25 @@
+{
+  "id": "part-2",
+  "name": "Part 2 (Shibuya Incident)",
+  "description": "Curses attack Shibuya on Halloween; a major turning point in the story.",
+  "overview": "The battle-heavy arc showcasing the biggest shift in the power dynamics of the JJK world.",
+  "iconicCharacters": [
+    "/characters/jjk/U-Pics/U-Pics-itadori.png",
+    "/characters/jjk/U-Pics/jjk-dope.png",
+    "/characters/jjk/U-Pics/gojo.png",
+    "/characters/jjk/megumi-ss1.png",
+    "/characters/jjk/Death-Painting-Arc/nobara-goat.png",
+    "/characters/jjk/Fearsome Womb Arc/sukuna.png",
+    "/characters/jjk/gojo-last-fight.png"
+  ],
+  "media": [
+    {
+      "id": "shibuya-incident",
+      "source_id": 40866,
+      "name": "Shibuya Incident Arc"
+    }
+  ],
+  "watch_type": ["anime"],
+  "start_year": "2023",
+  "end_year": "2023"
+}

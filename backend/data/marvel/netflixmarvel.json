@@ -1,0 +1,25 @@
+{
+  "id": "netflix-marvel",
+  "name": "Netflix Marvel",
+  "description": "The collection of Marvel TV shows and movies originally produced for or primarily associated with Netflix, featuring darker, street-level heroes and interconnected storylines.",
+  "start_year": "2015",
+  "end_year": "2019",
+  "iconicCharacters": [
+    "Daredevil",
+    "Jessica Jones",
+    "Luke Cage",
+    "Iron Fist",
+    "Punisher",
+    "Colleen Wing",
+    "Claire Temple"
+  ],
+  "media": [
+    { "id": "daredevil", "source_id": 45639, "name": "Daredevil (2015–2018)" },
+    { "id": "jessica-jones", "source_id": 63174, "name": "Jessica Jones (2015–2019)" },
+    { "id": "luke-cage", "source_id": 63175, "name": "Luke Cage (2016–2018)" },
+    { "id": "iron-fist", "source_id": 67915, "name": "Iron Fist (2017–2018)" },
+    { "id": "the-punisher", "source_id": 45824, "name": "The Punisher (2017–2019)" },
+    { "id": "the-defenders", "source_id": 67466, "name": "The Defenders (2017)" }
+  ],
+  "overview": "This galaxy features the Marvel shows produced exclusively for Netflix, focusing on gritty, street-level superheroes with interconnected storylines culminating in the crossover event, The Defenders."
+}

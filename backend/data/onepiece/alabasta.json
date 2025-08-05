@@ -1,0 +1,21 @@
+{
+  "id": "alabasta",
+  "name": "Alabasta Saga",
+  "description": "The Straw Hat Pirates journey to stop a rebellion and face the warlord Crocodile.",
+  "iconicCharacters": [
+    "/characters/one-piece/Alabasta/vivi.png",
+    "/characters/one-piece/Alabasta/croc.png",
+    "/characters/one-piece/Alabasta/ace-alabasta.png"
+  ],
+  "media": [
+    { "id": "reverse-mountain", "source_id": 21, "name": "Reverse Mountain Arc" },
+    { "id": "whisky-peak", "source_id": 21, "name": "Whisky Peak Arc" },
+    { "id": "little-garden", "source_id": 21, "name": "Little Garden Arc" },
+    { "id": "drum-island", "source_id": 21, "name": "Drum Island Arc" },
+    { "id": "arabasta", "source_id": 21, "name": "Arabasta Arc" }
+  ],
+  "watch_type": ["anime"],
+  "start_year": "2001",
+  "end_year": "2003",
+  "overview": "The Arabasta Saga sees the crew travel through dangerous territories to help Princess Vivi stop a rebellion. It climaxes in an epic confrontation with the warlord Crocodile."
+}

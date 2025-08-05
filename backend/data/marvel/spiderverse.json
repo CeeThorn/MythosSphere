@@ -1,0 +1,13 @@
+{
+  "id": "spider-verse",
+  "name": "Spider-Verse",
+  "description": "The animated multiverse saga following different Spider-People, beginning with Into the Spider-Verse.",
+  "iconicCharacters": [],
+  "media": [
+    { "id": "into-the-spider-verse", "source_id": 324857, "name": "Spider-Man: Into the Spider‑Verse" },
+    { "id": "across-the-spider-verse", "source_id": 610253, "name": "Spider-Man: Across the Spider‑Verse" }
+  ],
+  "start_year": "2018",
+  "end_year": "",
+  "overview": "The Spider‑Verse is an animated multiverse of Spider‑People that began with the critically acclaimed Into the Spider‑Verse."
+}

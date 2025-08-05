@@ -1,0 +1,22 @@
+{
+  "id": "dressrosa",
+  "name": "Dressrosa Saga",
+  "description": "The crew fights to liberate Dressrosa from the tyrant Doflamingo.",
+  "iconicCharacters": [
+      "/characters/one-piece/Dressrosa/one-piece-doflamingo-laughing.png",
+    "/characters/one-piece/Dressrosa/robin.png",
+     "/characters/one-piece/Dressrosa/2f68b643b03293aa6233dce093ce2061.png",
+    "/characters/one-piece/Dressrosa/7f5462710b5f5d16b9b1138edc9f380f.png",
+     "/characters/one-piece/Dressrosa/78dacb8f12fe179ca6296ad17810d9fb.png",
+    "/characters/one-piece/Dressrosa/a660cecc717b1314eaba53e62ef88d84.png",
+    "/characters/one-piece/Dressrosa/desktop-wallpaper-luffy-amzn-to-qmij-wp4407086-one-piece-luffy-dressrosa-epic-luffy.png"
+  ],
+  "media": [
+    { "id": "punk-hazard", "source_id": 21, "name": "Punk Hazard Arc" },
+    { "id": "dressrosa", "source_id": 21, "name": "Dressrosa Arc" }
+  ],
+  "watch_type": ["anime"],
+  "start_year": "2013",
+  "end_year": "2016",
+  "overview": "Dressrosa Saga is marked by political intrigue, battles, and new alliances."
+}

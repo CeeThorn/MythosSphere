@@ -1,0 +1,20 @@
+{
+  "id": "final",
+  "name": "Final Saga",
+  "description": "The concluding saga featuring the Egghead and Elbaph arcs.",
+  "iconicCharacters": [
+  "/characters/one-piece/Final Saga/0620166da5c6a7ce092c512a8fecc9fe.png",
+    "/characters/one-piece/Final Saga/filters_quality(95)format(webp).png",
+     "/characters/one-piece/Final Saga/wp13339924.png",
+    "/characters/one-piece/Final Saga/Elbaph_Infobox.png",
+     "/characters/one-piece/Final Saga/One-Piece-Elbalf-1.png",
+    "/characters/one-piece/Elbaph/one-piece-prince-loki.png"
+  ],
+  "media": [
+    { "id": "egghead", "source_id": 21, "name": "Egghead Arc" },
+    { "id": "elbaph", "source_id": 21, "name": "Elbaph Arc" }
+  ],
+  "watch_type": ["tv"],
+  "start_year": "2024",
+  "overview": "The Final Saga covers the ongoing adventures in Egghead and Elbaph."
+}

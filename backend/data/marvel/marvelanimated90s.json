@@ -1,0 +1,28 @@
+{
+  "id": "marvel-animated-90s",
+  "name": "Marvel Animated Universe (1990s)",
+  "description": "A shared animated universe that aired throughout the 1990s, featuring crossover events, team-ups, and serialized storytelling among Marvel’s most iconic characters.",
+  "start_year": "1992",
+  "end_year": "1998",
+  "iconicCharacters": [
+    "Spider-Man",
+    "Wolverine",
+    "Cyclops",
+    "Storm",
+    "Iron Man",
+    "War Machine",
+    "Hulk",
+    "Ghost Rider",
+    "The Fantastic Four"
+  ],
+  "media": [
+    { "id": "xmen-tas-1992", "source_id": 11109, "name": "X-Men: The Animated Series (1992)" },
+    { "id": "spiderman-tas-1994", "source_id": 11488, "name": "Spider-Man: The Animated Series (1994)" },
+    { "id": "iron-man-1994", "source_id": 3039, "name": "Iron Man (1994)" },
+    { "id": "fantastic-four-1994", "source_id": 3035, "name": "Fantastic Four (1994)" },
+    { "id": "hulk-1996", "source_id": 3612, "name": "The Incredible Hulk (1996)" },
+    { "id": "silver-surfer-1998", "source_id": 9785, "name": "Silver Surfer (1998)" },
+    { "id": "avengers-united-1999", "source_id": 15758, "name": "The Avengers: United They Stand (1999)" }
+  ],
+  "overview": "This galaxy includes the cornerstone shows of the Marvel Animated Universe (MAU), which introduced millions of viewers to serialized superhero stories with interconnected plots and cameos."
+}

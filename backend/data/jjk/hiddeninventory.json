@@ -1,0 +1,25 @@
+{
+  "id": "hidden-inventory",
+  "name": "Hidden Inventory",
+  "description": "Gojo and Geto’s past arc exploring their missions and philosophies.",
+  "overview": "Deep dive into Gojo’s youth and the origin of Suguru Geto’s ideology.",
+  "iconicCharacters": [
+    "/characters/jjk/U-Pics/U-Pics-itadori.png",
+    "/characters/jjk/U-Pics/jjk-dope.png",
+    "/characters/jjk/U-Pics/gojo.png",
+    "/characters/jjk/megumi-ss1.png",
+    "/characters/jjk/Death-Painting-Arc/nobara-goat.png",
+    "/characters/jjk/Fearsome Womb Arc/sukuna.png",
+    "/characters/jjk/gojo-last-fight.png"
+  ],
+  "media": [
+    {
+      "id": "hidden-inventory",
+      "source_id": 113138,
+      "name": "Hidden Inventory Arc"
+    }
+  ],
+  "watch_type": ["anime"],
+  "start_year": "2023",
+  "end_year": "2023"
+}
