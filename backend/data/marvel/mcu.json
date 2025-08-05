@@ -1,8 +1,17 @@
 {
   "id": "mcu",
   "name": "MCU",
+  "start_year": "2008",
+  "end_year": "",
   "description": "The interconnected cinematic saga of films and series produced by Marvel Studios, starting with Iron Man (2008).",
-  "iconicCharacters": [],
+  "iconicCharacters": [
+     "/characters/marvel/marvel2010s/emh.png",
+  "/characters/marvel/marvel2010s/hulk.png"
+  ],
+  "watch_type": [
+    "tv",
+    "movies"
+  ],
   "media": [
     { "id": "inhumans", "source_id": 71728, "name": "Marvel’s Inhumans (2017)" },
     { "id": "agent-carter", "source_id": 61550, "name": "Agent Carter (2015)" },
@@ -60,9 +69,7 @@
     { "id": "daredevil-born-again", "source_id": 2025, "name": "Daredevil: Born Again" },
     { "id": "ironheart", "source_id": 2025, "name": "Ironheart" },
     { "id": "deadpool-3", "source_id": 533535, "name": "Deadpool & Wolverine" }
-  ],
-  "watch_type": "movies and tv",
-  "start_year": "2008",
-  "end_year": "",
-  "overview": "The Marvel Cinematic Universe (MCU) is a groundbreaking franchise..."
+  ]
+
+  
 }

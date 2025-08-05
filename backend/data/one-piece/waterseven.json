@@ -1,19 +1,21 @@
 {
-  "id": "water-seven",
+  "id": "waterseven",
   "name": "Water 7 Saga",
+  "start_year": "2005",
+  "end_year": "2009",
   "description": "The Straw Hat Pirates face new challenges in Water Seven and Enies Lobby.",
   "iconicCharacters": [
     "/characters/one-piece/Water-Seven/franky-water-seven.png",
     "/characters/one-piece/Water-Seven/boxer-luffy.png"
+  ],
+    "watch_type": [
+    "anime"
   ],
   "media": [
     { "id": "long-ring-long-land", "source_id": 21, "name": "Long Ring Long Land Arc" },
     { "id": "water-seven", "source_id": 21, "name": "Water Seven Arc" },
     { "id": "enies-lobby", "source_id": 21, "name": "Enies Lobby Arc" },
     { "id": "post-enies-lobby", "source_id": 21, "name": "Post-Enies Lobby Arc" }
-  ],
-  "watch_type": ["anime"],
-  "start_year": "2005",
-  "end_year": "2009",
-  "overview": "Water 7 Saga features internal strife and confrontations with government forces, including the recruitment of Franky."
+  ]
+ 
 }

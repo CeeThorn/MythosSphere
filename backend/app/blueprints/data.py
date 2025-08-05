@@ -1,16 +1,18 @@
 from flask import jsonify, Blueprint
 from app.extensions import cache
+from pathlib import Path
 import os
 import json
 
-data_bp = Blueprint("data", __name__, url_prefix="/universes")
+data_bp = Blueprint("data", __name__,url_prefix="/universes" )  # ,url_prefix="/universes"
 
 
 # @cache.memoize(timeout=3600)
 @data_bp.route("/", methods=["GET"])
 def get_universes():
     universes = []
-    data_dir = "data"
+
+    data_dir = "data" #Path(__file__).resolve().parent.parent.parent / "data" 
     try:
         # The line is creating a list of directory names within the `data_dir` directory.
         universe_ids = [
@@ -31,13 +33,17 @@ def get_universes():
 @data_bp.route("/<string:universe_id>/galaxies", methods=["GET"])
 def get_galaxies(universe_id):
     galaxies = []
+
+    
     universe_dir = os.path.join("data", universe_id.lower())
 
+   
     try:
         if not os.path.isdir(universe_dir):
-            return jsonify({"Error": "Universe not found"})
+            return jsonify({"Status": "Failure", "Message": "Universe not found"}), 404
 
-        for filename in os.listdir(universe_dir):
+
+        for filename in os.listdir(universe_dir):  #universe_dir
             if filename.endswith(".json") and filename != "universe.json":
                 galaxy_path = os.path.join(universe_dir, filename)
                 with open(galaxy_path, "r") as f:
@@ -52,27 +58,31 @@ def get_galaxies(universe_id):
                             "iconicCharacters": galaxy_data.get("iconicCharacters", []),
                         }
                     )
-        return jsonify({"Status": "Success", "Payload": galaxies})
+        return jsonify({"Status": "Success", "Payload": galaxies}) 
 
     except Exception as e:
-        return jsonify({"Error": str(e)})
-
+       return jsonify({"Status": "Failure", "Message": f"An internal server error occurred: {str(e)}"}), 500
+    
 
 @data_bp.route("/<string:universe_id>/galaxy/<string:galaxy_id>", methods=["GET"])
 def get_full_galaxy_details(universe_id, galaxy_id):
     try:
-        file_path = os.path.join(
-            "data", universe_id.lower(), f"{galaxy_id.lower()}.json"
-        )
-
+        file_path =  Path(__file__).resolve().parent.parent / "data" / universe_id / f"{galaxy_id}.json"
+     
         if not os.path.exists(file_path):
             return jsonify({"Error": "Galaxy not found"}), 404
 
+
         with open(file_path, "r") as f:
+
 
             galaxy_data = json.load(f)
 
+
         return jsonify({"Status": "Success", "Payload": galaxy_data})
+
 
     except Exception as e:
         return jsonify({"Error": str(e)}), 500
+
+

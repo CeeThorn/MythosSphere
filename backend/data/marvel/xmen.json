@@ -1,8 +1,17 @@
 {
-  "id": "ssu",
-  "name": "Sony's Spider‑Man Universe",
+  "id": "xmen",
+  "name": "XMen Universe",
+  "start_year": "2018",
+  "end_year": "",
   "description": "Sony's cinematic universe of films based on characters from the Spider‑Man comics.",
-  "iconicCharacters": [],
+  "iconicCharacters": [
+      "/characters/marvel/daredevil/elektra.png",
+     "/characters/marvel/daredevil/daredevil.png"
+  ],
+  "watch_type": [
+    "tv",
+    "movies"
+  ],
   "media": [
     { "id": "venom", "source_id": 335983, "name": "Venom" },
     { "id": "venom-let-there-be-carnage", "source_id": 580489, "name": "Venom: Let There Be Carnage" },
@@ -11,8 +20,6 @@
     { "id": "venom-the-last-dance", "source_id": 912649, "name": "Venm: The Last Dance" },
     { "id": "kraven-the-hunter", "source_id": 539972, "name": "Kraven the Hunter" },
     { "id": "spider-noir", "source_id": 220102, "name": "Spider‑Noir (live‑action series)" }
-  ],
-  "start_year": "2018",
-  "end_year": "",
-  "overview": "Sony’s Spider‑Man Universe (SSU) is a loose connected franchise built around Spider‑Man characters, launched with Venom in 2018 and including Venom films, Morbius, Madame Web, and Kraven the Hunter, plus the upcoming live‑action Spider‑Noir series."
+  ]
+  
 }

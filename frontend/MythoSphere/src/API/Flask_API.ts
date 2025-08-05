@@ -28,6 +28,8 @@ export const fetchUniverses = async (): Promise<Universe[] | null> => {
 export const fetchGalaxiesForUniverse = async (universeId: string): Promise<GalaxySummary[] | null> => {
     try {
         const response = await axios.get<GalaxiesResponse>(`${host}universes/${universeId}/galaxies`);
+        //replaced with above
+       // const response = await axios.get<GalaxiesResponse>(`${host}universes/${universeId}/galaxies`);
         if (response.data && response.data.Status === "Success") {
             return response.data.Payload;
         }
@@ -47,7 +49,9 @@ export const fetchGalaxiesForUniverse = async (universeId: string): Promise<Gala
 export const fetchGalaxy = async (universeId: string, galaxyId: string): Promise<Galaxy | null> => {
   try {
     // 1. Call the specific backend endpoint with the universe and galaxy IDs.
-    const response = await axios.get<GalaxyResponse>(`${host}universes/${universeId}/galaxy/${galaxyId}`);
+    const response = await axios.get<GalaxyResponse>(`${host}universes/${universeId}/galaxies/${galaxyId}`);
+    //replaced with above
+   // const response = await axios.get<GalaxyResponse>(`${host}universes/${universeId}/galaxies/${galaxyId}`);
 
     // 2. Check for a successful response from the backend.
     if (response.data && response.data.Status === "Success") {

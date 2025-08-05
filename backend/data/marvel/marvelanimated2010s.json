@@ -1,25 +1,22 @@
 {
-  "id": "marvel-animated-2010s",
+  "id": "marvelanimated2010s",
   "name": "Marvel Animated Universe (2010s)",
   "description": "A shared animated universe developed by Marvel Television for Disney XD. These shows share continuity, crossovers, and feature core Marvel heroes in updated modern arcs.",
   "start_year": "2012",
   "end_year": "2019",
   "iconicCharacters": [
-    "Spider-Man",
-    "Iron Man",
-    "Hulk",
-    "Captain America",
-    "Thor",
-    "Nova",
-    "White Tiger",
-    "Rocket Raccoon",
-    "Gamora"
+ "/characters/marvel/marvel2010s/emh.png",
+  "/characters/marvel/marvel2010s/hulk.png"
+  ],
+  "watch_type": [
+    "tv",
+    "movies"
   ],
   "media": [
     { "id": "ultimate-spiderman-2012", "source_id": 44006, "name": "Ultimate Spider-Man (2012)" },
     { "id": "avengers-assemble-2013", "source_id": 62852, "name": "Avengers Assemble (2013)" },
     { "id": "agents-of-smash-2013", "source_id": 46817, "name": "Hulk and the Agents of S.M.A.S.H. (2013)" },
     { "id": "guardians-galaxy-2015", "source_id": 65334, "name": "Guardians of the Galaxy (2015)" }
-  ],
-  "overview": "Ultimate Spider-Man kicked off this universe, which continued through Avengers Assemble, Hulk and the Agents of S.M.A.S.H., and Guardians of the Galaxy, all featuring interconnected plots and recurring characters."
+  ]
+ 
 }

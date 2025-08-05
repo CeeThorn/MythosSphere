@@ -167,3 +167,6 @@ def get_jikan_details(category, id):
 def get_valid_categories():
     valid_categories = ["anime", "manga", "characters", "people", "top"]
     return jsonify({"valid_categories": valid_categories})
+
+
+

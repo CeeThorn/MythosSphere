@@ -28,6 +28,7 @@ export const GalaxySelector = ({
     const getGalaxies = async () => {
       setGalaxies(null);
       const response = await fetchGalaxiesForUniverse(universe.id);
+      console.log("Fetched galaxies:", response); // <-- ADD THIS
 
       if (response) {
         setGalaxies(response);

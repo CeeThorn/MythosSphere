@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CharacterSlideshow } from "../characterslideshow";
+import { CharacterSlideshow } from "../CharacterSlideshow";
 import { type Universe, fetchUniverses } from "@/API/Flask_API";
 
 interface UniverseSelectorProps {

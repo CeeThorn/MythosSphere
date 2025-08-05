@@ -1,11 +1,16 @@
 {
-  "id": "east-blue",
+  "id": "eastblue",
   "name": "East Blue Saga",
+   "start_year": "1999",
+  "end_year": "2001",
   "description": "The beginning of Luffy's journey, where he gathers his first crewmates.",
   "iconicCharacters": [
     "/characters/one-piece/East-Blue/nami-east-blue.png",
     "/characters/one-piece/East-Blue/zoro-east-blue.png",
     "/characters/one-piece/East-Blue/arlong.png"
+  ],
+  "watch_type": [
+    "anime"
   ],
   "media": [
     { "id": "romance-dawn", "source_id": 21, "name": "Romance Dawn Arc" },
@@ -14,9 +19,5 @@
     { "id": "baratie", "source_id": 21, "name": "Baratie Arc" },
     { "id": "arlong-park", "source_id": 21, "name": "Arlong Park Arc" },
     { "id": "loguetown", "source_id": 21, "name": "Loguetown Arc" }
-  ],
-  "watch_type": ["anime"],
-  "start_year": "1999",
-  "end_year": "2001",
-  "overview": "The East Blue Saga marks the origin of Luffy’s adventure as he forms the core of the Straw Hat crew. It introduces key characters and lays the foundation of the pirate world."
+  ]
 }

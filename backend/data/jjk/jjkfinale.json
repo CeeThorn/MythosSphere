@@ -1,6 +1,7 @@
 {
-  "id": "finale",
+  "id": "jjkfinale",
   "name": "Finale",
+  "start_year": "2024",
   "description": "Final acts of the Jujutsu Kaisen manga.",
   "overview": "Shinjuku Showdown and beyond as the story races to its conclusion.",
   "iconicCharacters": [
@@ -11,6 +12,9 @@
     "/characters/jjk/Death-Painting-Arc/nobara-goat.png",
     "/characters/jjk/Fearsome Womb Arc/sukuna.png",
     "/characters/jjk/gojo-last-fight.png"
+  ],
+  "watch_type": [
+    "anime"
   ],
   "media": [
     {
@@ -38,8 +42,7 @@
       "source_id": 113138,
       "name": "Endgame Arc"
     }
-  ],
-  "watch_type": ["manga"],
-  "start_year": "2024",
-  "end_year": ""
+  ]
+  
+
 }

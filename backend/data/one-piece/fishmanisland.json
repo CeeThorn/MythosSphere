@@ -1,6 +1,8 @@
 {
-  "id": "fishman-island",
+  "id": "fishmanisland",
   "name": "Fishman Island Saga",
+  "start_year": "2012",
+  "end_year": "2013",
   "description": "The crew explores the underwater Fishman Island and confronts new threats.",
   "iconicCharacters": [
     "/characters/one-piece/Fishman-Island/46f0b78ab4114b3766a0ac97664c740e.png",
@@ -9,12 +11,13 @@
     "/characters/one-piece/Fishman-Island/HD-wallpaper-one-piece-fishman-island-pirates-manga-animation-one-piece.png",
     "/characters/one-piece/Fishman-Island/Fishman Island/one-piece-monkey-d-luffy-roronoa-zoro-nami-wallpaper.png"
   ],
+  "watch_type": [
+    "anime"
+  ],
   "media": [
     { "id": "return-to-sabaody", "source_id": 21, "name": "Return to Sabaody Arc" },
     { "id": "fishman-island", "source_id": 21, "name": "Fishman Island Arc" }
-  ],
-  "watch_type": ["anime"],
-  "start_year": "2012",
-  "end_year": "2013",
-  "overview": "Fishman Island Saga deals with racial tensions and a battle against the New Fishman Pirates."
+  ]
+  
+  
 }

@@ -1,11 +1,16 @@
 {
-  "id": "jjk-0",
+  "id": "jjk0",
   "name": "Jujutsu Kaisen 0",
+  "start_year": "2021",
+  "end_year": "2021",
   "description": "The prequel story that introduces the world of Jujutsu Sorcerers and the events leading up to the main series.",
-  "overview": "A movie prequel focusing on Yuta Okkotsu and the origins of cursed energy in the Jujutsu Kaisen world.",
+ 
   "iconicCharacters": [
     "/characters/jjk/JJK-0/yuta-jjk0.png",
     "/characters/jjk/JJK-0/suguru-geto.png"
+  ],
+  "watch_type": [
+    "anime"
   ],
   "media": [
     {
@@ -28,8 +33,7 @@
       "source_id": 40866,
       "name": "Vs. Fushiguro Arc"
     }
-  ],
-  "watch_type": ["anime"],
-  "start_year": "2021",
-  "end_year": "2021"
+  ]
+ 
+  
 }

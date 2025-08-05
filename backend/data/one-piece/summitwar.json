@@ -1,0 +1,24 @@
+
+    {
+    "id": "summitwar",
+    "name": "Summit War Saga",
+    "start_year": "2009",
+    "end_year": "2012",
+    "description": "A massive conflict involving the Marines, pirates, and the war to save Ace.",
+    "iconicCharacters": [
+      "/characters/one-piece/Sabaody-Rayleigh/rayleigh.png",
+      "/characters/one-piece/Marineford/whitebeard.png",
+      "/characters/one-piece/Marineford/ace.png"
+    ],
+      "watch_type": [
+    "anime"
+  ],
+    "media": [
+      { "id": "sabaody-archipelago", "source_id": 21, "name": "Sabaody Archipelago Arc" },
+      { "id": "amazon-lily", "source_id": 21, "name": "Amazon Lily Arc" },
+      { "id": "impel-down", "source_id": 21, "name": "Impel Down Arc" },
+      { "id": "marineford", "source_id": 21, "name": "Marineford Arc" },
+      { "id": "post-war", "source_id": 21, "name": "Post-War Arc" }
+    ]
+    
+  }

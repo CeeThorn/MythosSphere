@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { type Galaxy } from "../../lib/data";
-import { GalaxyCard } from "./GalaxyCard";
+import { GalaxyCard } from "./galaxycard";
 import { motion } from "framer-motion";
 
 interface ModalProps {

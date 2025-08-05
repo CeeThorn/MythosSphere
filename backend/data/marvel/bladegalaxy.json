@@ -1,14 +1,25 @@
 {
-  "id": "blade-galaxy",
+  "id": "bladegalaxy",
   "name": "Blade Universe",
   "description": "Marvel live-action films centered on the vampire hunter Blade, released pre‑MCU.",
   "start_year": "1998",
   "end_year": "2004",
-  "iconicCharacters": [],
+  "iconicCharacters": [
+    "/characters/marvel/blade/blade.png",
+    "/characters/marvel/blade/blade1.png",
+    "/characters/marvel/blade/blade2.png",
+    "/characters/marvel/blade/blade2.png",
+    "/characters/marvel/blade/blade3.png",
+    "/characters/marvel/blade/blade4.png"
+  ],
+  "watch_type": [
+    "tv",
+    "movies"
+  ],
   "media": [
     { "id": "blade-1998", "source_id": 36647, "name": "Blade (1998)" },
     { "id": "blade-ii", "source_id": 36586, "name": "Blade II (2002)" },
     { "id": "blade-trinity", "source_id": 36648, "name": "Blade: Trinity (2004)" }
-  ],
-  "overview": "The Blade film trilogy starring Wesley Snipes, produced by New Line Cinema, forming a standalone Marvel franchise separate from the MCU."
+  ]
+ 
 }

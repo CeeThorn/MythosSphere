@@ -1,6 +1,8 @@
 {
-  "id": "part-1",
+  "id": "part1",
   "name": "Part 1 (Season 1)",
+  "start_year": "2020",
+  "end_year": "2021",
   "description": "Covers Yuji Itadori’s journey into the world of Jujutsu and the early battles with curses.",
   "overview": "From his first contact with curses to the Kyoto Goodwill Event and Death Painting Arc.",
   "iconicCharacters": [
@@ -11,6 +13,9 @@
     "/characters/jjk/Death-Painting-Arc/nobara-goat.png",
     "/characters/jjk/Fearsome Womb Arc/sukuna.png",
     "/characters/jjk/gojo-last-fight.png"
+  ],
+  "watch_type": [
+    "anime"
   ],
   "media": [
     {
@@ -23,8 +28,7 @@
       "source_id": 40866,
       "name": "Vs. Mahito Arc"
     }
-  ],
-  "watch_type": ["anime"],
-  "start_year": "2020",
-  "end_year": "2021"
+  ]
+
+
 }

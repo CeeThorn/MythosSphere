@@ -1,13 +1,21 @@
 {
-  "id": "daredevil-galaxy",
+  "id": "daredevilgalaxy",
   "name": "Daredevil & Elektra Universe",
   "description": "Marvel street‑level films focusing on Daredevil and Elektra, released outside MCU.",
   "start_year": "2003",
   "end_year": "2005",
-  "iconicCharacters": ["Daredevil", "Elektra"],
+  "iconicCharacters": [
+     "/characters/marvel/daredevil/elektra.png",
+     "/characters/marvel/daredevil/daredevil.png",
+    "/characters/marvel/daredevil/daredevil1.png"
+  ],
+  "watch_type": [
+    "tv",
+    "movies"
+  ],
   "media": [
     { "id": "daredevil-2003", "source_id": 9480, "name": "Daredevil (2003)" },
     { "id": "elektra-2005",  "source_id": 142297, "name": "Elektra (2005)" }
-  ],
-  "overview": "Darker superhero films centered on Matt Murdock and Elektra Natchios, produced by Fox/Marvel Enterprises."
+  ]
+  
 }

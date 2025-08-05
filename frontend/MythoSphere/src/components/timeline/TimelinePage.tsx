@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { type Galaxy } from "../../lib/data";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { GalaxyCard } from "../galaxy/GalaxyCard";
+import { GalaxyCard } from "../galaxy/galaxycard";
 
 interface TimelinePageProps {
   galaxy: Galaxy;

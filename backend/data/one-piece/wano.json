@@ -1,6 +1,8 @@
 {
-  "id": "wano-country",
+  "id": "wano",
   "name": "Wano Country Saga",
+  "start_year": "2019",
+  "end_year": "2023",
   "description": "The crew allies with samurai to overthrow the tyrant Kaido.",
   "iconicCharacters": [
        "/characters/one-piece/Wano/14a5fe4852ec9a95e492654ae230c466.png",
@@ -10,11 +12,13 @@
     "/characters/one-piece/Wano/one-piece-manga-hd-wallpaper-preview.png",
     "/characters/one-piece/Wano/FsMoHzBX0AMoJOz.png"
   ],
+    "watch_type": [
+    "anime"
+  ],
   "media": [
     { "id": "wano-country", "source_id": 21, "name": "Wano Country Arc" }
-  ],
-  "watch_type": ["anime"],
-  "start_year": "2019",
-  "end_year": "2023",
-  "overview": "Wano Country Saga features samurai, dragons, and the fight against Kaido."
+  ]
+ 
+
+  
 }

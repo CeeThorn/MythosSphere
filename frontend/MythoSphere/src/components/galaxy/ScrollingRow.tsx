@@ -1,6 +1,6 @@
 import { useState, useRef, useLayoutEffect } from "react";
 import { type GalaxySummary } from "@/API/Flask_API";
-import { GalaxyCard } from "./GalaxyCard";
+import { GalaxyCard } from "./galaxycard";
 
 interface ScrollingRowProps {
   galaxies: GalaxySummary[];
