@@ -1,4 +1,4 @@
-from flask import jsonify, Blueprint
+from flask import jsonify, Blueprint, current_app
 from app.extensions import cache
 import os
 import json
@@ -9,8 +9,9 @@ data_bp = Blueprint("data", __name__, url_prefix="/universes")
 # @cache.memoize(timeout=3600)
 @data_bp.route("/", methods=["GET"])
 def get_universes():
+    base_dir = os.path.dirname(current_app.root_path)
+    data_dir = os.path.join(base_dir, "data")
     universes = []
-    data_dir = "data"
     try:
         # The line is creating a list of directory names within the `data_dir` directory.
         universe_ids = [
@@ -31,7 +32,9 @@ def get_universes():
 @data_bp.route("/<string:universe_id>/galaxies", methods=["GET"])
 def get_galaxies(universe_id):
     galaxies = []
-    universe_dir = os.path.join("data", universe_id.lower())
+    base_dir = os.path.dirname(current_app.root_path)
+    data_dir = os.path.join(base_dir, "data")
+    universe_dir = os.path.join(data_dir, universe_id.lower())
 
     try:
         if not os.path.isdir(universe_dir):
@@ -60,9 +63,11 @@ def get_galaxies(universe_id):
 
 @data_bp.route("/<string:universe_id>/galaxy/<string:galaxy_id>", methods=["GET"])
 def get_full_galaxy_details(universe_id, galaxy_id):
+    base_dir = os.path.dirname(current_app.root_path)
+    data_dir = os.path.join(base_dir, "data")
     try:
         file_path = os.path.join(
-            "data", universe_id.lower(), f"{galaxy_id.lower()}.json"
+            data_dir, universe_id.lower(), f"{galaxy_id.lower()}.json"
         )
 
         if not os.path.exists(file_path):
