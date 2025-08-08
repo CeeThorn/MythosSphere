@@ -4,7 +4,12 @@
   "description": "Embark on an epic adventure across the Grand Line with Luffy and his crew in search of the legendary One Piece treasure.",
   "logoUrl": "/Universe Logos/one-piece-logo.png",
   "iconicCharacters": [
-    "/characters/one-piece/U-Pics/luffy-duece.png",
-    "/characters/one-piece/U-Pics/one-piece-manga.png"
+    "/characters/one-piece/U-Pics/crew.png",
+    "/characters/one-piece/U-Pics/blackbeardcrew.png",
+    "/characters/one-piece/U-Pics/gorosei.png",
+    "/characters/one-piece/U-Pics/shankscrew.png",
+    "/characters/one-piece/U-Pics/crew2.png",
+    "/characters/one-piece/U-Pics/xcrew.png"
+   
   ]
 }

@@ -1,12 +1,12 @@
 {
   "id": "ssu",
-  "name": "Sony's Spider‑Man Universe",
+  "name": "Sony's Spiderman Universe",
     "start_year": "2018",
   "end_year": "",
-  "description": "Sony's cinematic universe of films based on characters from the Spider‑Man comics.",
+  "description": "Sony's cinematic universe of films based on characters from the Spiderman comics.",
   "iconicCharacters": [
-       "/characters/marvel/elseworldsmarvel/spideyfriends.png",
-    "/characters/marvel/elseworldsmarvel/anihulk.png"
+    "/characters/marvel/ssu/morbius.png",
+    "/characters/marvel/ssu/venom.png"
   ],
   "watch_type": [
     "tv",

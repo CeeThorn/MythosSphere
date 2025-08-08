@@ -5,7 +5,12 @@
   "end_year": "2009",
   "description": "The Straw Hat Pirates face new challenges in Water Seven and Enies Lobby.",
   "iconicCharacters": [
-    "/characters/one-piece/Water-Seven/franky-water-seven.png",
+       "/characters/one-piece/Water-Seven/Water_7_Arc.png",
+       "/characters/one-piece/Water-Seven/franky-water-seven.png",
+    "/characters/one-piece/Water-Seven/merrydies.png",
+   "/characters/one-piece/Water-Seven/franky-water-seven.png",
+    "/characters/one-piece/Water-Seven/boxer-luffy.png",
+    "/characters/one-piece/Water-Seven/saverobin.png",
     "/characters/one-piece/Water-Seven/boxer-luffy.png"
   ],
     "watch_type": [

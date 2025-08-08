@@ -1,25 +1,33 @@
 {
   "id": "xmen",
-  "name": "XMen Universe",
-  "start_year": "2018",
-  "end_year": "",
-  "description": "Sony's cinematic universe of films based on characters from the Spider‑Man comics.",
+  "name": "X-Men Universe",
+  "start_year": "2000",
+  "end_year": "2020",
+  "description": "Fox's cinematic universe based on Marvel's X-Men comics, spanning two decades of mutant-powered stories.",
   "iconicCharacters": [
-      "/characters/marvel/daredevil/elektra.png",
-     "/characters/marvel/daredevil/daredevil.png"
+    "/characters/marvel/xmen/wolverine.png",
+    "/characters/marvel/xmen/professorx.png",
+    "/characters/marvel/xmen/magneto.png",
+    "/characters/marvel/xmen/cyclops.png",
+    "/characters/marvel/xmen/storm.png"
+    
   ],
   "watch_type": [
-    "tv",
     "movies"
   ],
   "media": [
-    { "id": "venom", "source_id": 335983, "name": "Venom" },
-    { "id": "venom-let-there-be-carnage", "source_id": 580489, "name": "Venom: Let There Be Carnage" },
-    { "id": "morbius", "source_id": 526896, "name": "Morbius" },
-    { "id": "madame-web", "source_id": 634492, "name": "Madame Web" },
-    { "id": "venom-the-last-dance", "source_id": 912649, "name": "Venm: The Last Dance" },
-    { "id": "kraven-the-hunter", "source_id": 539972, "name": "Kraven the Hunter" },
-    { "id": "spider-noir", "source_id": 220102, "name": "Spider‑Noir (live‑action series)" }
+    { "id": "xmen-2000", "source_id": 36657, "name": "X-Men" },
+    { "id": "x2", "source_id": 36658, "name": "X2: X-Men United" },
+    { "id": "xmen-last-stand", "source_id": 36669, "name": "X-Men: The Last Stand" },
+    { "id": "xmen-origins-wolverine", "source_id": 2080, "name": "X-Men Origins: Wolverine" },
+    { "id": "xmen-first-class", "source_id": 49538, "name": "X-Men: First Class" },
+    { "id": "the-wolverine", "source_id": 76170, "name": "The Wolverine" },
+    { "id": "xmen-days-of-future-past", "source_id": 127585, "name": "X-Men: Days of Future Past" },
+    { "id": "deadpool", "source_id": 293660, "name": "Deadpool" },
+    { "id": "xmen-apocalypse", "source_id": 246655, "name": "X-Men: Apocalypse" },
+    { "id": "logan", "source_id": 263115, "name": "Logan" },
+    { "id": "deadpool-2", "source_id": 383498, "name": "Deadpool 2" },
+    { "id": "dark-phoenix", "source_id": 320288, "name": "X-Men: Dark Phoenix" },
+    { "id": "new-mutants", "source_id": 340102, "name": "The New Mutants" }
   ]
-  
 }

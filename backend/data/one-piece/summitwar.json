@@ -6,9 +6,12 @@
     "end_year": "2012",
     "description": "A massive conflict involving the Marines, pirates, and the war to save Ace.",
     "iconicCharacters": [
-      "/characters/one-piece/Sabaody-Rayleigh/rayleigh.png",
-      "/characters/one-piece/Marineford/whitebeard.png",
-      "/characters/one-piece/Marineford/ace.png"
+      "/characters/one-piece/Summit War/acechain.png",
+        "/characters/one-piece/Summit War/acedie.png",
+          "/characters/one-piece/Summit War/acelock.png",
+            "/characters/one-piece/Summit War/luffy.png",
+              "/characters/one-piece/Summit War/luffyarrive.png"
+
     ],
       "watch_type": [
     "anime"

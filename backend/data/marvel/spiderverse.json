@@ -5,7 +5,9 @@
   "end_year": "",
   "description": "The animated multiverse saga following different Spider-People, beginning with Into the Spider-Verse.",
   "iconicCharacters": [
-     "/characters/marvel/spider-man.png"
+     "/characters/marvel/spiderverse/spiderverse.png",
+     "/characters/marvel/spiderverse/spiderverse2.png"
+
   ],
   "watch_type": [
     "tv",

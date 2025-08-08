@@ -5,14 +5,12 @@
   "end_year": "2022",
   "description": "A futuristic blend of superhero action and robotics, following Hiro Hamada and Baymax as they protect San Fransokyo.",
   "iconicCharacters": [
-    "/characters/marvel/big-hero-6/hiro.png",
-    "/characters/marvel/big-hero-6/baymax.png",
-    "/characters/marvel/big-hero-6/go-go.png",
-    "/characters/marvel/big-hero-6/honey-lemon.png",
-    "/characters/marvel/big-hero-6/wasabi.png",
-    "/characters/marvel/big-hero-6/fred.png"
+    "/characters/marvel/bighero6/bh6.png",
+    "/characters/marvel/bighero6/hirobaymax.png",
+    "/characters/marvel/big-hero-6/bighero6.png"
+
   ],
-  "watch_type": [
+   "watch_type": [
     "tv",
     "movies"
   ],

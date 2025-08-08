@@ -1,17 +1,16 @@
 {
   "id": "jjkfinale",
   "name": "Finale",
-  "start_year": "2024",
+  "start_year": "2027",
+   "end_year": "2028",
   "description": "Final acts of the Jujutsu Kaisen manga.",
   "overview": "Shinjuku Showdown and beyond as the story races to its conclusion.",
   "iconicCharacters": [
-    "/characters/jjk/U-Pics/U-Pics-itadori.png",
-    "/characters/jjk/U-Pics/jjk-dope.png",
-    "/characters/jjk/U-Pics/gojo.png",
-    "/characters/jjk/megumi-ss1.png",
-    "/characters/jjk/Death-Painting-Arc/nobara-goat.png",
-    "/characters/jjk/Fearsome Womb Arc/sukuna.png",
-    "/characters/jjk/gojo-last-fight.png"
+    
+      "/characters/jjk/Final Saga/yuji4.png",
+    "/characters/jjk/Final Saga/gojoyuta.png",
+    "/characters/jjk/Final Saga/yuji.png",
+    "/characters/jjk/Final Saga/yuta.png"
   ],
   "watch_type": [
     "anime"

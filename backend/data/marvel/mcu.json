@@ -5,8 +5,10 @@
   "end_year": "",
   "description": "The interconnected cinematic saga of films and series produced by Marvel Studios, starting with Iron Man (2008).",
   "iconicCharacters": [
-     "/characters/marvel/marvel2010s/emh.png",
-  "/characters/marvel/marvel2010s/hulk.png"
+  "/characters/marvel/mcu/bucky.png",
+  "/characters/marvel/mcu/ironman.png",
+  "/characters/marvel/mcu/ironman2.png",
+  "/characters/marvel/mcu/thanos.png"
   ],
   "watch_type": [
     "tv",
