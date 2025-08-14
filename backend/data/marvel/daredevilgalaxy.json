@@ -1,12 +1,15 @@
 {
   "id": "daredevilgalaxy",
-  "name": "Daredevil & Elektra Universe",
+  "name": "Daredevil Universe",
   "description": "Marvel street‑level films focusing on Daredevil and Elektra, released outside MCU.",
   "start_year": "2003",
   "end_year": "2005",
   "iconicCharacters": [
      "/characters/marvel/daredevil/elektra.png",
      "/characters/marvel/daredevil/daredevil.png",
+     "/characters/marvel/daredevil/fisk.png",
+     "/characters/marvel/daredevil/foggy.png",
+    "/characters/marvel/daredevil/bullseye.png",
     "/characters/marvel/daredevil/daredevil1.png"
   ],
   "watch_type": [

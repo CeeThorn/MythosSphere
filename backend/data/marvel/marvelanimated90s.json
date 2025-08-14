@@ -5,8 +5,11 @@
   "start_year": "1992",
   "end_year": "1998",
   "iconicCharacters": [
-    "/characters/marvel/marvel90s/darkphoenix.png",
-    "/characters/marvel/marvel90s/marvel90s.png"
+    "/characters/marvel/marvel90s/silversurfer.png",
+      "/characters/marvel/marvel90s/darkphoenix.png",
+     "/characters/marvel/marvel90s/storm.png",
+     "/characters/marvel/marvel90s/marvel90s.png"
+    
   ],
   "watch_type": [
     "tv",

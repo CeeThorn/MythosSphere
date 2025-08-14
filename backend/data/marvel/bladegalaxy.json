@@ -6,11 +6,12 @@
   "end_year": "2004",
   "iconicCharacters": [
     "/characters/marvel/blade/blade.png",
+    "/characters/marvel/blade/rein.png",
     "/characters/marvel/blade/blade1.png",
-    "/characters/marvel/blade/blade2.png",
-    "/characters/marvel/blade/blade2.png",
-    "/characters/marvel/blade/blade3.png",
-    "/characters/marvel/blade/blade4.png"
+    "/characters/marvel/blade/scud.png",
+    "/characters/marvel/blade/blade2.png"
+    
+  
   ],
   "watch_type": [
     "tv",

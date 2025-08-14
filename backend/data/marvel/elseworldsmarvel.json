@@ -4,11 +4,13 @@
   "description": "A collection of Marvel shows across time that exist in standalone timelines — unique interpretations, alternate continuities, or isolated adaptations of Marvel characters.",
   "start_year": "1966",
   "iconicCharacters": [
-    "/characters/marvel/elseworldsmarvel/spideyfriends.png",
-    "/characters/marvel/elseworldsmarvel/anihulk.png",
-    "/characters/marvel/elseworldsmarvel/spiderwoman.png",
-    "/characters/marvel/fantastic4-2000s/fantastic4.png",
-    "/characters/marvel/fantastic4-2000s/human torch.png",
+  
+    "/characters/marvel/elseworldsmarvel/ghostrider.png",
+   "/characters/marvel/elseworldsmarvel/nickfury.png",
+   "/characters/marvel/elseworldsmarvel/spiderwoman.png",
+    "/characters/marvel/elseworldsmarvel/cloakndagger.png",
+     "/characters/marvel/elseworldsmarvel/anihulk.png",
+
     "/characters/marvel/fantastic4-2000s/silversurfer.png"
   ],
   "watch_type": [

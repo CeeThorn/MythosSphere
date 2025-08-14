@@ -21,7 +21,9 @@ def create_app():
     app.register_blueprint(search_bp, url_prefix="/api/search")
     app.register_blueprint(data_bp, url_prefix="/api/universes")
     # Initializes CORS
-    CORS(app, origins=["http://localhost:5173"])
+    CORS(app, origins=["http://localhost:5173",
+                       "http://localhost:5174"
+                        ])
 
     # What happens when someone visits the default path.
     @app.route("/")

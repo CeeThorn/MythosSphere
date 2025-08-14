@@ -5,8 +5,9 @@
   "end_year": "2020",
   "description": "Fox's cinematic universe based on Marvel's X-Men comics, spanning two decades of mutant-powered stories.",
   "iconicCharacters": [
+
     "/characters/marvel/xmen/wolverine.png",
-    "/characters/marvel/xmen/professorx.png",
+    "/characters/marvel/xmen/profressorx.png",
     "/characters/marvel/xmen/magneto.png",
     "/characters/marvel/xmen/cyclops.png",
     "/characters/marvel/xmen/storm.png"
