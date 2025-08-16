@@ -36,7 +36,7 @@ export default function TimelinePage() {
             universeName={universe.name}
             isOverview={hoveredIndex === idx}
             alignRight={idx % 2 === 0}
-            refCallback={() => null} // no refs needed here
+            refCallback={() => null}
             dataIndex={idx}
             onMouseEnter={() => setHoveredIndex(idx)}
             onMouseLeave={() => setHoveredIndex(null)}

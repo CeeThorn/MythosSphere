@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CharacterSlideshow } from "../CharacterSlideshow";
+import { CharacterSlideshow } from "../characterslideshow";
 import { type Universe, fetchUniverses } from "@/API/Flask_API";
 
 interface UniverseSelectorProps {
@@ -54,7 +54,7 @@ export const UniverseSelector = ({
       <div className="relative w-full h-[650px] [perspective:1000px]">
         {universes.map((universe, index) => {
           /* This block of code is determining the styles for each card in the slideshow based on its
-          position relative to the active card. Here's a breakdown of what each part is doing: */
+          position relative to the active card.*/
           const isActive = index === activeIndex;
           const isPrev =
             index === (activeIndex - 1 + universes.length) % universes.length;

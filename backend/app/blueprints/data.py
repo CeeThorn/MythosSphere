@@ -61,7 +61,7 @@ def get_galaxies(universe_id):
         return jsonify({"Error": str(e)})
 
 
-@data_bp.route("/<string:universe_id>/galaxy/<string:galaxy_id>", methods=["GET"])
+@data_bp.route("/<string:universe_id>/galaxies/<string:galaxy_id>", methods=["GET"])
 def get_full_galaxy_details(universe_id, galaxy_id):
     base_dir = os.path.dirname(current_app.root_path)
     data_dir = os.path.join(base_dir, "data")

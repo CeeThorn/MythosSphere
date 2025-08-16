@@ -18,8 +18,8 @@ from app.blueprints.data import data_bp
 def create_app():
     app = Flask(__name__)
     init_extensions(app)
-    app.register_blueprint(search_bp, url_prefix="/api/search")
-    app.register_blueprint(data_bp, url_prefix="/api/universes")
+    app.register_blueprint(search_bp)
+    app.register_blueprint(data_bp)
     # Initializes CORS
     CORS(app, origins=["http://localhost:5173"])
 
