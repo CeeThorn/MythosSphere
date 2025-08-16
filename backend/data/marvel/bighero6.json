@@ -1,13 +1,15 @@
 {
   "id": "bighero6",
-  "name": "Big Hero 6 Universe",
+  "name": "Big Hero 6",
   "start_year": "2014",
   "end_year": "2022",
   "description": "A futuristic blend of superhero action and robotics, following Hiro Hamada and Baymax as they protect San Fransokyo.",
   "iconicCharacters": [
-    "/characters/marvel/bighero6/bh6.png",
-    "/characters/marvel/bighero6/hirobaymax.png",
-    "/characters/marvel/big-hero-6/bighero6.png"
+   
+     "/characters/marvel/bighero6/hirobaymax.png",
+      "/characters/marvel/bighero6/tomago.png",
+    "/characters/marvel/bighero6/wasabi.png",
+    "/characters/marvel/bighero6/brother.png"
 
   ],
    "watch_type": [
