@@ -11,6 +11,7 @@ export const fetchUniverses = async (): Promise<Universe[] | null> => {
     const response = await axios.get<UniversesResponse>(`${host}universes/`);
     if (response.data && response.data.Status === "Success") {
       return response.data.Payload;
+      console.log(response.data.Payload)
     }
     return null;
   } catch (error) {

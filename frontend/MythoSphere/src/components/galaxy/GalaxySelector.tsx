@@ -91,7 +91,7 @@ export const GalaxySelector = ({
           onClick={onBack}
           className="text-white/60 hover:text-white transition font-semibold"
         >
-          Back to Universes
+          &larr; Back to Universes
         </button>
       </header>
 

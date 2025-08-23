@@ -18,12 +18,10 @@ from app.blueprints.data import data_bp
 def create_app():
     app = Flask(__name__)
     init_extensions(app)
+    # Initializes CORS
+    CORS(app, origins=["http://localhost:5173"])
     app.register_blueprint(search_bp)
     app.register_blueprint(data_bp)
-    # Initializes CORS
-    CORS(app, origins=["http://localhost:5173",
-                       "http://localhost:5174"
-                        ])
 
     # What happens when someone visits the default path.
     @app.route("/")

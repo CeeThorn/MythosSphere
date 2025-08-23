@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CharacterSlideshow } from "../characterslideshow";
+import { CharacterSlideshow } from "../CharacterSlideshow";
 import { type Universe, fetchUniverses } from "@/API/Flask_API";
 
 interface UniverseSelectorProps {
@@ -39,7 +39,7 @@ export const UniverseSelector = ({
     }
   };
 
-  //Replace witha  loading screen later on
+  //Replace with a loading screen later on
   if (!universes) {
     return (
       <div className="h-screen w-full flex items-center justify-center bg-black text-white">

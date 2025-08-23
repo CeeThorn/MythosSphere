@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { UniverseSelector } from "./components/universe/UniverseSelector";
 import { GalaxySelector } from "./components/galaxy/GalaxySelector";
-import { TimelinePage } from "./components/timeline/TimelinePage";
+import { TimelinePage } from "./components/timeline/TimelinePage.tsx";
 import type { Galaxy, Universe } from "./API/Flask_API";
 import { AnimatePresence } from "framer-motion";
-import SearchBar from "./components/search";
 import "./App.css";
 
 function App() {

@@ -1,7 +1,7 @@
 // src/components/galaxy/GalaxyDetailModal.tsx
 
 import { useState, useEffect } from "react";
-import { type Galaxy } from "../../lib/data";
+import type { Galaxy } from "@/API/Flask_API";
 import { GalaxyCard } from "./galaxycard";
 import { motion } from "framer-motion";
 
