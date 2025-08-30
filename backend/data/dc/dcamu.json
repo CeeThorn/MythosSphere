@@ -19,92 +19,109 @@
     {
       "id": "the-flashpoint-paradox-dcamu",
       "source_id": 183011,
-      "name": "Justice League: The Flashpoint Paradox"
+      "name": "Justice League: The Flashpoint Paradox",
+      "media_type": "movie"
     },
     {
       "id": "justice-league-war-dcamu",
       "source_id": 217993,
-      "name": "Justice League: War"
+      "name": "Justice League: War",
+      "media_type": "movie"
     },
     {
       "id": "son-of-batman-dcamu",
       "source_id": 251519,
-      "name": "Son of Batman"
+      "name": "Son of Batman",
+      "media_type": "movie"
     },
     {
       "id": "justice-league-throne-of-atlantis-dcamu",
       "source_id": 297556,
-      "name": "Justice League: Throne of Atlantis"
+      "name": "Justice League: Throne of Atlantis",
+      "media_type": "movie"
     },
     {
       "id": "batman-vs-robin-dcamu",
       "source_id": 321528,
-      "name": "Batman vs. Robin"
+      "name": "Batman vs. Robin",
+      "media_type": "movie"
     },
     {
       "id": "batman-bad-blood-dcamu",
       "source_id": 366924,
-      "name": "Batman: Bad Blood"
+      "name": "Batman: Bad Blood",
+      "media_type": "movie"
     },
     {
       "id": "justice-league-vs-teen-titans-dcamu",
       "source_id": 379291,
-      "name": "Justice League vs. Teen Titans"
+      "name": "Justice League vs. Teen Titans",
+      "media_type": "movie"
     },
     {
       "id": "justice-league-dark-dcamu",
       "source_id": 408220,
-      "name": "Justice League Dark"
+      "name": "Justice League Dark",
+      "media_type": "movie"
     },
     {
       "id": "teen-titans-the-judas-contract-dcamu",
       "source_id": 408647,
-      "name": "Teen Titans: The Judas Contract"
+      "name": "Teen Titans: The Judas Contract",
+      "media_type": "movie"
     },
     {
       "id": "suicide-squad-hell-to-pay-dcamu",
       "source_id": 487242,
-      "name": "Suicide Squad: Hell to Pay"
+      "name": "Suicide Squad: Hell to Pay",
+      "media_type": "movie"
     },
     {
       "id": "death-and-return-of-superman-dcamu",
       "source_id": 630656,
       "name": "The Death and Return of Superman",
-      "timeline_note": "This represents the two-part story told in 'The Death of Superman' (2018) and 'Reign of the Supermen' (2019)."
+      "timeline_note": "This represents the two-part story told in 'The Death of Superman' (2018) and 'Reign of the Supermen' (2019).",
+      "media_type": "movie"
     },
     {
       "id": "constantine-city-of-demons-dcamu",
       "source_id": 539517,
       "name": "Constantine: City of Demons",
-      "timeline_note": "This movie's events occur concurrently with the 'Death of Superman' storyline."
+      "timeline_note": "This movie's events occur concurrently with the 'Death of Superman' storyline.",
+      "media_type": "movie"
     },
     {
       "id": "wonder-woman-bloodlines-dcamu",
       "source_id": 537055,
       "name": "Wonder Woman: Bloodlines",
-      "timeline_note": "While released later, the majority of this film consists of flashbacks that take place before 'Justice League: War', with the present-day scenes happening after 'Reign of the Supermen'."
+      "timeline_note": "While released later, the majority of this film consists of flashbacks that take place before 'Justice League: War', with the present-day scenes happening after 'Reign of the Supermen'.",
+      "media_type": "movie"
     },
     {
       "id": "batman-hush-dcamu",
       "source_id": 537056,
-      "name": "Batman: Hush"
+      "name": "Batman: Hush",
+      "media_type": "movie"
     },
     {
       "id": "justice-league-dark-apokolips-war-dcamu",
       "source_id": 618344,
-      "name": "Justice League Dark: Apokolips War"
+      "name": "Justice League Dark: Apokolips War",
+      "media_type": "movie"
     },
     {
       "id": "constantine-the-house-of-mystery-dcamu",
       "source_id": 791348,
       "name": "Constantine: The House of Mystery",
-      "timeline_note": "This film serves as an epilogue to the DCAMU, directly following the events of 'Apokolips War'."
+      "timeline_note": "This film serves as an epilogue to the DCAMU, directly following the events of 'Apokolips War'.",
+      "media_type": "movie"
     }
   ],
   "relationships": [
     {
       "toId": "tomorrowverse",
-      "reason": "The Tomorrowverse is the rebooted animated universe that began after the events of 'Justice League Dark: Apokolips War'."
+      "reason": "The Tomorrowverse is the rebooted animated universe that began after the events of 'Justice League Dark: Apokolips War'.",
+      "media_type": "movie"
     }
   ]
 }

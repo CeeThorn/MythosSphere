@@ -27,71 +27,83 @@
       "id": "smallville-cwverse",
       "source_id": 4604,
       "name": "Smallville",
-      "timeline_note": "Exists on its own Earth (Earth-167). Its characters and world were officially brought into the Arrowverse's multiverse during the 'Crisis on Infinite Earths' crossover event."
+      "timeline_note": "Exists on its own Earth (Earth-167). Its characters and world were officially brought into the Arrowverse's multiverse during the 'Crisis on Infinite Earths' crossover event.",
+      "media_type": "tv"
     },
     {
       "id": "arrow-cwverse",
       "source_id": 1412,
       "name": "Arrow",
-      "timeline_note": "The foundational show of the Arrowverse, set on Earth-1."
+      "timeline_note": "The foundational show of the Arrowverse, set on Earth-1.",
+      "media_type": "tv"
     },
     {
       "id": "the-flash-cwverse",
       "source_id": 60735,
       "name": "The Flash",
-      "timeline_note": "The first direct spin-off from 'Arrow', also set on Earth-1."
+      "timeline_note": "The first direct spin-off from 'Arrow', also set on Earth-1.",
+      "media_type": "tv"
     },
     {
       "id": "constantine-cwverse",
       "source_id": 60743,
       "name": "Constantine",
-      "timeline_note": "Originally an NBC show, the character was integrated into the Arrowverse on Earth-1 after its cancellation, becoming a regular on 'Legends of Tomorrow'."
+      "timeline_note": "Originally an NBC show, the character was integrated into the Arrowverse on Earth-1 after its cancellation, becoming a regular on 'Legends of Tomorrow'.",
+      "media_type": "tv"
     },
     {
       "id": "supergirl-cwverse",
       "source_id": 62688,
       "name": "Supergirl",
-      "timeline_note": "Began on its own Earth (Earth-38) and later merged with Earth-1 to become Earth-Prime after 'Crisis on Infinite Earths'."
+      "timeline_note": "Began on its own Earth (Earth-38) and later merged with Earth-1 to become Earth-Prime after 'Crisis on Infinite Earths'.",
+      "media_type": "tv"
     },
     {
       "id": "legends-of-tomorrow-cwverse",
       "source_id": 62643,
-      "name": "DC's Legends of Tomorrow"
+      "name": "DC's Legends of Tomorrow",
+      "media_type": "tv"
     },
     {
       "id": "black-lightning-cwverse",
       "source_id": 71663,
       "name": "Black Lightning",
-      "timeline_note": "Began on its own separate Earth and was merged into Earth-Prime after 'Crisis on Infinite Earths'."
+      "timeline_note": "Began on its own separate Earth and was merged into Earth-Prime after 'Crisis on Infinite Earths'.",
+      "media_type": "tv"
     },
     {
       "id": "titans-live-action-cwverse",
       "source_id": 75450,
       "name": "Titans",
-      "timeline_note": "A separate universe (Earth-9) that was officially acknowledged during the 'Crisis on Infinite Earths' crossover."
+      "timeline_note": "A separate universe (Earth-9) that was officially acknowledged during the 'Crisis on Infinite Earths' crossover.",
+      "media_type": "tv"
     },
     {
       "id": "doom-patrol-live-action-cwverse",
       "source_id": 79501,
       "name": "Doom Patrol",
-      "timeline_note": "A separate universe (Earth-21) that was officially acknowledged during the 'Crisis on Infinite Earths' crossover."
+      "timeline_note": "A separate universe (Earth-21) that was officially acknowledged during the 'Crisis on Infinite Earths' crossover.",
+      "media_type": "tv"
     },
     {
       "id": "batwoman-cwverse",
       "source_id": 89247,
-      "name": "Batwoman"
+      "name": "Batwoman",
+      "media_type": "tv"
     },
     {
       "id": "stargirl-cwverse",
       "source_id": 80986,
       "name": "Stargirl",
-      "timeline_note": "Set on the post-Crisis Earth-2. While connected to the multiverse, it remains in its own continuity."
+      "timeline_note": "Set on the post-Crisis Earth-2. While connected to the multiverse, it remains in its own continuity.",
+      "media_type": "tv"
     },
     {
       "id": "superman-and-lois-cwverse",
       "source_id": 95057,
       "name": "Superman & Lois",
-      "timeline_note": "Initially presented as a direct spin-off set on Earth-Prime, this series was later retconned to be in its own separate universe."
+      "timeline_note": "Initially presented as a direct spin-off set on Earth-Prime, this series was later retconned to be in its own separate universe.",
+      "media_type": "tv"
     }
   ],
   "relationships": [

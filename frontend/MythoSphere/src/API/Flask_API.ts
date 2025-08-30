@@ -85,7 +85,7 @@ export const fetchResults = async (searchQuery: string, searchCat = ""): Promise
     const data = response.data;
 
     if ((data as JikanResponse).jikan) return (data as JikanResponse).jikan.data ?? [];       
-    if ((data as TmdbResponse).tmdb) return (data as TmdbResponse).tmdb.results ?? [];              
+    if ((data as TmdbSearchResponse).tmdb) return (data as TmdbSearchResponse).tmdb.results ?? [];              
     if ((data as ComicvineResponse).comicvine) return (data as ComicvineResponse).comicvine.results ?? []; 
 
     return [];
@@ -98,11 +98,16 @@ export const fetchResults = async (searchQuery: string, searchCat = ""): Promise
 
 
 
-export const fetchDetails = async (itemSource: string, itemId: number, itemCat: string ) => {
+export const fetchDetails = async (media_type: string, media_id: number) => {
   try{
-    
-  }catch{
+    const response = await axios.get<FlaskApiSearch>(`${host}search/${media_type}/${media_id}`);
 
+    if (response.data as TmdbDetailsResponse) return (response.data as TmdbDetailsResponse).tmdb.results ?? [];
+
+    return []
+  }catch(error){
+    console.error("Error fetching results: ", error)
+    return []
   }finally{
     
   }
@@ -191,11 +196,37 @@ interface GalaxyResponse {
   Payload: Galaxy;
 }
 
-type FlaskApiSearch = TmdbResponse | ComicvineResponse | JikanResponse;
+type FlaskApiSearch = TmdbSearchResponse | TmdbDetailsResponse | ComicvineResponse | JikanResponse;
 
 /* These interfaces in TypeScript are defining the structure of the response data expected from
 different APIs. */
-interface TmdbResponse{
+interface TmdbSearchResponse{
+  tmdb:{
+    page:number,
+        type:string,
+    results: [{
+      adult:boolean,
+      backdrop_path:string,
+      id:number,
+      title:string,
+      original_language:string,
+      original_title:string,
+      overview:string,
+      poster_path: string,
+      media_type: string,
+      genre_ids: number[],
+      popularity: number,
+      release_date:string,
+      video:boolean,
+      vote_average:number,
+      vote_count:number
+    }],
+    total_pages:number,
+    total_results:number,
+  }
+}
+
+interface TmdbDetailsResponse{
   tmdb:{
     page:number,
         type:string,

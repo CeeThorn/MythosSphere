@@ -18,13 +18,15 @@
     {
       "id": "harley-quinn-main-series",
       "source_id": 74440,
-      "name": "Harley Quinn"
+      "name": "Harley Quinn",
+      "media_type": "tv"
     },
     {
       "id": "kite-man-hell-yeah-series",
       "source_id": 200753,
       "name": "Kite Man: Hell Yeah!",
-      "timeline_note": "A spin-off series set in the same universe, following the adventures of Kite Man and Golden Glider."
+      "timeline_note": "A spin-off series set in the same universe, following the adventures of Kite Man and Golden Glider.",
+      "media_type": "tv"
     }
   ],
   "relationships": []
