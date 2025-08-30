@@ -20,25 +20,29 @@
     {
       "id": "batman-66-tv-series",
       "source_id": 2287,
-      "name": "Batman (1966 TV Series)"
+      "name": "Batman (1966 TV Series)",
+      "media_type": "tv"
     },
     {
       "id": "batman-the-movie-1966",
       "source_id": 2661,
       "name": "Batman: The Movie",
-      "timeline_note": "This film was released between the first and second seasons of the TV series."
+      "timeline_note": "This film was released between the first and second seasons of the TV series.",
+      "media_type": "movie"
     },
     {
       "id": "batman-return-of-the-caped-crusaders-2016",
       "source_id": 411736,
       "name": "Batman: Return of the Caped Crusaders",
-      "timeline_note": "An animated sequel film released for the 50th anniversary, featuring the voices of Adam West, Burt Ward, and Julie Newmar."
+      "timeline_note": "An animated sequel film released for the 50th anniversary, featuring the voices of Adam West, Burt Ward, and Julie Newmar.",
+      "media_type": "movie"
     },
     {
       "id": "batman-vs-two-face-2017",
       "source_id": 464882,
       "name": "Batman vs. Two-Face",
-      "timeline_note": "The final performance of Adam West as Batman, this animated sequel introduces a '66 version of Two-Face."
+      "timeline_note": "The final performance of Adam West as Batman, this animated sequel introduces a '66 version of Two-Face.",
+      "media_type":"movie"
     }
   ],
   "relationships": []

@@ -27,4 +27,5 @@ yarn-error.log*
 #Backend Cache Files
 backend/app/cache/
 
+.idea/
 .venv/
