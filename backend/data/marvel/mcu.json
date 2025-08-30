@@ -7,9 +7,14 @@
   "iconicCharacters": [
   "/characters/marvel/mcu/captain-america.png",
   "/characters/marvel/mcu/bucky.png",
-  "/characters/marvel/mcu/ironman.png",
   "/characters/marvel/mcu/ironman2.png",
-  "/characters/marvel/mcu/thanos.png"
+  "/characters/marvel/mcu/thanos.png",
+   "/characters/marvel/mcu/peterparker.png",
+    "/characters/marvel/mcu/nick.png",
+     "/characters/marvel/mcu/thor.png",
+      "/characters/marvel/mcu/antman.png",
+       "/characters/marvel/mcu/star-lord.png",
+        "/characters/marvel/mcu/falcon.png"
   ],
   "watch_type": [
     "tv",

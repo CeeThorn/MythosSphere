@@ -17,10 +17,10 @@
     "movies"
   ],
   "media": [
-    { "id": "big-hero-6", "source_id": 177572, "name": "Big Hero 6 (2014)" },
-    { "id": "big-hero-6-the-series", "source_id": 73055, "name": "Big Hero 6: The Series (2017–2021)" },
-    { "id": "baymax", "source_id": 113988, "name": "Baymax! (2022)" },
-    { "id": "feast", "source_id": 24450, "name": "Feast (2014 short)" }
+    { "id": "big-hero-6", "source_id": 177572, "name": "Big Hero 6" },
+    { "id": "big-hero-6-the-series", "source_id": 73055, "name": "Big Hero 6: The Series " },
+    { "id": "baymax", "source_id": 113988, "name": "Baymax! " },
+    { "id": "feast", "source_id": 24450, "name": "Feast " }
   ]
 
 }

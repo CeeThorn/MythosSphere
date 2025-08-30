@@ -17,8 +17,8 @@
     "movies"
   ],
   "media": [
-    { "id": "daredevil-2003", "source_id": 9480, "name": "Daredevil (2003)" },
-    { "id": "elektra-2005",  "source_id": 142297, "name": "Elektra (2005)" }
+    { "id": "daredevil-2003", "source_id": 9480, "name": "Daredevil " },
+    { "id": "elektra-2005",  "source_id": 142297, "name": "Elektra " }
   ]
   
 }
