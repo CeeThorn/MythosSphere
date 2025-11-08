@@ -43,16 +43,16 @@ export const UniverseSelector = ({
 
   return (
     <div className="w-full max-w-full py-2 px-2">
-      {/* Flat horizontal row for a navbar dropdown (no 3D transforms). */}
       <div
-        className="relative flex items-stretch gap-3 overflow-x-auto snap-x snap-mandatory no-scrollbar"
+        className="relative flex items-stretch gap-3 overflow-x-auto snap-x snap-mandatory "
         onWheel={(e) => e.stopPropagation()}
       >
         {universes.map((u, index) => {
           const key = u.id;
           const title = u.name;
           const images = u.iconicCharacters;
-          //Responsive sizes: starts as ~44:24 ratio and scales up at breakpoints. Perfect for banner-style images like your Superman/Batman family shots.
+          const logo = u.logoUrl;
+
           return (
             <button
               key={key}
@@ -81,7 +81,14 @@ export const UniverseSelector = ({
               </div>
 
               {title && (
-                <div className="absolute inset-x-0 bottom-0 p-2 text-[11px] sm:text-xs text-white/90 bg-gradient-to-t from-black/60 to-transparent">
+                <div className="absolute inset-x-0 bottom-0 p-2 text-[11px] sm:text-xs text-white/90 bg-gradient-to-t from-black/60 to-transparent flex items-center gap-2">
+                  {logo && (
+                    <img
+                      src={logo}
+                      alt="logo"
+                      className="h-4 w-4 sm:h-5 sm:w-5 object-contain"
+                    />
+                  )}
                   <span className="block truncate">{title}</span>
                 </div>
               )}
