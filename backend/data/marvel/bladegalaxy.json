@@ -18,9 +18,9 @@
     "movies"
   ],
   "media": [
-    { "id": "blade-1998", "source_id": 36647, "name": "Blade (1998)" },
-    { "id": "blade-ii", "source_id": 36586, "name": "Blade II (2002)" },
-    { "id": "blade-trinity", "source_id": 36648, "name": "Blade: Trinity (2004)" }
+    { "id": "blade-1998", "source_id": 36647, "name": "Blade " },
+    { "id": "blade-ii", "source_id": 36586, "name": "Blade II " },
+    { "id": "blade-trinity", "source_id": 36648, "name": "Blade: Trinity " }
   ]
  
 }

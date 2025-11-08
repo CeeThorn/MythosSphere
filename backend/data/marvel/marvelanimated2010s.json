@@ -8,8 +8,7 @@
 
 "characters/marvel/marvel2010s/ironman.png",
 "/characters/marvel/marvel2010s/Captain_America.png",
-"characters/marvel/marvel2010s/ironman3.png",
- "/characters/marvel/marvel2010s/emh.png",
+
   "/characters/marvel/marvel2010s/hulk.png"
   ],
   "watch_type": [
@@ -17,10 +16,10 @@
     "movies"
   ],
   "media": [
-    { "id": "ultimate-spiderman-2012", "source_id": 44006, "name": "Ultimate Spider-Man (2012)" },
-    { "id": "avengers-assemble-2013", "source_id": 62852, "name": "Avengers Assemble (2013)" },
-    { "id": "agents-of-smash-2013", "source_id": 46817, "name": "Hulk and the Agents of S.M.A.S.H. (2013)" },
-    { "id": "guardians-galaxy-2015", "source_id": 65334, "name": "Guardians of the Galaxy (2015)" }
+    { "id": "ultimate-spiderman-2012", "source_id": 44006, "name": "Ultimate Spider-Man " },
+    { "id": "avengers-assemble-2013", "source_id": 62852, "name": "Avengers Assemble " },
+    { "id": "agents-of-smash-2013", "source_id": 46817, "name": "Hulk and the Agents of S.M.A.S.H. " },
+    { "id": "guardians-galaxy-2015", "source_id": 65334, "name": "Guardians of the Galaxy " }
   ]
  
 }

@@ -7,10 +7,15 @@
   "iconicCharacters": [
 
     "/characters/marvel/xmen/wolverine.png",
+      "/characters/marvel/xmen/deadpool.png",
     "/characters/marvel/xmen/profressorx.png",
     "/characters/marvel/xmen/magneto.png",
     "/characters/marvel/xmen/cyclops.png",
-    "/characters/marvel/xmen/storm.png"
+    "/characters/marvel/xmen/storm.png",
+    "/characters/marvel/xmen/mystique.png",
+    "/characters/marvel/xmen/colossus.png",
+    "/characters/marvel/xmen/beast.png",
+    "/characters/marvel/xmen/pheo.png"
     
   ],
   "watch_type": [
