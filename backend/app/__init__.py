@@ -7,7 +7,6 @@ Runs the application
 """
 import sys
 from flask import Flask, redirect
-from flask import Flask
 from flask_cors import CORS  # CORS allows for cross-origin requests
 
 from app.extensions import init_extensions
